@@ -1,0 +1,53 @@
+/**
+ * File:    ecology.cga
+ * Created: 27 Oct 2021 16:57:21 GMT
+ * Author:  User
+ */
+
+version "2021.1"
+
+#AssignSoilGrade	
+attr SoilGrade = #replaces de --> which is for rules with "=" which is for attributes
+	50%: SoilGradeCoefficient("GradeOne")
+	30%: SoilGradeCoefficient("GradeTwo")
+	10%: SoilGradeCoefficient("GradeThree")
+	10%: SoilGradeCoefficient("GradeFour")
+	else: SoilGradeCoefficient("GradeZero")
+
+#@Range (min=10, max =80) #what is this range for? maximum height
+
+@StartRule
+Lot --> 
+	extrude(rand(10, 80)) #oh you might want to have the randomess meet the range above? then its rand(10,80) for rand(min,max)
+	
+	report("height", geometry.height())#nice, you have read the documentation!!!
+	report("volume", geometry.volume) #nice, you have read the documentation!!!
+	report("Roofarea", geometry.area)
+	
+	
+	SelectVerticalSurfaces
+	SelectTopSurfaces #maybe its here where you put your soil coefficient?
+	
+@StartRule
+SelectVerticalSurfaces -->
+	comp(f){side: ReportVerticalSurfaces}
+
+@StartRule
+SelectTopSurfaces -->
+	comp(f){top: ReportTopSurfaces}
+
+ReportVerticalSurfaces -->
+		report("verticalArea", geometry.area)
+
+ReportTopSurfaces -->
+	report("Soil Grade", SoilGrade) 
+
+# AssignSoilGradeCoefficient
+# this should be a function or an attribute
+SoilGradeCoefficient(gradeType) =
+	case gradeType == "GradeOne": 0.1
+	case gradeType == "GradeTwo":  0.2
+	case gradeType == "GradeThree": 0.3
+	case gradeType == "GradeFour": 0.4
+	else: 0 #what happens with Grade zero?
+	
