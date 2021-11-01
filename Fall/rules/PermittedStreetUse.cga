@@ -6,6 +6,8 @@
 
 version "2021.1"
 
+import eventClosures: "eventsClosure.cga"
+
 #### Atribute ###
 #Events Column definition
 @Enum ("HF", "CU","BP", "SPS","SUPS", "PE/PPE","FM", "SBF", "SF", "SIS", "R", "SS", "ODP", "WW", "COART", "SUMS", "CF")
@@ -20,7 +22,7 @@ attr EventClass = ""
 # greaten than: >
 # ....
 
-attr EventClassName = 
+attr EventClassName =
 	case EventClass == "HF": "HealthFair"
     case EventClass == "CU": "CleanUps"
     case EventClass == "BP": "BlockParty"
@@ -56,7 +58,7 @@ attr TRAFDIR = ""
 #This is reading from the street attribute
 attr TrafficCategory =
     # if TRAFDIR is something, return  a new name
-    case TRAFDIR == "TW": "Two-Way" 
+    case TRAFDIR == "TW": "Two-Way"
     case TRAFDIR == "FT": "With"
     case TRAFDIR  == "TF": "Against"
     case TRAFDIR  == "NV": "Non-Vehicular"
@@ -73,16 +75,48 @@ PermittedStreet(Code)=
     else :  ["FT","TF","NV", "TW"]
 
 
+
+###################################################################
+###################################################################
+###################################################################
+
 @StartRule
 SchoolPlayStreet-->
     #if traffic ISNOT  two way then apply PaintActivity
-    case TrafficCategory != "Two-Way": PaintActivity
-    else: 
+    case TrafficCategory != "Two-Way":
+    	PaintActivity
+    	report("EventClosure", listFromArray(eventClosures.roadTypeClosure(EventClass)))
+
+    else:
     	NIL #Delete Model
-        DoNothing. #nothing, the dot is needed to do nothing.
+        #DoNothing. #nothing, the dot is needed to do nothing.
 
 PaintActivity -->
     case SchoolPlayStreetActivities == "Sports": color(1,0,0)
     case SchoolPlayStreetActivities == "Games": color (0,1,0)
     case SchoolPlayStreetActivities == "Performance":color ("CDCDCD")
     else : color ("#D4D4D4")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
