@@ -8,11 +8,13 @@ version "2021.1"
 
 #Randomly assign schools, transit, grocery stores
 #BuildingQualifiers -->
-@range(min = 1, max = 100)
+@Range(min = 1, max = 100)
 attr schoolamount = 10
-@range(min = 1, max = 100)
+
+@Range(min = 1, max = 100)
 attr busamount = 100
-@range(min = 1, max = 100)
+
+@Range(min = 1, max = 100)
 attr groceryamount = 15
 #import objects
 attr schoolFile = "school.dae"
