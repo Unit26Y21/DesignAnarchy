@@ -33,22 +33,22 @@ Nathan Laveau, Katie Kenny, Steven Kaminski, Xiaoneng Tang
 
 #### In addition to ecological based interventions, the NYCHA site only has 13% of the land covered by buildings, leaving a huge opportunity for additional development that will increase the housing capacity. Given the amount of open space and proximity to the Harlem River, potential interventions include:
 
-#### 1. TRANSFORM THE COASTLINE
+#### **1. TRANSFORM THE COASTLINE**
 ####    - Thicken the water edge of the seawall to be like the mucky tidal wetlands & provide a buffer zone of breakwaters and relieve structures during storm surges
 ####    - Use landfill to extend the coast to create a saltwater marsh, to increase the length of the shore 
 
 
-#### 2. SHIFT FROM HARD TO SOFT INFRASTRUCTURE 
+#### **2. SHIFT FROM HARD TO SOFT INFRASTRUCTURE** 
 ####    - Transform material of streets and sidewalks to have them paved with cast concrete and incorporate plants and vegetation that are selected for their tolerance to pollution and saltwater
 ####    - The porus green streets will act as a sponge for rainwater in a new organic system designed to respond to tidal flows and storm surges 
 
 
-#### 3. SLOW THE FLOW 
+#### **3. SLOW THE FLOW** 
 ####    - Incorporate both blue and green roofs to hold water (blue roofs) to slow drainage (green roofs)
 ####    - Create vertical green facades to slow the flow of water
 
 
-#### 4. TAME THE WAVE AND "ENRICH ESTUARINE HEALTH"  
+#### **4. TAME THE WAVE AND "ENRICH ESTUARINE HEALTH"**  
 ####    - Restore shoals and oyster beds to act as a breakwater and diminish wave action, while also cleaning polluted waters 
 ####    - The new reef will protect the shoreline, where there is now a new, cleaner, water-based community with gardens thawt are fertilized with combined sewer overflow and oyster development industries, where residents savor homegrow shellfish 
 
