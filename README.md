@@ -1,6 +1,3 @@
-# DesignAnarchy
-Repository for Design Anarchy 
+# TOWERS IN THE SOUP
+Nathan Laveau, Katie Kenny, Steven Kaminski, Xiaoneng Tang  
 
-This is the repository for Unit 26 year long project to codify design anarchy.
-
-Welcome!
