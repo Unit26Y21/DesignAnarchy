@@ -20,8 +20,8 @@ Nathan Laveau, Katie Kenny, Steven Kaminski, Xiaoneng Tang
 
 ![Consolidated Map_021422](https://github.com/Unit26Y21/DesignAnarchy/blob/93c404843fe21a2876ca915631f36013f9c1bc15/Consolidated%20Map_021422.png)
 
-## Considered but not Recommended: 
-#### The following sites were also considered in this analysis. Baruch Houses was a top contender in this analysis, and has a very similar site and demographic make up. However, Baruch Houses is a much larger site, with complex surroundings -- i.e. the FDR and East River. Dyckman is a similar site but on a smaller scale, that we suspect will provide the opportunity to more aggressive interventions. By proving out our interventions on a smaller scale site (dealing with Harlem River Drive and the Harlem River, opposed to the FDR Drive and the East River), it will be a proof of concept project that other NYCHA sites can adapt. 
+## Considered But Not Recommended: 
+#### The following sites were also considered in this analysis. Baruch Houses was a top contender in this analysis, and has a very similar site and demographic make up. However, Baruch Houses is a much larger site, with complex surroundings (i.e. the FDR and East River), and it has already had multiple resilency based interventions both by public and private focuses.  Dyckman is a similar site but on a smaller scale, that we suspect will provide the opportunity to have more aggressive interventions that we recommend and are different from what has been done at Baruch. By proving out our interventions on a smaller scale site (dealing with Harlem River Drive and the Harlem River, opposed to the FDR Drive and the East River), it will also be a proof of concept project that other NYCHA sites can adapt. 
 
 ![considered but not recommended](https://github.com/Unit26Y21/DesignAnarchy/blob/93c404843fe21a2876ca915631f36013f9c1bc15/considered%20but%20not%20recommended.png)
 
