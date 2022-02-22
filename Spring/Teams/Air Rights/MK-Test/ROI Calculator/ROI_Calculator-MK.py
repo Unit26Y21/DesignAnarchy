@@ -9,8 +9,10 @@
 
 #defining Rent can be a culmination of number of units and rent charged per UnitType
 #AMI= AreaMediumIncome
-##Source:
+##Source for average price per MarketRate DwellingType:
 # https://www.elliman.com/resources/siteresources/commonresources/static%20pages/images/corporate-resources/q3_2021/rental-09_2021.pdf
+
+##DwellingTypes## ---> PricePerUnit (%AMI) OR PricePerSqFt for Construction (Cost) vs Rent (Income)
     #SeniorHousing:
         #UnitA1 = SeniorStudioUnitAffordable, PricePerUnitA1 = 30%AMI ----->
             # OR BETTER way to calculate this?? Set a range from 30-100%AMI,
@@ -22,7 +24,7 @@
         #UnitC2 = Senior2BrUnitMarket, PricePerUnitB1 = 100%AMI
     #StudioUnits:
         #UnitB1 = StudioAffordable, PricePerUnitB1 =
-        #UnitB2 = StudioMarket, PricePerUnitB2 =
+        #UnitB2 = StudioMarket, PricePerUnitB2 = 2450
         #UnitB3 = StudioCoLivingAffordable, PricePerUnitB3 =
         #UnitB4 = StudioCoLivingMarket, PricePerUnitB4 =
     #1BrUnits:
@@ -35,7 +37,9 @@
         #UnitD1 = 3BrAffordable, PricePerUnitE1 =
         #UnitD2 = 3BrMarket, PricePerUnitE2 =
 
-    #def Rent (NumUnitA * PricePerUnit + )
+#def Rent [(NumUnitA * PricePerUnitA1),
+
+#def DevelopmentMix, 80:20 (Market v Affordable)
 
 #investmentDictionary = {}
 
