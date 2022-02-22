@@ -41,35 +41,35 @@
 
 #def DevelopmentMix, 80:20 (Market v Affordable)
 
-#investmentDictionary = {}
+investmentDictionary = {}
 
 ###Ownership Investment Variables###
-#stock= 2000 #Suppose is the value of Housing Authority
-#business= None
-#realEstate= 10000 #Suppose is LandValue
-#objectsCollectibles= None
+stock= 2000 #Suppose is the value of Housing Authority
+business= None
+realEstate= 10000 #Suppose is LandValue
+objectsCollectibles= None
 
 ###Lending Investment Variables###
-#savingAccount= 5000
-#bonds= 20000 #Suppose is a loan from BoFA
+savingAccount= 5000
+bonds= 20000 #Suppose is a loan from BoFA
 
 ###Cash Equivalent Investment Variables###
-#moneyMarket= None
+moneyMarket= None
 
 
-#for variable in ["stock", "business", "realEstate", "objectsCollectibles", "savingAccount", "bonds", "moneyMarket"]:
-   # investmentDictionary[variable] = eval(variable)
+for variable in ["stock", "business", "realEstate", "objectsCollectibles", "savingAccount", "bonds", "moneyMarket"]:
+    investmentDictionary[variable] = eval(variable)
 
 
-#def sumOfInvestments (investmentDictionary):
-   # Investment= sum(investmentDictionary)
-#    print(Investment)
+def sumOfInvestments (investmentDictionary):
+    Investment= sum(investmentDictionary)
+    print(Investment)
 
 
 ###Creating ROI Calculator###
 
 #Define the Variables#
-Investment = 40000
+#Investment = 40000
 Rent = 700
 Loss = 1000
 
