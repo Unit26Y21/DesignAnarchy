@@ -1,6 +1,5 @@
-print("Towers In The Soup")
-print("Pro Forma")
 
+# Global Constants
 constructionCostPerSqFt = 362
 studioSqFt = 400
 oneBedroomSqFt = 575
@@ -10,18 +9,32 @@ numberStudios = 20
 numberOneBedrooms = 20
 numberTwoBedrooms = 40
 numberThreeBedrooms = 20
-percentAffordable = userInputNumber
-percentMarketRate = {100 - userInputNumber}
 affordableRentPerSqft = 1
 marketRentPerSqft = 3
 principlePercent = 0.003
 interestPercent = 0.002
 
+def tidsProforma(userInputNumber):
+    print("Towers In The Soup")
+    print("Pro Forma")
+
+    percentAffordable = userInputNumber
+    percentMarketRate = 100 - userInputNumber
+
+    development_totalsqft = total_sqft()
+
+    print("######"*10)
+    print(percentAffordable, percentMarketRate)
+    print(development_totalsqft)
+    print("######" * 10)
+
 def total_sqft():
-    return {(studioSqFt * numberStudios) + (oneBedroomSqFt * numberOneBedrooms) + (twoBedroomSqFt * numberTwoBedrooms)
-    (threeBedroomSqFt * numberThreeBedrooms)}
+    #Python Collection
+    #{} or [] or ()
+    return (studioSqFt * numberStudios) + (oneBedroomSqFt * numberOneBedrooms) + (twoBedroomSqFt * numberTwoBedrooms)
+    (threeBedroomSqFt * numberThreeBedrooms)
 
-
+'''
 def number_of_units():
     return {numberStudios + numberOneBedrooms + numberTwoBedrooms + numberThreeBedrooms}
 
@@ -63,3 +76,4 @@ userInputNumber = int(userInput)
 
 calculatedValue = profitability(userInputNumber)
 print(profitability)
+'''
