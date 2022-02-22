@@ -40,8 +40,14 @@
 #def Rent [(NumUnitA * PricePerUnitA1),
 
 #def DevelopmentMix, 80:20 (Market v Affordable)
+myDictionary = { "stocks": 5000,
+                         "business": {}}
+                #start or instatiate an empty dictionary | because I dont know what is inside.
+                    # ALl I know is that it will have a key and a value
+
 
 investmentDictionary = {}
+
 
 ###Ownership Investment Variables###
 stock= 2000 #Suppose is the value of Housing Authority
@@ -50,16 +56,25 @@ realEstate= 10000 #Suppose is LandValue
 objectsCollectibles= None
 
 ###Lending Investment Variables###
-savingAccount= 5000
-bonds= 20000 #Suppose is a loan from BoFA
+savingAccount = 5000
+bonds = 20000 #Suppose is a loan from BoFA
 
 ###Cash Equivalent Investment Variables###
 moneyMarket= None
 
+typesOfMarkets = ["stock", "business", "realEstate", "objectsCollectibles", "savingAccount", "bonds", "moneyMarket"]
 
-for variable in ["stock", "business", "realEstate", "objectsCollectibles", "savingAccount", "bonds", "moneyMarket"]:
-    investmentDictionary[variable] = eval(variable)
+for item in typesOfMarkets:
+    investmentDictionary[item] = eval(item)
 
+#before for Loop
+investmentDictionary = {}
+
+#after foor loop:
+{ "stocks": 5000,
+  "business": 3442341123123123,
+
+}
 
 def sumOfInvestments (investmentDictionary):
     Investment= sum(investmentDictionary)

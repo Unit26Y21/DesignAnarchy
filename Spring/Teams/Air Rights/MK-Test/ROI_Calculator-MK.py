@@ -73,9 +73,9 @@ Loss = 1000
 def ROI (Investment, Rent, Loss):
     NetProfit = Rent * 12 - Loss
     ROI = (NetProfit/Investment) *100
-    print(ROI)
+    return ROI
 
-ROI (Investment, Rent, Loss)
+my_ROI = ROI(Investment, Rent, Loss)
 
 #Rate of Return- takes into account the project's time frame
 #SROI- Social return on investment, to understand the environmental,

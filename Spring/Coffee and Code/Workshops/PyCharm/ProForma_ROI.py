@@ -46,6 +46,8 @@ def tidsProforma(userInputNumberAffordable):
     print("######" * 10)
     print("The profitability output of your development is: {0}".format(profitability_output))
 
+    return profitability_output
+
 def totalSqft():
     #Python Collection
     #{} or [] or ()
