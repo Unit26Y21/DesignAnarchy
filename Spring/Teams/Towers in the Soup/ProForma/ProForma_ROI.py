@@ -15,10 +15,18 @@ interestPercent = 0.002
 
 def userInput():
     userInput = input("What percentage of housing would you like to be affordable? ")
-    userInputNumber = int(userInput)
-
-    tidsProforma(userInputNumber)
-
+    try:
+        userInputNumber = int(userInput)
+        if 0 < userInputNumber < 100:
+            return tidsProforma(userInputNumber)
+        elif userInputNumber > 100:
+            print("You can't have more than 100% of anything. Who taught you math?")
+        elif userInputNumber == 0:
+            print("Why did you enter zero? Do you hate poor people?")
+        elif userInputNumber < 0:
+            print("You entered a negative number. That's not possible.")
+    except ValueError:
+        print("You didn't put and integer... Stop Trying to break my program!")
 
 def tidsProforma(userInputNumberAffordable):
     print("Towers In The Soup")
@@ -44,8 +52,6 @@ def tidsProforma(userInputNumberAffordable):
     print(development_totalSqFt)
     print("######" * 10)
     print("The profitability output of your development is: {0}".format(profitability_output))
-
-    return profitability_output
 
 def totalSqft():
     #Python Collection
