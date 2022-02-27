@@ -4,7 +4,6 @@
     <list default="true" id="d84c16fa-1747-4b6c-8a7c-3215dd12a060" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProForma/ProForma_ROI.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProForma/ProForma_ROI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProForma/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProForma/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
