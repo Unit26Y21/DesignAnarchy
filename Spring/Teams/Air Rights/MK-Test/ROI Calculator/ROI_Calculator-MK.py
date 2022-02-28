@@ -12,36 +12,83 @@
 ##Source for average price per MarketRate DwellingType:
 # https://www.elliman.com/resources/siteresources/commonresources/static%20pages/images/corporate-resources/q3_2021/rental-09_2021.pdf
 
-##DwellingTypes## ---> PricePerUnit (%AMI) OR PricePerSqFt for Construction (Cost) vs Rent (Income)
-    #SeniorHousing:
-        #UnitA1 = SeniorStudioUnitAffordable, PricePerUnitA1 = 30%AMI ----->
-            # OR BETTER way to calculate this?? Set a range from 30-100%AMI,
-            # Calculate by average household income by district? Doesn't really work for seniors...
-        #UnitA2 = SeniorStudioUnitMarket, PricePerUnitA2 = 100%AMI
-        #UnitB1 = Senior1BrUnitAffordable, PricePerUnitB1 = 30%AMI
-        #UnitB2 = Senior1BrUnitMarket, PricePerUnitB1 = 100%AMI
-        #UnitC1 = Senior2BrUnitAffordable, PricePerUnitB1 = 30%AMI
-        #UnitC2 = Senior2BrUnitMarket, PricePerUnitB1 = 100%AMI
-    #StudioUnits:
-        #UnitB1 = StudioAffordable, PricePerUnitB1 =
-        #UnitB2 = StudioMarket, PricePerUnitB2 = 2450
-        #UnitB3 = StudioCoLivingAffordable, PricePerUnitB3 =
-        #UnitB4 = StudioCoLivingMarket, PricePerUnitB4 =
-    #1BrUnits:
-        #UnitC1 = 1BrAffordable, PricePerUnitC1 =
-        #UnitC2 = 1BrMarket, PricePerUnitC2 =
-    #2BrUnits:
-        #UnitD1 = 2BrAffordable, PricePerUnitD1 =
-        #UnitD2 = 2BrMarket, PricePerUnitD2 =
-    #3BrUnits:
-        #UnitD1 = 3BrAffordable, PricePerUnitE1 =
-        #UnitD2 = 3BrMarket, PricePerUnitE2 =
+##Cost:
+ConstructionCostAffordable = 350
+ConstructionCostMarket = 500
 
-#def Rent [(NumUnitA * PricePerUnitA1),
+##Financial Factors:
+    #Interest
+    #Principle
+    #Loans
+    #Grants
+
+##DwellingTypes Constants##
+
+    #StudioUnitsRent:
+
+StudioExtAffordable = (0-419) #0-30%AMI (419)
+StudioSeniorAffordable = (419-598) #30-40%AMI (419, 598)
+StudioCoAffordable = (419-777) #30-50%AMI (419, 598, 777)
+StudioAffordable = (420-1314) #40-80%AMI (598, 777, 956, 1135, 1314)
+StudioSeniorMarket = (956-1314) #60-80%AMI (956, 1135, 1314)
+StudioCoMarket = (956-1547) #60-90%AMI (956, 1135, 1314)
+StudioMarket = (1547-2889) #90-165%AMI (1547, 1726, 1905, 2084, 2263, 2889)
+
+    #StudioUnitsArea:
+
+StudioExtAffordableArea= 260 #no kitchen
+StudioSeniorAffordableArea = 400
+StudioCoAffordableArea = 300
+StudioAffordableArea = 400
+StudioSeniorMarketArea = 400
+StudioCoMarketArea = 300
+StudioMarketArea = 400
+
+    #1BrUnitsRent:
+
+Bdrm1ExtAffordable = (0-532) #0-30%AMI (532)
+Bdrm1SeniorAffordable = (532-756) #30-40%AMI (532, 756)
+Bdrm1Affordable = (756-1651) #40-80%AMI (756, 980, 1204, 1427, 1651)
+Bdrm1SeniorMarket = (1204-1651) #60-80%AMI (1204,1427,1651)
+Bdrm1MarketRate = (1942-3621) #90-165%AMI (1942, 2166, 2390, 2614, 2838, 3621)
+
+    #Bdrm1UnitsArea:
+
+Bdrm1ExtAffordableArea = 600
+Bdrm1SeniorAffordableArea = 700
+Bdrm1AffordableArea = 700
+Bdrm1SeniorMarketArea = 700
+Bdrm1MarketArea = 700
+
+    #Bdrm2UnitsRent:
+
+Bdrm2ExtAffordable = (0 - 631)  # 0-30%AMI (631)
+Bdrm2SeniorAffordable = (631 - 900)  # 30-40%AMI (631, 900)
+Bdrm2Affordable = (900 - 1947)  # 40-80%AMI (900, 1168, 1437, 1705, 1947)
+Bdrm2SeniorMarket = (1437 - 1974)  # 60-80%AMI (1437, 1705, 1974)
+Bdrm2MarketRate = (2323 - 4337)  # 90-165%AMI (2323, 2592, 2860, 3129, 3397, 4337)
+
+#Bdrm2UnitsArea: 870
+
+Bdrm2ExtAffordableArea = 870
+Bdrm2SeniorAffordableArea = 870
+Bdrm2AffordableArea = 870
+Bdrm2SeniorMarketArea = 870
+Bdrm2MarketArea = 870
+
+#Bdrm3Units: 1100
+
+Bdrm3ExtAffordable = (0 - 722)  # 0-30%AMI (722)
+Bdrm3Affordable = (1032 - 2273)  # 40-80%AMI (1032, 1343, 1653, 1963, 2273)
+Bdrm3MarketRate = (2677 - 5004)  # 90-165%AMI (2677, 2987, 3297, 3608, 3918, 5004)
+
+
+
+#def SumofRent [(NumUnitA * PricePerUnitA1),
 
 #def DevelopmentMix, 80:20 (Market v Affordable)
 
-investmentDictionary = {}
+'''investmentDictionary = {}
 
 ###Ownership Investment Variables###
 stock= 2000 #Suppose is the value of Housing Authority
@@ -63,13 +110,14 @@ for variable in ["stock", "business", "realEstate", "objectsCollectibles", "savi
 
 def sumOfInvestments (investmentDictionary):
     Investment= sum(investmentDictionary)
-    print(Investment)
+    print(Investment)'''
 
 
 ###Creating ROI Calculator###
+    #Source: https://www.youtube.com/watch?v=sW-an04-ubI
 
 #Define the Variables#
-#Investment = 40000
+Investment = 40000
 Rent = 700
 Loss = 1000
 
@@ -82,5 +130,6 @@ def ROI (Investment, Rent, Loss):
 ROI (Investment, Rent, Loss)
 
 #Rate of Return- takes into account the project's time frame
+
 #SROI- Social return on investment, to understand the environmental,
-#   social and governance (ESG) criteria used in Socially responsible Investing (SRI)
+        #social and governance (ESG) criteria used in Socially responsible Investing (SRI)
