@@ -36,7 +36,7 @@ StudioMarket = (1547-2889) #90-165%AMI (1547, 1726, 1905, 2084, 2263, 2889)
 
     #StudioUnitsArea:
 
-StudioExtAffordableArea= 260 #no kitchen
+StudioExtAffordableArea= 300 #no kitchen
 StudioSeniorAffordableArea = 400
 StudioCoAffordableArea = 300
 StudioAffordableArea = 400
@@ -66,7 +66,7 @@ Bdrm2ExtAffordable = (0 - 631)  # 0-30%AMI (631)
 Bdrm2SeniorAffordable = (631 - 900)  # 30-40%AMI (631, 900)
 Bdrm2Affordable = (900 - 1947)  # 40-80%AMI (900, 1168, 1437, 1705, 1947)
 Bdrm2SeniorMarket = (1437 - 1974)  # 60-80%AMI (1437, 1705, 1974)
-Bdrm2MarketRate = (2323 - 4337)  # 90-165%AMI (2323, 2592, 2860, 3129, 3397, 4337)
+Bdrm2Market = (2323 - 4337)  # 90-165%AMI (2323, 2592, 2860, 3129, 3397, 4337)
 
 #Bdrm2UnitsArea: 870
 
@@ -81,8 +81,6 @@ Bdrm2MarketArea = 870
 Bdrm3ExtAffordable = (0 - 722)  # 0-30%AMI (722)
 Bdrm3Affordable = (1032 - 2273)  # 40-80%AMI (1032, 1343, 1653, 1963, 2273)
 Bdrm3MarketRate = (2677 - 5004)  # 90-165%AMI (2677, 2987, 3297, 3608, 3918, 5004)
-
-
 
 #def SumofRent [(NumUnitA * PricePerUnitA1),
 
