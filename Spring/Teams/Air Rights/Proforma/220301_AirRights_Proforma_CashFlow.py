@@ -1,19 +1,11 @@
-<<<<<<< Updated upstream
 '''
-    # Determining Pretax Cash Flow
-=======
    # Determining Pretax Cash Flow
->>>>>>> Stashed changes
     #NetRevenue Constants:
     BaseRentals= 1000000
     RentEscalators= 2000
     ExpenseReimbursements= 40000
     OtherIncome= 2000
-<<<<<<< Updated upstream
     Vacancies= 1000
-=======
-    Vacancies= .04
->>>>>>> Stashed changes
     BadDebts= 50000
 
     #Operating Expenses Constants:
@@ -45,16 +37,10 @@
     print (FinancialPayments)
 
     CashFlow= (OperationCashFlow- FinancialPayments- CapitalExpenditures)
-
-<<<<<<< Updated upstream
 '''
-# Free and Clear Cash Flow represents the total funds available to service debt in the event of a foreclosure
-# Capitalizing Free and Clear Cash Flow Constants
-=======
 
     # Free and Clear Cash Flow represents the total funds available to service debt in the event of a foreclosure
     # Capitalizing Free and Clear Cash Flow Constants
->>>>>>> Stashed changes
 
 CashFlowTest = 1000000
 CapitalizationRateTest = .11
