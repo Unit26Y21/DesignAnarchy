@@ -30,6 +30,7 @@ ChangesCategories = {
 # Poor liquidity
 # Uncertainty concerning the valuation of the property
 
+
 # Calculation of Net Cash from Sale
 # 1. Calculation of Book Value
 purchasePrice = 3
@@ -76,6 +77,7 @@ IHR = "Investor Hurdle Rate"
 CFAT = "Cash Flow After Taxes in year N"
 # the sum of before-tax cash flow in year n + tax effect in year n + futures in year n
 
+import ProFormaCashFlow
 import math
 for n in range (1, N):
     NPV = ((1 / math.pow((1+IHR),n))* CFAT) - Equity

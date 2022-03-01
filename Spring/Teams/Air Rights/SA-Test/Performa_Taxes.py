@@ -8,16 +8,39 @@
 # initial value, rate and time are given
 
 
+def Depreciation(annualAmount, depreciableYears):
+    """ Depreciation is... """
+    depreciation = (annualAmount/depreciableYears)
+
+    return depreciation
+
+def MortgageInterest(annualInterestRate,startingPrincipleBalance,numberofPeriodicPayment):
+    """
+    Mortgage interest calculator.
+
+    returns PIR and PMT as a tuple (PIR, PMT)
+
+    """
+    PIR = (annualInterestRate/12)
+    PMT = ((startingPrincipleBalance/(1-(1+PIR)**(-numberofPeriodicPayment))/PIR))
+
+    return (PIR, PMT)
+
+
+def CashFlowAfterTaxes (CashFlowfromOperations,ReplacementReserve,TaxRate,Depreciation,MortgageInterest,MortgageAmortization):
+    NetTaxIncome = (CashFlowfromOperations + ReplacementReserve - MortgageInterest - Depreciation)
+    Tax = (NetTaxIncome * TaxRate)
+
+    CashFlowAfterFinancing = (CashFlowfromOperations - MortgageInterest)
+    CashFlowAfterTaxes = (CashFlowAfterFinancing - Tax)
+
+    return CashFlowAfterTaxes
 
 # Function to return the depreciation of value
 AnnualAmount = 100000
 DepreciableYears = 25
-def Depreciation(AnnualAmount, DepreciableYears):
-    D = (AnnualAmount/DepreciableYears)
 
-    #return D
-
-
+testDepreciation = Depreciation(AnnualAmount,DepreciableYears)
 
 #Mortgage Interest
 #PRI = Period of Interest Rate
@@ -26,12 +49,9 @@ AnnualInterestRate = 6
 StartingPrincipleBalance = 100000
 NumberofPeriodicPayment = 25
 
-def MortgageIntrest(AnnualInterestRate,StartingPrincipleBalance,NumberofPeriodicPayment):
-    PIR = (AnnualInterestRate/12)
-    PMT = ((StartingPrincipleBalance/(1-(1+PIR)**(-NumberofPeriodicPayment))/PIR))
-
-    #return PMT
-
+testMortgageInterest = MortgageInterest(annualInterestRate=AnnualInterestRate,
+                                        startingPrincipleBalance=StartingPrincipleBalance,
+                                        numberofPeriodicPayment=NumberofPeriodicPayment)
 
 
 #Cash Flow After Taxes
@@ -42,11 +62,16 @@ Depreciation = 3000
 MortgageInterest = .0325
 MortgageAmortization = 664
 
-def CashFlowAfterTaxes (CashFlowfromOperations,ReplacementReserve,TaxRate,Depreciation,MortgageInterest,MortgageAmortization):
-    NetTaxIncome = (CashFlowfromOperations + ReplacementReserve - MortgageInterest - Depreciation)
-    Tax = (NetTaxIncome * TaxRate)
+testCashFlowAfterTaxes = CashFlowAfterTaxes(CashFlowfromOperations=CashFlowfromOperations,
+                                            ReplacementReserve=ReplacementReserve,
+                                            TaxRate=TaxRate,
+                                            Depreciation=testDepreciation,
+                                            MortgageInterest=testMortgageInterest[1],
+                                            MortgageAmortization=MortgageAmortization)
 
-    CashFlowAfterFinancing = (CashFlowfromOperations - MortgageInterest)
-    CashFlowAfterTaxes = (CashFlowAfterFinancing - Tax)
-
-    return CashFlowAfterTaxes
+print("My depreciation:")
+print(testDepreciation)
+print("Mortgage Interest")
+print(testMortgageInterest)
+print("Cash Flow After Taxes")
+print(testCashFlowAfterTaxes)
