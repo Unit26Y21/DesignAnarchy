@@ -11,7 +11,7 @@
 def Depreciation(annualAmount, depreciableYears):
     """ Depreciation is... """
     depreciation = (annualAmount/depreciableYears)
-
+    print(depreciation)
     return depreciation
 
 def MortgageInterest(annualInterestRate,startingPrincipleBalance,numberofPeriodicPayment):
@@ -37,10 +37,10 @@ def CashFlowAfterTaxes (CashFlowfromOperations,ReplacementReserve,TaxRate,Deprec
     return CashFlowAfterTaxes
 
 # Function to return the depreciation of value
-AnnualAmount = 100000
+AnnualAmount = 975
 DepreciableYears = 25
 
-testDepreciation = Depreciation(AnnualAmount,DepreciableYears)
+testDepreciation = Depreciation(AnnualAmount, DepreciableYears)
 
 #Mortgage Interest
 #PRI = Period of Interest Rate
