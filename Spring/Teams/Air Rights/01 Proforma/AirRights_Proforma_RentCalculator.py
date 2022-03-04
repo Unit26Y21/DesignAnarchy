@@ -3,8 +3,8 @@
     ##Source for average price per MarketRate DwellingType:
     #https://www.elliman.com/resources/siteresources/commonresources/static%20pages/images/corporate-resources/q3_2021/rental-09_2021.pdf
 
-    ##Cost per sqft:
-constructionCostAffordable = 350
+  ##Cost per sqft:
+'''constructionCostAffordable = 350
 constructionCostMarket = 500
 
     ##DwellingTypes Constants##
@@ -12,31 +12,34 @@ constructionCostMarket = 500
         #https://www1.nyc.gov/site/hpd/services-and-information/area-median-income.page
 
     #MicroUnitsRent:
-coLivingAffordableRent = (19, 598, 777) #30-50%AMI
+coLivingExtAffordableRent = (375) #0-30%AMI
+coLivingSeniorAffordableRent = (419, 598) #30-40%AMI
+coLivingAffordableRent = (419, 598, 777) #30-50%AMI
+coLivingSeniorMarketRent = (956, 1135, 1314) #60-80%AMI
 coLivingMarketRent = (956, 1135, 1314) #60-90%AMI
 
     #MicroUnitsArea (sqft):
+coLivingExtAffordableArea = 250
+coLivingSeniorAffordableArea = 300
 coLivingAffordableArea = 300
+coLivingSeniorMarketArea = 300
 CoLivingMarketArea = 300
 
     #StudioUnitsRent:
-
-studioExtAffordableRent = (419) #0-30%AMI
+studioExtAffordableRent = (419) #0-30% AMI
 studioSeniorAffordableRent = (419, 598) #30-40%AMI
 studioAffordableRent = (598, 777, 956, 1135, 1314) #40-80%AMI
 studioSeniorMarketRent = (956, 1135, 1314) #60-80%AMI
 studioMarketRent = (1547, 1726, 1905, 2084, 2263, 2889) #90-165%AMI
 
     #StudioUnitsArea (sqft):
-
-studioExtAffordableArea= 250 #no kitchen
+studioExtAffordableArea = 350
 studioSeniorAffordableArea = 400
 studioAffordableArea = 400
 studioSeniorMarketArea = 400
 studioMarketArea = 400
 
     #1BrUnitsRent:
-
 bdrm1ExtAffordableRent = (532) #0-30%AMI
 bdrm1SeniorAffordableRent = (532, 756) #30-40%AMI
 bdrm1AffordableRent = (756, 980, 1204, 1427, 1651) #40-80%AMI
@@ -44,7 +47,6 @@ bdrm1SeniorMarketRent = (1204, 1427, 1651) #60-80%AMI
 bdrm1MarketRent = (1942, 2166, 2390, 2614, 2838, 3621) #90-165%AMI
 
     #Bdrm1UnitsArea (sqft):
-
 bdrm1ExtAffordableArea = 600
 bdrm1SeniorAffordableArea = 700
 bdrm1AffordableArea = 700
@@ -68,19 +70,69 @@ bdrm2SeniorMarketArea = 870
 bdrm2MarketArea = 870
 
     #Bdrm3Units:
-
 bdrm3ExtAffordableRent = (722)  # 0-30%AMI (722) These might not be profitable
 bdrm3AffordableRent = (1032, 1343, 1653, 1963, 2273)  # 40-80%AMI
 bdrm3MarketRent = (2677, 2987, 3297, 3608, 3918, 5004)  # 90-165%AMI
 
     #bdrm3UnitArea (sqft): 1100
-
 bdrm3ExtAffordableArea = 1100
 bdrm3AffordableArea = 1100
 bdrm3MarketArea = 1100
+'''
+    #Dictionary for determining construction cost...may want to be its own .py file
+
+'''UnitDictionary = {
+    "affordableUnit" : {
+        "coLivingExtAffordableRent" : {
+            "area" : coLivingExtAffordableArea,
+            "rent" : coLivingExtAffordableRent
+        },
+        "coLivingSeniorAffordable" : {
+            "area" : coLivingSeniorAffordableArea,
+            "rent" : coLivingSeniorAffordableRent
+        }   
+    }
+}'''
+
+UnitDictionary = {
+    "affordableUnit" : {
+        "coLivingExtAffordableRent" : 375,
+        "coLivingSeniorAffordableRent" : 419
+          }
+}
+def create_dict():
+    ''' Function to return dict '''
+    value = UnitDictionary.get("affordableUnit") or {}
+    valueOfAffordableUnit = value.get("coLivingExtAffordableRent")
+    print(valueOfAffordableUnit)
 
 
+'''def userInput():
+    userInput = input("What percentage of housing would you like to be affordable? ")
+    userInputNumber = int(userInput)
+
+    AirRightsProforma(userInputNumber)
+
+def AirRightsProforma(userInputNumberAffordable):
+    print("Air Rights")
+    print("Pro Forma")
+
+    percentAffordable = userInputNumberAffordable
+    percentMarketRate = 100 - percentAffordable
+
+def unitOutput(inputUnit):
+    if inputUnit[coLivingSeniorAffordableRent] == "affordableUnit":
+        return UnitDictionary["residentialZoning"][inputZone]
+
+    elif inputZone[0] == "C":
+        return zoningDictionary["commercialZoning"][inputZone]
+
+    else:
+        return zoningDictionary["manufacturingZoning"][inputZone]
+#def unitConstructionCost (affordableUnitArea, marketUnitArea, constructionCostAffordable, constructionCostMakert)
+    #unitConstructionCost = (affordableUnitArea * constructionCostAffordable)
 
     #def SumofRent [(NumUnitA * PricePerUnitA1),
 
     #def DevelopmentMix, 80:20 (Market v Affordable)
+    #total sq footage = 100,000'''
