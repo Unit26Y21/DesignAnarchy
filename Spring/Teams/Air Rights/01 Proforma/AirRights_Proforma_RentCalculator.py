@@ -4,7 +4,8 @@
     #https://www.elliman.com/resources/siteresources/commonresources/static%20pages/images/corporate-resources/q3_2021/rental-09_2021.pdf
 
   ##Cost per sqft:
-'''constructionCostAffordable = 350
+"""
+constructionCostAffordable = 350
 constructionCostMarket = 500
 
     ##DwellingTypes Constants##
@@ -78,10 +79,10 @@ bdrm3MarketRent = (2677, 2987, 3297, 3608, 3918, 5004)  # 90-165%AMI
 bdrm3ExtAffordableArea = 1100
 bdrm3AffordableArea = 1100
 bdrm3MarketArea = 1100
-'''
+
     #Dictionary for determining construction cost...may want to be its own .py file
 
-'''UnitDictionary = {
+UnitDictionary = {
     "affordableUnit" : {
         "coLivingExtAffordableRent" : {
             "area" : coLivingExtAffordableArea,
@@ -92,22 +93,57 @@ bdrm3MarketArea = 1100
             "rent" : coLivingSeniorAffordableRent
         }   
     }
-}'''
+}
 
+# This is what asks the person what amount of percentage of affordable units wants
+def userInput():
+    userInput = input("What percentage of housing would you like to be affordable? ")
+    try:
+        userInputNumber = int(userInput)
+        if 0 < userInputNumber < 100:
+            return AirRightsProforma(userInputNumber)
+        elif userInputNumber > 100:
+            print("You can't have more than 100% of anything. Who taught you math?")
+        elif userInputNumber == 0:
+            print("Why did you enter zero? Do you hate poor people?")
+        elif userInputNumber < 0:
+            print("You entered a negative number. That's not possible.")
+    except ValueError:
+        print("You didn't put and integer... Stop Trying to break my program!")
+
+
+def AirRightsProforma(userInputNumberAffordable):
+    print("Air Rights")
+    print("Pro Forma")
+
+    affordablePercentage = userInputNumberAffordable
+
+
+constructionArea = 100000
+marketRatePercentage = 100 - affordablePercentage
+affordableArea = (constructionArea * affordablePercentage)/100
+marketRateArea = constructionArea - affordableArea
+
+"""
 UnitDictionary = {
     "affordableUnit" : {
         "coLivingExtAffordableRent" : 375,
         "coLivingSeniorAffordableRent" : 419
           }
 }
-def create_dict():
-    ''' Function to return dict '''
-    value = UnitDictionary.get("affordableUnit") or {}
-    valueOfAffordableUnit = value.get("coLivingExtAffordableRent")
-    print(valueOfAffordableUnit)
+
+ for key in UnitDictionary.keys():
+     value = UnitDictionary[key]
+     print(key, "=", value)
 
 
-'''def userInput():
+# if we get a list/tuple/set  can we get the index ???
+# distribute the UnitsArea randomly in the constructionArea and count the units
+
+
+
+"""
+def userInput():
     userInput = input("What percentage of housing would you like to be affordable? ")
     userInputNumber = int(userInput)
 
@@ -135,4 +171,5 @@ def unitOutput(inputUnit):
     #def SumofRent [(NumUnitA * PricePerUnitA1),
 
     #def DevelopmentMix, 80:20 (Market v Affordable)
-    #total sq footage = 100,000'''
+    #total sq footage = 100,000
+"""
