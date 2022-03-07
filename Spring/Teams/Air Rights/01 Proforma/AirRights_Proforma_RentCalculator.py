@@ -132,9 +132,11 @@ UnitDictionary = {
           }
 }
 
- for key in UnitDictionary.keys():
-     value = UnitDictionary[key]
-     print(key, "=", value)
+#  key : str, float, integer, list/set/tuple
+
+for key in UnitDictionary.keys():
+    value = UnitDictionary[key]
+    print(key, "=", value)
 
 
 # if we get a list/tuple/set  can we get the index ???
