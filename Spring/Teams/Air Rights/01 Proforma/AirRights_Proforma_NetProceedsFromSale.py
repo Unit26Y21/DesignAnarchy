@@ -1,6 +1,7 @@
 # Net Book Value
 
 import AirRights_Proforma_Taxes
+import math
 
 """multiply everything times 1,000,000"""
 totalDevelopmentCost = 270
@@ -48,4 +49,32 @@ def NetProceedsFromSaleCal (MortgagePayoff, SalePrice, SaleExpenses, TaxPayment)
     return NetProceedsFromSaleCal
 
 NetProceedsFromSale = NetProceedsFromSaleCal(mortgagePayoff, salePrice, saleExpenses, taxPayment)
+
+
+#############################
+# Return Metrics
+"""
+import numpy as np
+
+values = [588, 0.9, 1, 1.1, 1.2, 1.2, 1.3, 1.4, 1.5, 15000]
+rate = 0
+
+NPV =  np.npv(rate,values)
+print("Net Present Value(npv) : ", NPV)
+"""
+
+# Net Present Value (NPV)
+N = 11
+# holding period: the amount of time for which an investor plans to hold an asset
+IHR = "Investor Hurdle Rate"
+# hurdle rate: is the minimum rate of return on a project or investment required by a manager or investor
+CFAT = "Cash Flow After Taxes in year N"
+# the sum of before-tax cash flow in year n + tax effect in year n + futures in year
+Equity = 94
+values = [588, 0.9, 1, 1.1, 1.2, 1.2, 1.3, 1.4, 1.5, 15000]
+rate = 0
+
+for val in values:
+    NPV = (val / (1+rate)*math.pow(1,10)) - Equity
+    print("Net Present Value(npv) : ", NPV)
 

@@ -138,40 +138,26 @@ for key in UnitDictionary.keys():
     value = UnitDictionary[key]
     print(key, "=", value)
 
+# another way of doing the same
+for key, value in UnitDictionary.items():
+    print(key, "=", value)
+
+
 
 # if we get a list/tuple/set  can we get the index ???
 # distribute the UnitsArea randomly in the constructionArea and count the units
 
 
 
-"""
-def userInput():
-    userInput = input("What percentage of housing would you like to be affordable? ")
-    userInputNumber = int(userInput)
+def AffordableUnitDistribution()=
+ExtraAffordableColiving = developmentArea*0.1
+ExtraAffordableStudio= developmentArea*0.05
+ExtraAffordable1B= developmentArea*0.05
+ExtraAffordable2B= developmentArea*0.1
+ExtraAffordable3B= developmentArea*0.1
+AffordableColiving= developmentArea*0.15
+AffordableStudio= developmentArea*0.1
+Affordable1B= developmentArea*0.15
+Affordable2B= developmentArea*0.15
+Affordable3B= developmentArea*0.05
 
-    AirRightsProforma(userInputNumber)
-
-def AirRightsProforma(userInputNumberAffordable):
-    print("Air Rights")
-    print("Pro Forma")
-
-    percentAffordable = userInputNumberAffordable
-    percentMarketRate = 100 - percentAffordable
-
-def unitOutput(inputUnit):
-    if inputUnit[coLivingSeniorAffordableRent] == "affordableUnit":
-        return UnitDictionary["residentialZoning"][inputZone]
-
-    elif inputZone[0] == "C":
-        return zoningDictionary["commercialZoning"][inputZone]
-
-    else:
-        return zoningDictionary["manufacturingZoning"][inputZone]
-#def unitConstructionCost (affordableUnitArea, marketUnitArea, constructionCostAffordable, constructionCostMakert)
-    #unitConstructionCost = (affordableUnitArea * constructionCostAffordable)
-
-    #def SumofRent [(NumUnitA * PricePerUnitA1),
-
-    #def DevelopmentMix, 80:20 (Market v Affordable)
-    #total sq footage = 100,000
-"""
