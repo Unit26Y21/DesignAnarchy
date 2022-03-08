@@ -1,3 +1,5 @@
+import DevelopmentCostsInputs as devCost
+
 ##DevelopmentCostsPartAofProforma##
     #0.StartingAssumptions#
 DevelopmentTimeline = 11
@@ -18,30 +20,31 @@ print(InnacuracyFloorLoss)
 NetLossFactor = 0.15
 TotalNetZoningFloorArea = TotalGrossZoningFloorArea-(TotalGrossZoningFloorArea*NetLossFactor)
 print(TotalNetZoningFloorArea)
-    #A.DevelopmentCosts#
-ResidentialCostpsf = 500.00
-CommercialCostpsf = 500.00
-ManufacturingCostpsf = 500.00
-HardCostpsf = 200.00
-SoftCostpsf = 200.00
-LandCostpsf = 50
-ExistingBuildingPurchase = 0
-LandPurchase = LandCostpsf*LotArea
-print('$',LandPurchase)
-ResidentialCost = ResidentialZoningFloorArea*ResidentialCostpsf
-print('$',ResidentialCost)
-CommercialCost = CommercialZoningFloorArea*CommercialCostpsf
-print('$',CommercialCost)
-ManufacturingCost = ManufacturingZoningFloorArea*ManufacturingCostpsf
-print('$',ManufacturingCost)
-#AirRightsPurchase =
-HardCost = TotalGrossZoningFloorArea*HardCostpsf
-print('$',HardCost)
-SoftCost = TotalGrossZoningFloorArea*SoftCostpsf
-print('$',SoftCost)
-TotalDevelopmentCost = ExistingBuildingPurchase+LandPurchase+ResidentialCost+CommercialCost+ManufacturingCost+HardCost+SoftCost
-print('$',TotalDevelopmentCost)
-    #B.CapitalStructure#
+
+
+
+def developmentCosts(landCostpsf, lotArea):
+    landPurchase = landCostpsf * lotArea
+    landPurchaseAlt = devCost.LandCostpsf * devCost.Lotarea
+
+    #
+    # ResidentialCost = ResidentialZoningFloorArea*ResidentialCostpsf
+    #
+    # CommercialCost = CommercialZoningFloorArea*CommercialCostpsf
+    #
+    # ManufacturingCost = ManufacturingZoningFloorArea*ManufacturingCostpsf
+    #
+    # #AirRightsPurchase =
+    #
+    # HardCost = TotalGrossZoningFloorArea*HardCostpsf
+    #
+    # SoftCost = TotalGrossZoningFloorArea*SoftCostpsf
+    #
+    # TotalDevelopmentCost = ExistingBuildingPurchase+LandPurchase+ResidentialCost+CommercialCost+ManufacturingCost+HardCost+SoftCost
+
+myDevelopmentCosts = developmentCosts(devCost.LandCostpsf, devCost.LotArea)
+
+#B.CapitalStructure#
 EquityPercentage = 0.35
 DebtPercentage = 0.65
 DebtServicePercentage = 0.0688

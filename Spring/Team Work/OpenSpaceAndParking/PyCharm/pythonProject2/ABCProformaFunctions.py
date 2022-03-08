@@ -1,21 +1,22 @@
-##DevelopmentCostsPartAofProforma##
-    #0.StartingAssumptions#
-DevelopmentTimeline = 11
-LotArea = 10375
-ExistingBuildingFloorArea = 132420.00
-ResidentialFAR = 7.52
-CommercialFAR = 1.00
-ManufacturingFAR = 0.00
-ResidentialZoningFloorArea = 100000.00
-CommercialZoningFloorArea = 100000.00
-ManufacturingZoningFloorArea = 100000.00
+import DevelopmentCostsInputs as devCost
+
+
 #AirRightsSquareFeet =
 '''TotalGrossZoningFloorArea = ResidentialZoningFloorArea+CommercialZoningFloorArea+ManufacturingZoningFloorArea
 print(TotalGrossZoningFloorArea)'''
 
-def TotalGrossZoningFloorArea(ResidentialZoningFloorArea,CommercialZoningFloorArea,ManufacturingZoningFloorArea):
-    return ResidentialZoningFloorArea + CommercialZoningFloorArea + ManufacturingZoningFloorArea
-print(TotalGrossZoningFloorArea(ResidentialZoningFloorArea,CommercialZoningFloorArea,ManufacturingZoningFloorArea))
+def TotalGrossZoningFloorArea(residZFA, comZFA, manZFA):
+    totalZFA = [residZFA,comZFA,manZFA]
+    sumZFA = sum(totalZFA)
+
+    for i in totalZFA:
+        print(i)
+
+    return sumZFA
+
+myTotalZFA = TotalGrossZoningFloorArea(residZFA= devCost.ResidentialZoningFloorArea,
+                                       comZFA= devCost.CommercialZoningFloorArea,
+                                       manZFA= devCost.ManufacturingZoningFloorArea)
 
 InnacuracyFactor = 0.03
 '''InnacuracyFloorLoss = TotalGrossZoningFloorArea*InnacuracyFactor
