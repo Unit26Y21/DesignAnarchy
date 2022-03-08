@@ -88,7 +88,7 @@ def permittedFAR(inputZone):
 
 """
 # Example
-def permittedFAR(inputZone):
+def permittedFARComplex(inputZone):
     if inputZone[0] == "R":
         return zoningDictionary["residentialZoning"][inputZone]
 
@@ -99,7 +99,7 @@ def permittedFAR(inputZone):
         return zoningDictionary["manufacturingZoning"][inputZone]
 
 
-zoningDictionary = {
+zoningDictionaryFlat = {
         "R2": 0.5,
         "R2A": 0.5,
         "R3-1": 0.5,
@@ -151,4 +151,4 @@ zoningDictionary = {
 }
 
 def permittedFAR(inputZone):
-    return zoningDictionary[inputZone]
+    return zoningDictionaryFlat[inputZone]
