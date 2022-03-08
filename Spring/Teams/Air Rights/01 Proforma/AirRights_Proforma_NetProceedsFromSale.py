@@ -95,7 +95,33 @@ capRateSale = .06
 
 def CapitalizeValueCalculator (input1, input2):
     capitalizeValue = input1 / input2
-    print(capitalizeValue)
+    print("Capitalize Value:", capitalizeValue)
     return capitalizeValue
 
 CapitalizeValue = CapitalizeValueCalculator (netOperatingIncome, capRateSale)
+
+################################
+#ROTA- Return on Total Assets
+
+def ReturnOnTotalAssetsCalculator (input3, input4):
+    ReturnOnTotalAssets = (input3 / input4) * 100
+    print ("ROTA %: ", ReturnOnTotalAssets)
+    return ReturnOnTotalAssets
+
+ReturnOnTotalAssets = ReturnOnTotalAssetsCalculator (netOperatingIncome, totalDevelopmentCost)
+
+################################
+# Return on Equity
+
+cashFlowAfterFinancing = 9
+cashFlowAfterTaxes = cashFlowAfterFinancing + taxPayment
+
+def ReturnOnEquityCalculator (input5, input6):
+    ReturnOnEquity = (input5 / input6)
+    print ("Return on Equity %: ", ReturnOnEquity)
+    return ReturnOnEquity
+
+ReturnOnEquity = ReturnOnEquityCalculator (cashFlowAfterTaxes, Equity)
+
+
+
