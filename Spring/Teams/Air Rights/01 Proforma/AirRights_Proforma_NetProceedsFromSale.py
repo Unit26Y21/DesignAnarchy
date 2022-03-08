@@ -77,4 +77,25 @@ rate = 0
 for val in values:
     NPV = (val / (1+rate)*math.pow(1,10)) - Equity
     print("Net Present Value(npv) : ", NPV)
+"""
+# Leveraged after tax IRR
 
+cashFlows = [Equity, values]
+
+# Calculate the IRR
+
+irr = round(np.irr(cashFlows), 11)
+
+print("Internal rate of return:%3.4f" % irr)
+"""
+
+# Capitalized Value
+netOperatingIncome = 917
+capRateSale = .06
+
+def CapitalizeValueCalculator (input1, input2):
+    capitalizeValue = input1 / input2
+    print(capitalizeValue)
+    return capitalizeValue
+
+CapitalizeValue = CapitalizeValueCalculator (netOperatingIncome, capRateSale)
