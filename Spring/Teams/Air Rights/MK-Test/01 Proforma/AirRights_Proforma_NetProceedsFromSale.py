@@ -2,15 +2,16 @@
 
 import AirRights_Proforma_Taxes
 import math
+import numpy as np
 
 """multiply everything times 1,000,000"""
 totalDevelopmentCost = 270
 accReplacementReserve = 2
 accDepreciation = AirRights_Proforma_Taxes.testDepreciation
 
-def NetBookValueCalculator(DevelopmentCost,replacementReserve, Depreciation):
+def NetBookValueCalculator(developmentCost, replacementReserve, depreciation):
     """what is this?"""
-    NetBookValueCalculator = totalDevelopmentCost - accReplacementReserve - accDepreciation
+    NetBookValueCalculator = developmentCost - replacementReserve - depreciation
     print("Netbook Value : " + str(NetBookValueCalculator))
     return NetBookValueCalculator
 
@@ -53,15 +54,12 @@ NetProceedsFromSale = NetProceedsFromSaleCal(mortgagePayoff, salePrice, saleExpe
 
 #############################
 # Return Metrics
-"""
-import numpy as np
 
 values = [588, 0.9, 1, 1.1, 1.2, 1.2, 1.3, 1.4, 1.5, 15000]
 rate = 0
 
-NPV =  np.npv(rate,values)
+NPV = np.npv(rate, values)
 print("Net Present Value(npv) : ", NPV)
-"""
 
 # Net Present Value (NPV)
 N = 11
@@ -74,9 +72,13 @@ Equity = 94
 values = [588, 0.9, 1, 1.1, 1.2, 1.2, 1.3, 1.4, 1.5, 15000]
 rate = 0
 
-for val in values:
-    NPV = (val / (1+rate)*math.pow(1,10)) - Equity
-    print("Net Present Value(npv) : ", NPV)
+def NPV(holdingPeriod, IHR, CFAT, equity, value):
+    for val in values:
+        NPV = (val / (1+rate)*math.pow(1,10)) - Equity
+        print("Net Present Value(npv) : ", NPV)
+
+
+
 """
 # Leveraged after tax IRR
 
