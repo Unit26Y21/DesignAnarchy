@@ -1,5 +1,6 @@
 #Manufacturing Constants
-marketRateRent = 12000 "/Yr"
+
+marketRateRent = 12000
 manufacturingVacancyRate = .05
 manufacturingIncome = 100000
 operationalExpensesPerSqft = 3

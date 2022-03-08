@@ -1,31 +1,39 @@
-import Manufacturing_Constants
-import Starting_Assumptions
+import Manufacturing_Constants as MC
+import Starting_Assumptions as SA
 
-def commonAreaAndCirculation ():
-    return manufacturingZoningFloorArea * netLossFactor
 
-def netManufacturingArea ():
-    return manufacturingZoningFloorArea - commonAreaAndCirculation()
+def common_area_and_circulation (zoningFloorArea, netLossFactor):
+    return zoningFloorArea * netLossFactor
 
-def totalManufacturingIncome ():
-    return manufacturingZoningFloorArea
+'''
+def net_manufacturing_area (SA.manufacturingZoningFloorArea, MC.commonAreaAndCirculation):
+    return SA.manufacturingZoningFloorArea - MC.commonAreaAndCirculation()
 
-def totalManufacturingVacancyCost ():
-    return -1 * manufacturingVacancyRate * totalManufacturingIncome()
+def total_manufacturing_income (SA.manufacturingZoningFloorArea):
+    return SA.manufacturingZoningFloorArea
 
-'''Manufacturing Expenses'''
-def totalOperationalExpenses ():
-    return netManufacturingArea() * operationalExpensesPerSqft
+def total_manufacturing_vacancy_cost (MC.manufacturingVacancyRate, MC.manufacturingIncome):
+    return -1 * MC.manufacturingVacancyRate * MC.manufacturingIncome
 
-def totalRealEstateTaxes ():
-    return netManufacturingArea() * realEstateTaxesPerSqft
+#Manufacturing Expenses
+def total_operational_expenses (netManufacturingArea, MC.operationalExpensesPerSqft):
+    return netManufacturingArea * MC.operationalExpensesPerSqft
 
-def totalReplacementReserve ():
-    return manufacturingZoningFloorArea * replacementReservesPerSqft
+def total_real_estate_taxes (netManufacturingArea, MC.realEstateTaxesPerSqft):
+    return netManufacturingArea * MC.realEstateTaxesPerSqft
 
-'''Depreciation'''
-def totalCostManufacturing ():
-    return manufacturingCost * manufacturingZoningFloorArea
+def total_replacement_reserve (SA.manufacturingZoningFloorArea, MC.replacementReservesPerSqft):
+    return SA.manufacturingZoningFloorArea * MC.replacementReservesPerSqft
 
-def manufacturingDepreciation ():
-    return -1 * (totalCostManufacturing()/manufacturingDepreciationInYears)
+#Depreciation
+def total_cost_manufacturing (manufacturingCost, SA.manufacturingZoningFloorArea):
+    return manufacturingCost * SA.manufacturingZoningFloorArea
+
+def mandepreciationufacturing_ (totalCostManufacturing, MC.manufacturingDepreciationInYears):
+    return -1 * (totalCostManufacturing / MC.manufacturingDepreciationInYears)
+'''
+
+manuCommonAreaCirculation = common_area_and_circulation(SA.manufacturingZoningFloorArea, SA.netLossFactor)
+resiCommonAreaCirculation = common_area_and_circulation(SA.residentialZoningFloorArea, SA.netLossFactor)
+
+print(manuCommonAreaCirculation)

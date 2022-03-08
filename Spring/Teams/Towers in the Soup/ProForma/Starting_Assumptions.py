@@ -2,7 +2,7 @@
 
 devTimeline = 11
 lotArea = 10375
-existingBuildingFloorArea =
+existingBuildingFloorArea = 0
 residentialFAR = 7.52
 commercialFAR = 1.00
 manufacturingFAR = 1.00
