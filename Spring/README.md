@@ -56,9 +56,10 @@ The overall class schedule will be as follow:
 | Mar 22, 2021 | 9-12pm | 3 | Coffee and Code | Networks 2
 | Mar 29, 2021 | 9-12pm | 3 | Coffee and Code | Networks 3
 | Apr 5, 2021 | 9-12pm | 3 | Coffee and Code | Flow Diagrams 1
+| Apr 7, 2021 | 9-12pm | 3 | Mid term |  Mid term
 | Apr 12, 2021 | 9-12pm | 3 | Coffee and Code | Flow Diagrams 2
 | Apr 19, 2021 | 9-12pm | 3 | Coffee and Code | Flow Diagrams 3
-| Apr 26, 2021 | 9-12pm | 3 | Coffee and Code | Spring Break
+| Apr 26, 2021 | 9-12pm | 3 | Mid term | Mid term
 | May 3, 2021 | 9-12pm | 3 | Coffee and Code | Open Discussion
 | May 10, 2021 | 9-12pm | 3 | Coffee and Code | Open Discussion
 
