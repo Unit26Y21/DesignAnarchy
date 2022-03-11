@@ -32,6 +32,10 @@ import json
 # ProForma Market Rate
 ############################################
 
+def printMyDictionary(k,v, myDictionary):
+    for k,v in myDictionary:
+        print(k,v)
+
 # Income and Expenses
 def income(potential_gross_income, vacancy):
     '''
@@ -65,7 +69,7 @@ def expenses(operating_expenses, real_estate_taxes, replacement_reserve):
 
     print("### Expense ###")
 
-    for k, v in total_expenses:
+    for k, v in total_expenses.items():
         print(k, v)
 
     output = sum(total_expenses.values())
@@ -93,8 +97,7 @@ def net_operating_income(incomeTotal, expense_total):
                           'expense_total':expense_total
                           }
 
-    for k,v in netOperatingIncome:
-        print(k, v)
+    print(json.dumps(netOperatingIncome, indent = 4))
 
     output = sum(netOperatingIncome.values())
 
@@ -115,8 +118,7 @@ def annual_debt_service(debt, debt_service):
 
     output = -(debt * debt_service)
 
-    for k,v in debServiceValues:
-        print(k, v)
+    print(json.dumps(debServiceValues, indent = 4))
 
     print("Annual Debt Service", output)
 
@@ -140,7 +142,7 @@ def cash_flow_after_taxes(operating_income, annual_dbs, tax_payment):
     '''
 
     cash_flow_after_financing = operating_income + annual_dbs
-    caFT = cash_flow_after_financing + -tax_payment  #cash flow after taxes
+    caFT = cash_flow_after_financing + (-1 * tax_payment)  #cash flow after taxes
 
     cashFlowDictionary = {'operating_income': operating_income,
               'annual_dbs': annual_dbs,
@@ -149,8 +151,7 @@ def cash_flow_after_taxes(operating_income, annual_dbs, tax_payment):
               'Cash Flow After Taxes': caFT
               }
 
-    for k,v in cashFlowDictionary:
-        print(k, v)
+    print(json.dumps(cashFlowDictionary, indent=1))
 
     return caFT
 
@@ -172,8 +173,7 @@ def total_sales(salePrice, saleExpense):
                         'totalSales': totalSales
                         }
 
-    for k,v in salesDictionary:
-        print(k, v)
+    print(json.dumps(salesDictionary))
 
     return totalSales
 
@@ -203,8 +203,7 @@ def leveraged_before_taxIRR(total_cashFlow_afterTaxes, net_proceeds_fromSale):
 
     output = sum(futureCashFlow.values())
 
-    for k, v in futureCashFlow:
-        print(k, v)
+    print(json.dumps(futureCashFlow))
 
     print(" Total Future Cash Flow", output)
 
@@ -226,8 +225,7 @@ def debt_service_components(beginYearBalance, debtService, interestRate, ammorti
                   'ammortization': ammortization
                       }
 
-    for k,v in debtComponents:
-        print(k, v)
+    print(json.dumps(debtComponents))
 
     return amortization
 
@@ -252,8 +250,7 @@ def tax_paymentScheduler(cashFlowAfterFinancing,
                            'taxPayment': taxPayment
                            }
 
-    for k, v in taxPaymentLineItems:
-        print(k, v)
+    print(json.dumps(taxPaymentLineItems))
 
     return taxableIncome, taxPayment
 
