@@ -11,13 +11,13 @@ numberThreeBedrooms = 20
 affordableRentPerSqft = 1
 marketRentPerSqft = 3
 i = .03
-n = 12
+n = 1
 
 def userInput():
     userInput = input("What percentage of housing would you like to be affordable? ")
     try:
         userInputNumber = int(userInput)
-        if 0 < userInputNumber < 100:
+        if 0 < userInputNumber < 101:
             return tidsProforma(userInputNumber)
         elif userInputNumber > 100:
             print("You can't have more than 100% of anything. Who taught you math?")

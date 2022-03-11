@@ -13,3 +13,9 @@ airRightsSqft = 0
 innacuracyFactor = .03
 inaccuracyFloorLoss = 9000
 netLossFactor = .15
+
+
+#Development Costs
+resDevCost = 500
+comDevCost = 500
+ManuDevCost = 500
