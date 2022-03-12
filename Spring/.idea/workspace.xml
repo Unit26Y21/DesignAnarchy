@@ -2,19 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="809482bc-06a4-4c1f-8aeb-19b59191988b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/01 Proforma/AirRights_Proforma_CashFlow.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Air Rights/MK-Test/01 Proforma/AirRights_Proforma_CashFlow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/01 Proforma/AirRights_Proforma_FutureBenefits.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Air Rights/MK-Test/01 Proforma/AirRights_Proforma_FutureBenefits.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/01 Proforma/AirRights_Proforma_FutureConditionsDictionaries" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Air Rights/MK-Test/01 Proforma/AirRights_Proforma_FutureConditionsDictionaries" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/01 Proforma/AirRights_Proforma_NetProceedsFromSale.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Air Rights/MK-Test/01 Proforma/AirRights_Proforma_NetProceedsFromSale.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/01 Proforma/AirRights_Proforma_ROICalculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Air Rights/MK-Test/01 Proforma/AirRights_Proforma_ROICalculator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/01 Proforma/AirRights_Proforma_RentCalculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Air Rights/MK-Test/01 Proforma/AirRights_Proforma_RentCalculator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/01 Proforma/AirRights_Proforma_Taxes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Air Rights/MK-Test/01 Proforma/AirRights_Proforma_Taxes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/01 Proforma/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Air Rights/MK-Test/01 Proforma/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_ReturnMetrics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Spring.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Spring.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_NetProceedsFromSale.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_NetProceedsFromSale.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -23,7 +27,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="266nNOfhZdgUei3SV72yMtWoZkD" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />

@@ -1,129 +1,58 @@
 # Net Book Value
 
-import AirRights_Proforma_Taxes
-import math
-import numpy as np
-
 """multiply everything times 1,000,000"""
 totalDevelopmentCost = 270
 accReplacementReserve = 2
 accDepreciation = AirRights_Proforma_Taxes.testDepreciation
 
 def NetBookValueCalculator(developmentCost, replacementReserve, depreciation):
-    """what is this?"""
+    """is calculated as the original cost of an asset, minus any accumulated depreciation, accumulated depletion, accumulated amortization, and accumulated impairment"""
     NetBookValueCalculator = developmentCost - replacementReserve - depreciation
     print("Netbook Value : " + str(NetBookValueCalculator))
     return NetBookValueCalculator
 
 netBookValue = NetBookValueCalculator(totalDevelopmentCost, accReplacementReserve, accDepreciation)
 
+#################################################################################################
 # Gain On Sale
 salePrice = 20000
 saleExpenses = 1000
 
-def gainOnSaleCalculator (SalePrice,SaleExpenses,netBookValue):
-    gainOnSaleCalculator = salePrice - saleExpenses - netBookValue
+def gainOnSaleCalculator (SalePrice,SaleExpenses,NetBookValue):
+    """is the amount of money that is made when selling a property for more than its original value"""
+    gainOnSaleCalculator = SalePrice - SaleExpenses - NetBookValue
     print("Gain on Sale : " + str(gainOnSaleCalculator))
     return gainOnSaleCalculator
 
 gainOnSale = gainOnSaleCalculator (salePrice, saleExpenses, netBookValue)
 
+##################################################################################################
 # Tax Payment
 capitalGainsTaxPercentage = 0.20 # extracted from Assumptions
 depreciationRecaptureTax = 9
 capitalGainInExcessOfDebt = gainOnSale - accDepreciation
 
-def capitalGainTaxCalculator (CapitalGainInExcessOfDebt, CapitalGainsTax):
-    capitalGainTaxCalculator = capitalGainInExcessOfDebt * capitalGainsTaxPercentage
+def capitalGainTaxCalculator (CapitalGainInExcessOfDebt, CapitalGainsTaxPercentage):
+    """federal fee paid on the profit made from selling a property"""
+    capitalGainTaxCalculator = CapitalGainInExcessOfDebt * CapitalGainsTaxPercentage
     print("Capital Gain Tax : " + str(capitalGainTaxCalculator))
     return capitalGainTaxCalculator
 
 capitalGainTax = capitalGainTaxCalculator(capitalGainInExcessOfDebt, capitalGainsTaxPercentage)
 
+##################################################################################################
 # Net Proceeds from Sale
 mortgagePayoff = 115
 taxPayment = capitalGainTax + depreciationRecaptureTax
 
 def NetProceedsFromSaleCal (MortgagePayoff, SalePrice, SaleExpenses, TaxPayment):
-    NetProceedsFromSaleCal = salePrice - saleExpenses - mortgagePayoff - taxPayment
+    """the amounts received by the seller after deducting all costs and expenses from the gross proceeds"""
+    NetProceedsFromSaleCal = SalePrice - SaleExpenses - MortgagePayoff - TaxPayment
     print("Net Proceeds from Sale : " + str(NetProceedsFromSaleCal))
     return NetProceedsFromSaleCal
 
 NetProceedsFromSale = NetProceedsFromSaleCal(mortgagePayoff, salePrice, saleExpenses, taxPayment)
 
-
-#############################
-# Return Metrics
-
-values = [588, 0.9, 1, 1.1, 1.2, 1.2, 1.3, 1.4, 1.5, 15000]
-rate = 0
-
-NPV = np.npv(rate, values)
-print("Net Present Value(npv) : ", NPV)
-
-# Net Present Value (NPV)
-N = 11
-# holding period: the amount of time for which an investor plans to hold an asset
-IHR = "Investor Hurdle Rate"
-# hurdle rate: is the minimum rate of return on a project or investment required by a manager or investor
-CFAT = "Cash Flow After Taxes in year N"
-# the sum of before-tax cash flow in year n + tax effect in year n + futures in year
-Equity = 94
-values = [588, 0.9, 1, 1.1, 1.2, 1.2, 1.3, 1.4, 1.5, 15000]
-rate = 0
-
-def NPV(holdingPeriod, IHR, CFAT, equity, value):
-    for val in values:
-        NPV = (val / (1+rate)*math.pow(1,10)) - Equity
-        print("Net Present Value(npv) : ", NPV)
-
-
-
-"""
-# Leveraged after tax IRR
-
-cashFlows = [Equity, values]
-
-# Calculate the IRR
-
-irr = round(np.irr(cashFlows), 11)
-
-print("Internal rate of return:%3.4f" % irr)
-"""
-
-# Capitalized Value
-netOperatingIncome = 917
-capRateSale = .06
-
-def CapitalizeValueCalculator (input1, input2):
-    capitalizeValue = input1 / input2
-    print("Capitalize Value:", capitalizeValue)
-    return capitalizeValue
-
-CapitalizeValue = CapitalizeValueCalculator (netOperatingIncome, capRateSale)
-
-################################
-#ROTA- Return on Total Assets
-
-def ReturnOnTotalAssetsCalculator (input3, input4):
-    ReturnOnTotalAssets = (input3 / input4) * 100
-    print ("ROTA %: ", ReturnOnTotalAssets)
-    return ReturnOnTotalAssets
-
-ReturnOnTotalAssets = ReturnOnTotalAssetsCalculator (netOperatingIncome, totalDevelopmentCost)
-
-################################
-# Return on Equity
-
-cashFlowAfterFinancing = 9
-cashFlowAfterTaxes = cashFlowAfterFinancing + taxPayment
-
-def ReturnOnEquityCalculator (input5, input6):
-    ReturnOnEquity = (input5 / input6)
-    print ("Return on Equity %: ", ReturnOnEquity)
-    return ReturnOnEquity
-
-ReturnOnEquity = ReturnOnEquityCalculator (cashFlowAfterTaxes, Equity)
 
 
 
