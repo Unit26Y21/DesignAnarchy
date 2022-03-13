@@ -38,3 +38,4 @@ ReplacementReservepsf = 1.00
 
 #Depreciation#
 ResidentailDepreciationinyrs = 27.5
+

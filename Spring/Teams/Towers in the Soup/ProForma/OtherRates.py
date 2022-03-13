@@ -1,13 +1,8 @@
 """Attributes"""
 
-'''Import from tab A Development costs'''
-#import DevelopmentCosts
-#DC = DevelopmentCosts
-
-
-'''import form tab C capital structures'''
-#import CapitalStructure
-#CS = CapitalStructure
+'''Import from Legacies py file'''
+import DevCosts_CapitalStruc
+DC = DevCosts_CapitalStruc
 
 annualIncreaseInExpenses = .02
 annualPublicSubsidiesIncrease = .02
@@ -18,14 +13,18 @@ depreciationRecapture = .25
 capitalGainsTax = .2
 discountRate = 0
 interestRate = .05
-constantRate = 0.66 #constantLoanRate
 
-loanAmount = 1000000 #TODO: import from Car legacies -> DC.totalDevelopmentCost?
 
-debtService = 2000000 #TODO: import from Car legacies -> CS.debtService?
+loanAmount = DC.myTotalDevCost #TODO: import from Car legacies -> DC.totalDevelopmentCost?
 
-def constantLoanRate():
-    return loanAmount/debtService
+debtService = DC.mytotalDebtServ #TODO: import from Car legacies -> CS.debtService?
 
-print(constantLoanRate())
-print("100")
+def constantLoanRate(loanAmount, debtService):
+    return  debtService / loanAmount
+constantRate = constantLoanRate(loanAmount, debtService)
+print(constantRate)
+
+
+'''print(constantLoanRate())'''
+print(loanAmount)
+print(debtService)
