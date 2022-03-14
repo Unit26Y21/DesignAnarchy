@@ -2,10 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="809482bc-06a4-4c1f-8aeb-19b59191988b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Schedule/testSchedule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/CapitalStructure.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/CapitalStructureHelper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/CostHelper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/Costs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/Inputs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/OtherRates.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/Proceeds.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/ProceedsHelper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/TotalsHelper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/ProForma_Form.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/ProForma_ProfileInformation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Schedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Schedule/Schedule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ScheduleFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Schedule/ScheduleFunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Pro Forma/ProForma_ROI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Other Classes/ProForma_ROI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Pro Forma/ROICalculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Returns/ROICalculator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Pro Forma/Schedule/Schedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Schedule/Schedule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Pro Forma/Schedule/ScheduleFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Schedule/ScheduleFunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Pro Forma/Schedule/testSchedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Schedule/testSchedule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/.idea/ProForma.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/.idea/ProForma.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/BuildUp_ProForma.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/BuildUp_ProForma.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/DevCosts_CapitalStruc.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/DevCosts_CapitalStruc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/DevelopmentCostsInputs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/DevelopmentCostsInputs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/Manufacturing_Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/Manufacturing_Constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/OtherRates.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/OtherRates.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/ProForma_ProfileInformation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/ProForma_ROI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/ProForma_ROI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/Proceeds_Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/Proceeds_Constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/Projected_Proceeds.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/Projected_Proceeds.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/Starting_Assumptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/Starting_Assumptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,16 +65,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Teams/Air Rights/MK-Test" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Pro Forma/Returns" />
+      <recent name="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Other Classes" />
+      <recent name="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Pro Forma" />
+      <recent name="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Simple Proforma" />
       <recent name="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Schedule" />
-      <recent name="C:\Users\MKALINOWSKI\Documents\GitHub\DesignAnarchy\Spring\Teams\Air Rights\MK-Test" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="testSchedule" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.OtherRates">
+    <configuration name="CapitalStructure (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Spring" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -52,11 +85,95 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Schedule" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Schedule/testSchedule.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/CapitalStructure.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Costs" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Spring" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Pro Forma/Inputs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Pro Forma/Inputs/Costs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="OtherRates" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Spring" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/OtherRates.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ProForma_Form (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Spring" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/ProForma_Form.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ProForma_Form" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Spring" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Pro Forma" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Pro Forma/ProForma_Form.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -67,7 +184,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.testSchedule" />
+        <item itemvalue="Python.OtherRates" />
+        <item itemvalue="Python.CapitalStructure (1)" />
+        <item itemvalue="Python.ProForma_Form (1)" />
+        <item itemvalue="Python.ProForma_Form" />
+        <item itemvalue="Python.Costs" />
       </list>
     </recent_temporary>
   </component>

@@ -15,6 +15,7 @@ discountRate = 0
 interestRate = .05
 
 
+
 loanAmount = DC.myTotalDevCost #TODO: import from Car legacies -> DC.totalDevelopmentCost?
 
 debtService = DC.mytotalDebtServ #TODO: import from Car legacies -> CS.debtService?
