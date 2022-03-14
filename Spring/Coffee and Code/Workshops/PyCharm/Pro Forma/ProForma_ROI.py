@@ -22,8 +22,8 @@ def userInput():
 
 
 def tidsProforma(userInputNumberAffordable):
-    print("Towers In The ProForma - Soup")
-    print("ProForma")
+    print("Towers In The Soup")
+    print("Pro Forma")
 
     percentAffordable = userInputNumberAffordable
     percentMarketRate = 100 - percentAffordable

@@ -29,7 +29,7 @@ import json
 #     return output
 
 ############################################
-# Pro Forma ProForma - Soup Market Rate
+# ProForma Market Rate
 ############################################
 
 def printMyDictionary(k,v, myDictionary):
