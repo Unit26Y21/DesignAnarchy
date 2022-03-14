@@ -1,42 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="809482bc-06a4-4c1f-8aeb-19b59191988b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/CapitalStructure.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/CapitalStructureHelper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/CostHelper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/Costs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/Inputs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/OtherRates.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/Proceeds.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/ProceedsHelper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/TotalsHelper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/ProForma_Form.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/ProForma_ProfileInformation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Pro Forma/ProForma_ROI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Other Classes/ProForma_ROI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Pro Forma/ROICalculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Returns/ROICalculator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Pro Forma/Schedule/Schedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Schedule/Schedule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Pro Forma/Schedule/ScheduleFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Schedule/ScheduleFunctions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Pro Forma/Schedule/testSchedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Schedule/testSchedule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/.idea/ProForma.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/.idea/ProForma.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/BuildUp_ProForma.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/BuildUp_ProForma.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/DevCosts_CapitalStruc.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/DevCosts_CapitalStruc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/DevelopmentCostsInputs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/DevelopmentCostsInputs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/Manufacturing_Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/Manufacturing_Constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/OtherRates.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/OtherRates.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/ProForma_ProfileInformation.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/ProForma_ROI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/ProForma_ROI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/Proceeds_Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/Proceeds_Constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/Projected_Proceeds.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/Projected_Proceeds.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/Starting_Assumptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/Starting_Assumptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Towers in the Soup/ProForma - Soup/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="809482bc-06a4-4c1f-8aeb-19b59191988b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
