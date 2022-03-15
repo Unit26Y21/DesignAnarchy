@@ -12,6 +12,7 @@
 # Function to return the depreciation of value
 AnnualAmount = 100000
 DepreciableYears = 25
+
 def Depreciation(AnnualAmount, DepreciableYears):
     D = (AnnualAmount/DepreciableYears)
 
@@ -50,3 +51,7 @@ def CashFlowAfterTaxes (CashFlowfromOperations,ReplacementReserve,TaxRate,Deprec
     CashFlowAfterTaxes = (CashFlowAfterFinancing - Tax)
 
     return CashFlowAfterTaxes
+
+
+
+
