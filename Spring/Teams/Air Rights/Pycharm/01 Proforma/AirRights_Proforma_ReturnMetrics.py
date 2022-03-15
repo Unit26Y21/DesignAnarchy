@@ -1,3 +1,6 @@
+import AirRights_Proforma_NetProceedsFromSale
+#import NumPy.py
+
 #############################
 # Return Metrics
 
@@ -42,7 +45,7 @@ netOperatingIncome = 917
 capRateSale = .06
 
 def CapitalizeValueCalculator (netOperatingIncome, capRateSale):
-    '''calculate capitalize value, the current worth of an asset based on expected income'''
+    """calculate capitalize value, the current worth of an asset based on expected income"""
     capitalizeValue = netOperatingIncome / capRateSale
     print("Capitalize Value:", capitalizeValue)
     return capitalizeValue
@@ -51,23 +54,24 @@ CapitalizeValue = CapitalizeValueCalculator (netOperatingIncome, capRateSale)
 
 ################################
 #ROTA- Return on Total Assets
+TotalDevelopmentCost = AirRights_Proforma_NetProceedsFromSale.totalDevelopmentCost
 
-def ReturnOnTotalAssetsCalculator (input3, input4):
-    '''to determine how profitable in relation to total assets, based on financial ratio'''
-    ReturnOnTotalAssets = (input3 / input4) * 100
+def ReturnOnTotalAssetsCalculator (netOperatingIncome, totalDevelopmentCost):
+    """to determine how profitable in relation to total assets, based on financial ratio"""
+    ReturnOnTotalAssets = (netOperatingIncome / totalDevelopmentCost) * 100
     print ("ROTA %: ", ReturnOnTotalAssets)
     return ReturnOnTotalAssets
 
-ReturnOnTotalAssets = ReturnOnTotalAssetsCalculator (netOperatingIncome, totalDevelopmentCost)
+ReturnOnTotalAssets = ReturnOnTotalAssetsCalculator (netOperatingIncome, TotalDevelopmentCost)
 
 ################################
 # Return on Equity
-
+TaxPayment = AirRights_Proforma_NetProceedsFromSale.taxPayment
 cashFlowAfterFinancing = 9
-cashFlowAfterTaxes = cashFlowAfterFinancing + taxPayment
+cashFlowAfterTaxes = cashFlowAfterFinancing + TaxPayment
 
 def ReturnOnEquityCalculator (cashFlowAfterFinancing, cashFlowAfterTaxes):
-    ''''''
+    """measure of financial performance"""
     ReturnOnEquity = (cashFlowAfterFinancing / cashFlowAfterTaxes)
     print ("Return on Equity %: ", ReturnOnEquity)
     return ReturnOnEquity

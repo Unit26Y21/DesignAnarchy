@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="809482bc-06a4-4c1f-8aeb-19b59191988b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Spring.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Spring.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_RentCalculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_RentCalculator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/.idea/Air Rights.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/.idea/MK-Test.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_ReturnMetrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_ReturnMetrics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/main.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
