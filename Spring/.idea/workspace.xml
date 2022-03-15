@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="809482bc-06a4-4c1f-8aeb-19b59191988b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/Results.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/ResultsMetricHelper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/AirRights_Proforma_CashFlow.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/AirRights_Proforma_FutureBenefits.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/AirRights_Proforma_FutureConditionsDictionaries" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/AirRights_Proforma_NetProceedsFromSale.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/AirRights_Proforma_ROICalculator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/AirRights_Proforma_RentCalculator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/AirRights_Proforma_ReturnMetrics.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/AirRights_Proforma_Taxes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/ROICalculator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/ResultsHelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/ResultsHelper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Schedule/ScheduleDataFrame.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
