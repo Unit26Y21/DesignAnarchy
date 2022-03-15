@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="809482bc-06a4-4c1f-8aeb-19b59191988b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_NetProceedsFromSale.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_NetProceedsFromSale.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_ReturnMetrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_ReturnMetrics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_Taxes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_Taxes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
