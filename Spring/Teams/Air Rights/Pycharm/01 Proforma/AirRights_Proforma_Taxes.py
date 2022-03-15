@@ -11,7 +11,6 @@
 def Depreciation(annualAmount, depreciableYears):
     """ Depreciation is... """
     depreciation = (annualAmount/depreciableYears)
-    print(depreciation)
     return depreciation
 
 def MortgageInterest(annualInterestRate,startingPrincipleBalance,numberofPeriodicPayment):
@@ -69,9 +68,6 @@ testCashFlowAfterTaxes = CashFlowAfterTaxes(CashFlowfromOperations=CashFlowfromO
                                             MortgageInterest=testMortgageInterest[1],
                                             MortgageAmortization=MortgageAmortization)
 
-print("My depreciation:")
-print(testDepreciation)
-print("Mortgage Interest")
-print(testMortgageInterest)
-print("Cash Flow After Taxes")
-print(testCashFlowAfterTaxes)
+print("Depreciation: " + str(testDepreciation))
+print("Mortgage Interest: " + str(testMortgageInterest))
+print("Cash Flow After Taxes: " + str(testCashFlowAfterTaxes))
