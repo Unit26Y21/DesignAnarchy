@@ -34,7 +34,7 @@ def NPV(holdingPeriod, IHR, CFAT, equity, value):
 Equity = 94
 cashFlows = 94, 588, 0.9, 1, 1.1, 1.2, 1.2, 1.3, 1.4, 1.5, 15000
 
-# Calculate the IRR
+# Calculate the IRR. Use whole numbers, not integers
 IRR = round(npf.irr([94, 588, 0.9, 1, 1.1, 1.2, 1.2, 1.3, 1.4, 1.5, 15000]), 11)
 print("Internal rate of return: ", IRR)
 
