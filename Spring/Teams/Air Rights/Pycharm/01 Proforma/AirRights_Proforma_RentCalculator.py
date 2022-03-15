@@ -47,7 +47,7 @@ bdrm1AffordableRent = (756, 980, 1204, 1427, 1651) #40-80%AMI
 bdrm1SeniorMarketRent = (1204, 1427, 1651) #60-80%AMI
 bdrm1MarketRent = (1942, 2166, 2390, 2614, 2838, 3621) #90-165%AMI
 
-    #Bdrm1UnitsArea (sqft):
+    #Bdrm1UnitsArea (sqft): (dimensions instead)
 bdrm1ExtAffordableArea = 600
 bdrm1SeniorAffordableArea = 700
 bdrm1AffordableArea = 700

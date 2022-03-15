@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="809482bc-06a4-4c1f-8aeb-19b59191988b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_ReturnMetrics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Spring.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Spring.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_NetProceedsFromSale.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_NetProceedsFromSale.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_RentCalculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_RentCalculator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_ReturnMetrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_ReturnMetrics.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,13 +36,44 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Teams/Air Rights/MK-Test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Teams/Air Rights/Pycharm" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\MKALINOWSKI\Documents\GitHub\DesignAnarchy\Spring\Teams\Air Rights\Pycharm" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\MKALINOWSKI\Documents\GitHub\DesignAnarchy\Spring\Teams\Air Rights\MK-Test" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="AirRights_Proforma_ReturnMetrics" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Spring" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Teams/Air Rights/Pycharm/01 Proforma/AirRights_Proforma_ReturnMetrics.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.AirRights_Proforma_ReturnMetrics" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

@@ -41,8 +41,9 @@ print("Internal rate of return:%3.4f" % irr)
 netOperatingIncome = 917
 capRateSale = .06
 
-def CapitalizeValueCalculator (input1, input2):
-    capitalizeValue = input1 / input2
+def CapitalizeValueCalculator (netOperatingIncome, capRateSale):
+    '''calculate capitalize value, the current worth of an asset based on expected income'''
+    capitalizeValue = netOperatingIncome / capRateSale
     print("Capitalize Value:", capitalizeValue)
     return capitalizeValue
 
@@ -52,6 +53,7 @@ CapitalizeValue = CapitalizeValueCalculator (netOperatingIncome, capRateSale)
 #ROTA- Return on Total Assets
 
 def ReturnOnTotalAssetsCalculator (input3, input4):
+    '''to determine how profitable in relation to total assets, based on financial ratio'''
     ReturnOnTotalAssets = (input3 / input4) * 100
     print ("ROTA %: ", ReturnOnTotalAssets)
     return ReturnOnTotalAssets
@@ -64,8 +66,9 @@ ReturnOnTotalAssets = ReturnOnTotalAssetsCalculator (netOperatingIncome, totalDe
 cashFlowAfterFinancing = 9
 cashFlowAfterTaxes = cashFlowAfterFinancing + taxPayment
 
-def ReturnOnEquityCalculator (input5, input6):
-    ReturnOnEquity = (input5 / input6)
+def ReturnOnEquityCalculator (cashFlowAfterFinancing, cashFlowAfterTaxes):
+    ''''''
+    ReturnOnEquity = (cashFlowAfterFinancing / cashFlowAfterTaxes)
     print ("Return on Equity %: ", ReturnOnEquity)
     return ReturnOnEquity
 
