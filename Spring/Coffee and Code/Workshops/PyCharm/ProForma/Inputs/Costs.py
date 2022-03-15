@@ -53,3 +53,7 @@ testCosts = DevelopmentCosts(gross_ZFA = 100000,
                   residential_ZFA = 100000,
                   commercial_ZFA = 0,
                   manufacturing_ZFA = 0 )
+
+testCosts.residential_Cost = 1000
+
+print(testCosts.residential_Cost)
