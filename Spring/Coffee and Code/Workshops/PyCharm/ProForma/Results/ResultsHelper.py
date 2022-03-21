@@ -1,4 +1,5 @@
 
+
 # Net Book Value
 def NetBookValueCalculator(developmentCost, replacementReserve, total_depreciation):
     """NetBookValue is calculated as the original cost of an asset,
@@ -8,10 +9,10 @@ def NetBookValueCalculator(developmentCost, replacementReserve, total_depreciati
     NetBookValue = developmentCost - replacementReserve - total_depreciation
 
     print('### Net Book Value ###')
-    print("Total Development Cost: {:,}".format(developmentCost))
-    print("Accumulated Replacement Reserve: {:,}".format(replacementReserve))
-    print("Accumulated Depreciation: {:,}".format(total_depreciation))
-    print("Total Netbook Value: {:,}".format(NetBookValue))
+    print("Total Development Cost: {:,}".format(round(developmentCost, 2)))
+    print("Accumulated Replacement Reserve: {:,}".format(round(replacementReserve, 2)))
+    print("Accumulated Depreciation: {:,}".format(round(total_depreciation, 2)))
+    print("Total Netbook Value: {:,}".format(round(NetBookValue, 2)))
     print('###'*10)
 
     return NetBookValue
@@ -23,10 +24,10 @@ def gainOnSaleCalculator (SalePrice, SaleExpenses,NetBookValue):
     gainOnSale= SalePrice - SaleExpenses - NetBookValue
 
     print('### Gain on Sale ###')
-    print('Sale Price: {:,}'.format(SalePrice))
-    print('Sale Expenses: {:,}'.format(-SaleExpenses))
-    print('Net Book Value: {:,}'.format(-NetBookValue))
-    print("Gain on Sale : {:,}".format(gainOnSale))
+    print('Sale Price: {:,}'.format(round(SalePrice, 2)))
+    print('Sale Expenses: {:,}'.format(round(-SaleExpenses, 2)))
+    print('Net Book Value: {:,}'.format(round(-NetBookValue, 2)))
+    print("Gain on Sale : {:,}".format(round(gainOnSale, 2)))
     print('###' * 10)
 
     return gainOnSale
@@ -42,10 +43,10 @@ def TaxCalculator (total_depreciation,
     CapitalGainTax = CapitalGainInExcessOfDebt * capital_gains_tax
 
     print('### Tax Payment ###')
-    print('Accumulated Depreciation: {:,}'.format(total_depreciation))
-    print('Depreciation Recapture Tax: {:,}'.format(depreciation_recapture_tax))
-    print('Capital Gain in Excess of Debt: {:,}'.format(CapitalGainInExcessOfDebt))
-    print("Capital Gain Tax : {:,}".format(CapitalGainTax))
+    print('Accumulated Depreciation: {:,}'.format(round(total_depreciation, 2)))
+    print('Depreciation Recapture Tax: {:,}'.format(round(depreciation_recapture_tax, 2)))
+    print('Capital Gain in Excess of Debt: {:,}'.format(round(CapitalGainInExcessOfDebt, 2)))
+    print("Capital Gain Tax : {:,}".format(round(CapitalGainTax, 2)))
     print('###' * 10)
 
     return CapitalGainTax
@@ -59,11 +60,11 @@ def NetProceedsFromSaleCalculator (MortgagePayoff, SalePrice, SaleExpenses, TaxP
     NetProceedsFromSale = SalePrice - SaleExpenses - MortgagePayoff - TaxPayment
 
     print('### Sale Price ###')
-    print('Sale Price: {:,}'.format(SalePrice))
-    print('Sales Expenses: {:,}'.format(SaleExpenses))
-    print('Mortage Payoff: {:,}'.format(MortgagePayoff))
-    print('Tax Payment: {:,}'.format(TaxPayment))
-    print("Net Proceeds from Sale : {:,}".format(NetProceedsFromSale))
+    print('Sale Price: {:,}'.format(round(SalePrice, 2)))
+    print('Sales Expenses: {:,}'.format(round(SaleExpenses, 2)))
+    print('Mortage Payoff: {:,}'.format(round(MortgagePayoff, 2)))
+    print('Tax Payment: {:,}'.format(round(TaxPayment, 2)))
+    print("Net Proceeds from Sale : {:,}".format(round(NetProceedsFromSale, 2)))
     print('###' * 10)
 
     return NetProceedsFromSale

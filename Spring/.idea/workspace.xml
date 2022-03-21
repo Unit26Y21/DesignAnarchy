@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="809482bc-06a4-4c1f-8aeb-19b59191988b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Class Examples/bedrooms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/Costs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/Costs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/Results.py" beforeDir="false" afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/Results.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/ResultsHelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/ResultsHelper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/ResultsMetricHelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/ResultsMetricHelper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/test_Results.py" beforeDir="false" afterPath="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/test_Results.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +49,7 @@
       <recent name="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Simple Proforma" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.bedrooms">
+  <component name="RunManager" selected="Python.test_Results">
     <configuration name="Costs" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Spring" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -61,27 +63,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/Costs.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="OtherRates" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Spring" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Inputs/OtherRates.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -153,13 +134,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test_Results" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Spring" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/ProForma/Results/test_Results.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test_Results" />
         <item itemvalue="Python.bedrooms" />
         <item itemvalue="Python.Costs" />
         <item itemvalue="Python.testSchedule" />
         <item itemvalue="Python.Results" />
-        <item itemvalue="Python.OtherRates" />
       </list>
     </recent_temporary>
   </component>
