@@ -1,4 +1,3 @@
-import pprint as pp
 
 class OtherRates:
     ratesDictionary = { 'annualIncreaseInExpenses' : .02,
@@ -12,3 +11,4 @@ class OtherRates:
                         'interestRate' : .05,
                         'constantRate': 0.0688
     }
+

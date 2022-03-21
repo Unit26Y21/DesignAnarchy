@@ -29,8 +29,34 @@ class Totals:
         self.commercial_Depreciation = commercial_Depreciation
         self.manufacturing_Depreciation = manufacturing_Depreciation
 
+        print("#" * 5)
 
         total_Gross_Incomes = sum([total_Residential_Income, total_Commercial_Income, total_Manufacturing_Income])
+        print("Total Residential Income: ${:,}".format(total_Residential_Income))
+        print("Total Commercial Income: ${:,}".format(total_Commercial_Income))
+        print("Total Manufacturing Income: ${:,}".format(total_Manufacturing_Income))
+        print("Total Gross Income: ${:,}".format(total_Gross_Incomes))
+
         total_Vacancy = sum([total_Residential_Vacancy,total_Commercial_Vacancy,total_Manufacturing_Vacancy])
+        print("\n")
+        print("Total Residential Vacancy: ${:,}".format(total_Residential_Vacancy))
+        print("Total Commercial Vacancy: ${:,}".format(total_Commercial_Vacancy))
+        print("Total Manufacturing Vacancy: ${:,}".format(total_Manufacturing_Vacancy))
+        print("Total Vacancy: ${:,}".format(total_Vacancy))
+
+
         total_Expenses = sum([total_Property_Operational_Expenses, total_Property_Real_Estate_Taxes, total_Property_Replacement_Reserve])
-        total_Depreciation_Cost = sum([residential_Depreciation, commercial_Depreciation, manufacturing_Depreciation])
+
+        print("\n")
+        print("Total Property Operational Expenses: ${:,}".format(total_Property_Operational_Expenses))
+        print("Total Property Real Estate Tax: ${:,}".format(total_Property_Real_Estate_Taxes))
+        print("Total Property Replacement Reserve: ${:,}".format(total_Property_Replacement_Reserve))
+        print("Total Expenses: ${:,}".format(total_Expenses))
+
+        total_Depreciation = sum([residential_Depreciation, commercial_Depreciation, manufacturing_Depreciation])
+
+        print("\n")
+        print("Total Residential Depreciation: ${:,}".format(residential_Depreciation))
+        print("Total Commercial Depreciation: ${:,}".format(commercial_Depreciation))
+        print("Total Manufacturing Depreciation: ${:,}".format(manufacturing_Depreciation))
+        print("Total Depreciation: ${:,}".format(total_Depreciation))

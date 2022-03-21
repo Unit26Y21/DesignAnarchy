@@ -4,22 +4,22 @@ import CostHelper
 class DevelopmentCosts():
 
     currency = "USD"
-    residential_Cost = 500  # $ per sqft
-    commercial_Cost = 500  # $ per sqft
-    manufacturing_Cost = 500  # $ per sqft
-    hardCost = 200  # $ per sqft
-    softCost = 200  # $ per sqft
+    residential_Cost = 250  # $ per sqft
+    commercial_Cost = 0  # $ per sqft
+    manufacturing_Cost = 0  # $ per sqft
+    hardCost = 0  # $ per sqft
+    softCost = 0  # $ per sqft
     landCost = 0  # $ per sqft
     existingBuildingPurchase = 0  # flat purchase price
+    total_development_cost = 0
 
     def __init__(self,
-                 residential_ZFA: float,
-                 commercial_ZFA: float,
-                 manufacturing_ZFA: float,
+                 residential_ZFA: int,
+                 commercial_ZFA: int,
+                 manufacturing_ZFA: int,
                  ):
 
         # Development Costs
-        self.total_development_cost = 0
         self.residential_ZFA = residential_ZFA
         self.commerical_ZFA = commercial_ZFA
         self.manufacturing_ZFA = manufacturing_ZFA
@@ -45,7 +45,7 @@ class DevelopmentCosts():
         my_soft_costs = CostHelper.SoftCost(myTotalGZFA= gross_ZFA,
                                             softCost= self.softCost)
 
-        total_development_costs = CostHelper.TotalDevelopmentCost(myBuildingPurchase = self.existingBuildingPurchase,
+        self.total_development_cost = CostHelper.TotalDevelopmentCost(myBuildingPurchase = self.existingBuildingPurchase,
                                                                   mytotalResidCost= my_residential_costs,
                                                                   mytotalComCost= my_commercial_costs,
                                                                   mytotalManCost= my_manufacturing_costs,
