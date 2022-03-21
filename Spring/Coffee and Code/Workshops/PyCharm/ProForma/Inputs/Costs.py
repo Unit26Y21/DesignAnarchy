@@ -13,17 +13,19 @@ class DevelopmentCosts():
     existingBuildingPurchase = 0  # flat purchase price
 
     def __init__(self,
-                 gross_ZFA,
-                 residential_ZFA,
-                 commercial_ZFA,
-                 manufacturing_ZFA,
+                 residential_ZFA: float,
+                 commercial_ZFA: float,
+                 manufacturing_ZFA: float,
                  ):
 
         # Development Costs
-        self.gross_ZFA = gross_ZFA
+        self.total_development_cost = 0
         self.residential_ZFA = residential_ZFA
         self.commerical_ZFA = commercial_ZFA
         self.manufacturing_ZFA = manufacturing_ZFA
+
+
+        gross_ZFA = sum([residential_ZFA,commercial_ZFA,manufacturing_ZFA])
 
         print("")
         print("My development costs ({})".format(self.currency))
@@ -34,7 +36,8 @@ class DevelopmentCosts():
         my_commercial_costs = CostHelper.CommercialCost(comZFA= commercial_ZFA,
                                                         comCost= self.commercial_Cost)
 
-        my_manufacturing_costs = 0
+        my_manufacturing_costs = CostHelper.ManufacturingCost(manZFA= manufacturing_ZFA,
+                                                              manCost= self.manufacturing_Cost)
 
         my_hard_costs = CostHelper.HardCost(myTotalGZFA= gross_ZFA,
                                             hardCost= self.hardCost)
@@ -49,11 +52,4 @@ class DevelopmentCosts():
                                                                   mytotalHardCost= my_hard_costs,
                                                                   mytotalSoftCost= my_soft_costs)
 
-testCosts = DevelopmentCosts(gross_ZFA = 100000,
-                  residential_ZFA = 100000,
-                  commercial_ZFA = 0,
-                  manufacturing_ZFA = 0 )
 
-testCosts.residential_Cost = 1000
-
-print(testCosts.residential_Cost)

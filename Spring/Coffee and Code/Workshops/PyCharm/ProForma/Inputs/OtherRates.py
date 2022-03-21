@@ -12,10 +12,3 @@ class OtherRates:
                         'interestRate' : .05,
                         'constantRate': 0.0688
     }
-
-
-testRates = OtherRates
-
-testRates.ratesDictionary['constantRate'] = 0.08
-
-pp.pprint(testRates.ratesDictionary)

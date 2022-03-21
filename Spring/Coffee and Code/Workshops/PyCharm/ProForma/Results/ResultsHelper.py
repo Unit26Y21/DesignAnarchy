@@ -6,7 +6,7 @@ def NetBookValueCalculator(developmentCost, replacementReserve, total_depreciati
     minus any accumulated depreciation, accumulated depletion,
     accumulated amortization, and accumulated impairment"""
 
-    NetBookValue = developmentCost - replacementReserve - total_depreciation
+    NetBookValue = developmentCost + replacementReserve + total_depreciation
 
     print('### Net Book Value ###')
     print("Total Development Cost: {:,}".format(round(developmentCost, 2)))
@@ -34,12 +34,11 @@ def gainOnSaleCalculator (SalePrice, SaleExpenses,NetBookValue):
 
 # Tax Payment
 def TaxCalculator (total_depreciation,
-                   depreciation_recapture_rate,
+                   depreciation_recapture_tax,
                    gain_on_sale,
                    capital_gains_tax):
     """Capital Gains Tax is a federal fee paid on the profit made from selling a property"""
-    depreciation_recapture_tax = depreciation_recapture_rate * total_depreciation
-    CapitalGainInExcessOfDebt = -total_depreciation + gain_on_sale
+    CapitalGainInExcessOfDebt = total_depreciation + gain_on_sale
     CapitalGainTax = CapitalGainInExcessOfDebt * capital_gains_tax
 
     print('### Tax Payment ###')
@@ -57,7 +56,7 @@ def TaxCalculator (total_depreciation,
 def NetProceedsFromSaleCalculator (MortgagePayoff, SalePrice, SaleExpenses, TaxPayment):
     """Net Proceeds from Sale is the amount received by the seller after deducting
     all costs and expenses from the gross proceeds"""
-    NetProceedsFromSale = SalePrice - SaleExpenses - MortgagePayoff - TaxPayment
+    NetProceedsFromSale = sum([SalePrice,SaleExpenses, MortgagePayoff, TaxPayment])
 
     print('### Sale Price ###')
     print('Sale Price: {:,}'.format(round(SalePrice, 2)))

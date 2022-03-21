@@ -8,60 +8,58 @@ class myProceeds:
     '''
 
     # NYCHA Vacancy
-    residential_vacancy = 0.012
+    vacancy = 0.012
     income_escalation = 0.01
+    rent = 500
+
+    #NYCHA Operation Costs
+    operation_expense_persqft = 7 #USD
+    realestate_taxes_persqft = 0 #USD
+    replacement_reserve_persqft = 1 #USD
+    depreciation_yrs = 27.5   # in years
+    netLossFactor = 0.15
 
     def __init__(self,
-                 residential_GFA,
-                 netLossFactor,
-                 avg_unit_size,
-                 total_dev_cost,
-                 residential_rent,
-                 residential_operation_expense_persqft,
-                 residential_realestate_taxes_persqft,
-                 residential_replacement_reserve_persqft,
-                 residential_depreciation_yrs, #in years
+                 GFA: int,
+                 avg_unit_size: float,
+                 total_dev_cost: int,
                  ):
 
         self.total_dev_cost = total_dev_cost
-        self.residential_GFA = residential_GFA
-        self.netLossFactor = netLossFactor
+        self.GFA = GFA
         self.avg_unit_size = mean(avg_unit_size)
-        self.residential_Rent = residential_rent
-        self.residential_operation_expense_persqft = residential_operation_expense_persqft
-        self.residential_realestate_taxes_persqft = residential_realestate_taxes_persqft
-        self.residential_replacement_reserve_persqft = residential_replacement_reserve_persqft
 
+        netArea = GFA - (GFA * self.netLossFactor)
+        units = netArea/avg_unit_size
 
-        # Residential Proceeds
-        res_common_circulation = ProceedsHelper.common_area_and_circulation(zoningFloorArea= residential_GFA,
-                                                                            netLossFactor=netLossFactor)
+        #Proceeds
+        common_circulation = ProceedsHelper.common_area_and_circulation(totalFloorArea= GFA,
+                                                                        netLossFactor= self.netLossFactor)
 
-        res_netArea = ProceedsHelper.net_area(zoningFloorArea= residential_GFA,
-                                common_area_and_circulation= res_common_circulation)
+        netArea = ProceedsHelper.net_area(totalFloorArea= GFA,
+                                          common_area_and_circulation= GFA * self.netLossFactor)
 
+        units = ProceedsHelper.approximate_units(netArea= netArea,
+                                                 avgmarketRateUnitSize= avg_unit_size)
 
-        res_units = ProceedsHelper.approximate_units(resNetArea= res_netArea,
-                                                     avgmarketRateUnitSize= avg_unit_size)
+        income = ProceedsHelper.total_income(approxUnits= units,
+                                             marketRateRent= self.rent)
 
-        res_income = ProceedsHelper.total_income(approxUnits= res_units,
-                                                 marketRateRent= residential_rent)
+        vacancy = ProceedsHelper.total_vacancy(vacancyRate= self.vacancy,
+                                               total_income= income)
 
-        res_vacancy = ProceedsHelper.total_vacancy(vacancyRate= self.residential_vacancy,
-                                                   total_income= res_income)
+        #Expenses
+        operation_expense = ProceedsHelper.operational_expenses(netArea= netArea,
+                                                                operationalExpenses= self.operation_expense_persqft)
 
-        # Residential Expenses
-        residential_operation_expense = ProceedsHelper.operational_expenses(net_area= res_netArea,
-                                                                            operationalExpenses= residential_operation_expense_persqft)
+        realestate_taxes = ProceedsHelper.real_estate_taxes(realestateTaxes= self.realestate_taxes_persqft,
+                                                            netArea= netArea)
 
-        residential_realestate_taxes = ProceedsHelper.real_estate_taxes(realestateTaxes= residential_realestate_taxes_persqft,
-                                                                        net_area= res_netArea)
+        replacement_reserve = ProceedsHelper.replacement_reserve(totalFloorArea= GFA,
+                                                                 replacementReserve= self.replacement_reserve_persqft)
 
-        residential_replacement_reserve = ProceedsHelper.replacement_reserve(zoningFloorArea= residential_GFA,
-                                                                             replacementReserve= residential_replacement_reserve_persqft)
+        #Depreciation
 
-        # Residential Depreciation
-
-        residential_depreciation = ProceedsHelper.depreciation(depreciation= residential_depreciation_yrs,
-                                                               total_cost= total_dev_cost)
+        depreciation = ProceedsHelper.depreciation(depreciation= self.depreciation_yrs,
+                                                   total_cost= total_dev_cost)
 

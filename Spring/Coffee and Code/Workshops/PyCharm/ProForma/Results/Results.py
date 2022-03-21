@@ -4,8 +4,8 @@ import ResultsMetricHelper, ResultsHelper
 class Results:
     discount_rate = 0.09
     cap_rate_atSale = 0.06
-    capital_gains_tax = 0.2
-    depreciation_recapture = 0.25
+    capital_gains_tax_rate = 0.2
+    depreciation_recapture_rate = 0.25
     sale_expense_rate = 0.05
 
     def __init__(self,
@@ -29,14 +29,11 @@ class Results:
         self.mortgage_payoff = mortgage_payoff
         self.net_operating_income = net_operating_income
 
+        depreciation_recapture_total = accumulated_depreciation * self.depreciation_recapture_rate
+
         #### Net Proceeds From Sale ###
         sale_price = total_net_operating_income / self.cap_rate_atSale
         sale_expenses = sale_price * self.sale_expense_rate
-
-        net_proceeds_from_sale = ResultsHelper.NetProceedsFromSaleCalculator(MortgagePayoff=mortgage_payoff,
-                                                                             SalePrice=sale_price,
-                                                                             SaleExpenses=sale_expenses,
-                                                                             TaxPayment=self.capital_gains_tax)
 
         net_book_value = ResultsHelper.NetBookValueCalculator(developmentCost=total_development_cost,
                                                               replacementReserve=total_replacement_reserve,
@@ -46,14 +43,25 @@ class Results:
                                                           SaleExpenses=sale_expenses,
                                                           NetBookValue=net_book_value)
 
-        capital_gains_tax = ResultsHelper.TaxCalculator(capital_gains_tax=self.capital_gains_tax,
+        capital_gains_tax = ResultsHelper.TaxCalculator(capital_gains_tax=self.capital_gains_tax_rate,
                                                         total_depreciation=accumulated_depreciation,
-                                                        depreciation_recapture_rate=self.depreciation_recapture,
+                                                        depreciation_recapture_tax=depreciation_recapture_total,
                                                         gain_on_sale=gain_on_sale)
+
+        net_proceeds_from_sale = ResultsHelper.NetProceedsFromSaleCalculator(MortgagePayoff=mortgage_payoff,
+                                                                             SalePrice=sale_price,
+                                                                             SaleExpenses= -sale_expenses,
+                                                                             TaxPayment= -(capital_gains_tax + abs(depreciation_recapture_total)))
+
+
+
+
+
 
         ### Return Metrics ###
         print("#" * 30)
         print("#" * 30)
+        print("\n")
         # Net Present Value
         ResultsMetricHelper.net_present_value_calculator(equity=equity,
                                                          list_future_cash_flow=future_cash_flow_list,

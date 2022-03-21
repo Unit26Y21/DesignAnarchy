@@ -1,17 +1,17 @@
 class Totals:
     def __init__(self,
-                 total_Residential_Income,
-                 total_Commercial_Income,
-                 total_Manufacturing_Income,
-                 total_Residential_Vacancy,
-                 total_Commercial_Vacancy,
-                 total_Manufacturing_Vacancy,
-                 total_Property_Operational_Expenses,
-                 total_Property_Real_Estate_Taxes,
-                 total_Property_Replacement_Reserve,
-                 residential_Depreciation,
-                 commercial_Depreciation,
-                 manufacturing_Depreciation):
+                 total_Residential_Income: int,
+                 total_Commercial_Income: int,
+                 total_Manufacturing_Income: int,
+                 total_Residential_Vacancy: int,
+                 total_Commercial_Vacancy: int,
+                 total_Manufacturing_Vacancy: int,
+                 total_Property_Operational_Expenses: int,
+                 total_Property_Real_Estate_Taxes: int,
+                 total_Property_Replacement_Reserve: int,
+                 residential_Depreciation: int,
+                 commercial_Depreciation: int,
+                 manufacturing_Depreciation: int):
 
         self.total_Residential_Income = total_Residential_Income
         self.total_Commercial_Income = total_Commercial_Income
