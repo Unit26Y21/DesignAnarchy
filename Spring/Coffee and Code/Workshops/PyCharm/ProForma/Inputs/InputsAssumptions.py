@@ -33,8 +33,6 @@ class MyInputsAssumptions:
 
         myCapitalStructure = CapitalStructure.CapitalStructure(total_development_cost= myDevelopmentCosts.total_development_cost)
 
-        print(avgUnitSize)
-        print(myDevelopmentCosts.total_development_cost)
 
         myResidentialProceeds = Proceeds.myProceeds(proceedsType= "Residential",
                                                     GFA= myDevelopment.totalFloorArea,
