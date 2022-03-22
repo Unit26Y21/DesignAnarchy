@@ -47,7 +47,7 @@
       <recent name="$PROJECT_DIR$/Coffee and Code/Workshops/PyCharm/Simple Proforma" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.bedrooms">
+  <component name="RunManager" selected="Python.ScheduleDataFrame">
     <configuration name="Costs" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Spring" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -155,8 +155,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.bedrooms" />
         <item itemvalue="Python.ScheduleDataFrame" />
+        <item itemvalue="Python.bedrooms" />
         <item itemvalue="Python.testInputs" />
         <item itemvalue="Python.test_Results" />
         <item itemvalue="Python.Costs" />
