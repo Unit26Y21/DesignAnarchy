@@ -11,23 +11,6 @@ source: Poorvu, William J., and Samuel Plimpton. "Financial analysis of real pro
 import pprint as pp
 import json
 
-# def columnConstructor(inputList):
-#     inputList = []
-#
-#     dict = {}
-#
-#     for i in inputList:
-#         dict["'" + i +"'"]= i
-#
-#     output = sum(futureCashFlow.values())
-#
-#     for k, v in futureCashFlow:
-#         print(k, v)
-#
-#     print(" Total Future Cash Flow", output)
-#
-#     return output
-
 ############################################
 # Pro Forma ProForma - Soup Market Rate
 ############################################
