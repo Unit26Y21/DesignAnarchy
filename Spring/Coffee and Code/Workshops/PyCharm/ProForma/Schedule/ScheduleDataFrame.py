@@ -59,24 +59,19 @@ class ScheduleGrid:
 
 
     def __init__(self,
-                 total_gross_income: int,
-                 total_vacancy: int,
-                 operating_expenses: int,
-                 real_estate_taxes: int,
-                 replacement_reserve: int,
-                 debt: int,
-                 debt_service: int,
+                 total_gross_income: float,
+                 total_vacancy: float,
+                 operating_expenses: float,
+                 real_estate_taxes: float,
+                 replacement_reserve: float,
+                 debt: float,
+                 equity: float,
+                 debt_service: float,
                  debt_service_rate: float,
-                 net_proceeds_fromSale: int,
-                 beginYearBalance: int,
-                 interestRate: int,
-                 depreciation: int,
+                 beginYearBalance: float,
+                 interestRate: float,
+                 depreciation: float,
                  odinaryTaxIncome: float,
-                 amortizationValues: int,
-                 gain_sale_price: int,
-                 gain_sale_expenses: int,
-                 total_development_cost: int,
-                 total_future_cashflow_atStart: int,
                  annual_public_subsidy_increase: float
                  ):
 
@@ -221,16 +216,25 @@ class ScheduleGrid:
 
 
         #Total
-        total_future_cashflow_atStart
+        self.total_future_cashflow_atStart = -equity
 
-        endYear_net_operating_income = self.df.iat[11, -2]
+        self.future_cashflow_list = self.df.loc['Total Future Cash Flow']
 
-        net_sale_price = gain_sale_price + gain_sale_expenses
+        self.cash_flow_after_taxes_atStart = self.df.iat[16,0]
 
-        total_sales = net_sale_price + endYear_net_operating_income
+        self.net_operating_income_atStart = self.df.iat[11,0]
 
+        self.final_net_operating_income = self.df.iat[11, -1]
 
+        self.total_amortization = sum(self.offsheet_df.loc['Amortization'])
 
+        self.final_replacement_reserve = sum(self.offsheet_df.loc['Replacement Reserve'])
+
+        self.final_depreciation = sum(self.offsheet_df.loc['Depreciation'])
+
+        self.mortage_payoff = self.offsheet_df.iat[4,0] - self.total_amortization
+
+        self.table = pd.concat([self.df, self.offsheet_df])
 
 
 myScheduleGrid = ScheduleGrid(total_gross_income= 1021228000.00,
@@ -239,22 +243,17 @@ myScheduleGrid = ScheduleGrid(total_gross_income= 1021228000.00,
                               real_estate_taxes=  425000.00,
                               replacement_reserve=  225000.00,
                               debt=  175837188.00 ,
+                              equity = 94681562.50,
                               debt_service=  12098478.00 ,
                               debt_service_rate= 0.068805,
-                              net_proceeds_fromSale= 100000.00,
                               beginYearBalance= 175837188.00,
                               interestRate= 0.05,
                               annual_public_subsidy_increase = 0.02,
-                              depreciation=  -3917249.42,
+                              depreciation= -3917249.42,
                               odinaryTaxIncome= 0.35,
-                              amortizationValues= 100000.00,
-                              gain_sale_price= 0,
-                              gain_sale_expenses= 0,
-                              total_development_cost=  270518750.00,
-                              total_future_cashflow_atStart=  94681562.50
                               )
 
-print(myScheduleGrid.df.to_string())
+print(myScheduleGrid.table.to_string())
 print('\n')
-print(myScheduleGrid.offsheet_df.to_string())
+print(myScheduleGrid.total_future_cashflow_atStart, myScheduleGrid.final_replacement_reserve)
 

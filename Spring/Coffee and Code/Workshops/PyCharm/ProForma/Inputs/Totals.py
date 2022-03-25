@@ -3,15 +3,18 @@ class Totals:
                  total_Residential_Income: int,
                  total_Commercial_Income: int,
                  total_Manufacturing_Income: int,
+                 total_Community_Income: int,
                  total_Residential_Vacancy: int,
                  total_Commercial_Vacancy: int,
                  total_Manufacturing_Vacancy: int,
+                 total_Community_Vacancy: int,
                  total_Property_Operational_Expenses: int,
                  total_Property_Real_Estate_Taxes: int,
                  total_Property_Replacement_Reserve: int,
                  residential_Depreciation: int,
                  commercial_Depreciation: int,
-                 manufacturing_Depreciation: int):
+                 manufacturing_Depreciation: int,
+                 community_Depreciation: int):
 
         self.total_Residential_Income = total_Residential_Income
         self.total_Commercial_Income = total_Commercial_Income
@@ -31,13 +34,21 @@ class Totals:
 
         print("#" * 5)
 
-        total_Gross_Incomes = sum([total_Residential_Income, total_Commercial_Income, total_Manufacturing_Income])
+        self.total_Gross_Incomes = sum([total_Residential_Income,
+                                   total_Commercial_Income,
+                                   total_Manufacturing_Income,
+                                   total_Community_Income])
+
         print("Total Residential Income: ${:,}".format(total_Residential_Income))
         print("Total Commercial Income: ${:,}".format(total_Commercial_Income))
         print("Total Manufacturing Income: ${:,}".format(total_Manufacturing_Income))
         print("Total Gross Income: ${:,}".format(total_Gross_Incomes))
 
-        total_Vacancy = sum([total_Residential_Vacancy,total_Commercial_Vacancy,total_Manufacturing_Vacancy])
+        self.total_Vacancy = sum([total_Residential_Vacancy,
+                             total_Commercial_Vacancy,
+                             total_Manufacturing_Vacancy,
+                             total_Community_Vacancy])
+
         print("\n")
         print("Total Residential Vacancy: ${:,}".format(total_Residential_Vacancy))
         print("Total Commercial Vacancy: ${:,}".format(total_Commercial_Vacancy))
@@ -45,7 +56,9 @@ class Totals:
         print("Total Vacancy: ${:,}".format(total_Vacancy))
 
 
-        total_Expenses = sum([total_Property_Operational_Expenses, total_Property_Real_Estate_Taxes, total_Property_Replacement_Reserve])
+        self.total_Expenses = sum([total_Property_Operational_Expenses,
+                              total_Property_Real_Estate_Taxes,
+                              total_Property_Replacement_Reserve])
 
         print("\n")
         print("Total Property Operational Expenses: ${:,}".format(total_Property_Operational_Expenses))
@@ -53,7 +66,10 @@ class Totals:
         print("Total Property Replacement Reserve: ${:,}".format(total_Property_Replacement_Reserve))
         print("Total Expenses: ${:,}".format(total_Expenses))
 
-        total_Depreciation = sum([residential_Depreciation, commercial_Depreciation, manufacturing_Depreciation])
+        self.total_Depreciation = sum([residential_Depreciation,
+                                  commercial_Depreciation,
+                                  manufacturing_Depreciation,
+                                  community_Depreciation ])
 
         print("\n")
         print("Total Residential Depreciation: ${:,}".format(residential_Depreciation))

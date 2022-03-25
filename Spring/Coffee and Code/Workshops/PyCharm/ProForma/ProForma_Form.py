@@ -1,5 +1,7 @@
 import Inputs.InputsAssumptions as Inputs
 import Results.Results as Results
+import Schedule.ScheduleDataFrame as Schedule
+
 from statistics import mean
 
 
@@ -23,30 +25,44 @@ class ProForma:
 
 
     # 1. Property Information
-    Inputs.MyInputsAssumptions(lotArea=11000,
-                               existingBuildingFloorArea=0,
-                               residentialFAR=9,
-                               commercialFAR=0,
-                               manufacturingFAR=0,
-                               avgUnitSize=myUnits
-                               )
-
-    # 2. Assumptions About Cost and Capital Structure: Left as is for now...
+    propertyInput = Inputs.MyInputsAssumptions(lotArea=11000,
+                                               existingBuildingFloorArea=0,
+                                               residentialFAR=9,
+                                               commercialFAR=0,
+                                               manufacturingFAR=0,
+                                               avgUnitSize_residential=0,
+                                               avgUnitSize_commercial = 0,
+                                               avgUnitSize_manufacturing = 0,
+                                               avgUnitSize_community = 0,
+                                               )
 
     # 3. Schedule
+    schedule = Schedule.ScheduleGrid(total_gross_income= propertyInput.totals.total_Gross_Incomes,
+                                     total_vacancy= -propertyInput.totals.total_Vacancy,
+                                     operating_expenses=  propertyInput.totals.total_Expenses,
+                                     real_estate_taxes=  propertyInput.totals.total_Property_Real_Estate_Taxes,
+                                     replacement_reserve=  propertyInput.totals.total_Property_Replacement_Reserve,
+                                     debt=  propertyInput.capitalStructure.debt,
+                                     equity = propertyInput.capitalStructure.equity,
+                                     debt_service=  propertyInput.capitalStructure.debtService,
+                                     debt_service_rate= propertyInput.capitalStructure.debtService_rate,
+                                     beginYearBalance= propertyInput.capitalStructure.debt,
+                                     interestRate= propertyInput.rates.ratesDictionary['interestRate'],
+                                     annual_public_subsidy_increase = propertyInput.rates.ratesDictionary['annualPublicSubsidiesIncrease'],
+                                     depreciation= propertyInput.totals.total_Depreciation,
+                                     odinaryTaxIncome= propertyInput.rates.ratesDictionary['ordinaryIncomeTax'],
+                                     )
 
     # 4. Results
-    futureCashFlowTest = [880323, 956599, 1033967, 1112448, 1192064, 1272838, 1354794, 1437953, 1522342, 24248132]
-
-    Results.Results(equity = 9712500,
-                      net_operating_income= 1995000,
-                      future_cash_flow_list= futureCashFlowTest,
-                      cash_flow_after_taxes= 880323,
-                      total_net_operating_income= 2431894,
-                      total_development_cost= 27750000,
-                      total_replacement_reserve= 1084022 ,
-                      accumulated_depreciation= -8310023,
-                      mortgage_payoff= -11853140)
+    Results.Results(equity = propertyInput.capitalStructure.equity,
+                    net_operating_income= schedule.net_operating_income_atStart,
+                    future_cash_flow_list= schedule.future_cashflow_list,
+                    cash_flow_after_taxes= schedule.cash_flow_after_taxes_atStart,
+                    total_net_operating_income= schedule.final_net_operating_income,
+                    total_development_cost= propertyInput.developmentCosts.total_development_cost,
+                    total_replacement_reserve= schedule.final_replacement_reserve,
+                    accumulated_depreciation= -schedule.final_depreciation,
+                    mortgage_payoff= -schedule.mortage_payoff)
 
 
 testProforma = ProForma()

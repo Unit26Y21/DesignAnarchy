@@ -8,13 +8,13 @@ class CapitalStructure:
                  total_development_cost):
 
         self.total_development_cost = total_development_cost
-        self.debtService = 0.068805
+        self.debtService_rate = 0.068805
 
 
-        myEquity = CSHelper.Equity(myTotalDevCost= total_development_cost,
+        self.equity = CSHelper.Equity(myTotalDevCost= total_development_cost,
                         EqPerc= self.equity_percent)
 
-        myTotalDebt = CSHelper.Debt(myTotalDevCost= total_development_cost,
+        self.totalDebt = CSHelper.Debt(myTotalDevCost= total_development_cost,
                       equityPercent= self.equity_percent)
 
-        myDebtService = CSHelper.DebtService(mytotalDebt= myTotalDebt, debtServPerc= self.debtService)
+        self.debtService = CSHelper.DebtService(mytotalDebt= self.totalDebt, debtServPerc= self.debtService_rate)

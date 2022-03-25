@@ -53,18 +53,18 @@ class myProceeds:
                                                total_income= self.income)
 
         #Expenses
-        operation_expense = ProceedsHelper.operational_expenses(netArea= self.netArea,
+        self.operation_expense = ProceedsHelper.operational_expenses(netArea= self.netArea,
                                                                 operationalExpenses= self.operation_expense_persqft)
 
-        realestate_taxes = ProceedsHelper.real_estate_taxes(realestateTaxes= self.realestate_taxes_persqft,
+        self.realestate_taxes = ProceedsHelper.real_estate_taxes(realestateTaxes= self.realestate_taxes_persqft,
                                                             netArea= self.netArea)
 
-        replacement_reserve = ProceedsHelper.replacement_reserve(totalFloorArea= GFA,
+        self.replacement_reserve = ProceedsHelper.replacement_reserve(totalFloorArea= GFA,
                                                                  replacementReserve= self.replacement_reserve_persqft)
 
         #Depreciation
 
-        depreciation = ProceedsHelper.depreciation(depreciation= self.depreciation_yrs,
+        self.depreciation = ProceedsHelper.depreciation(depreciation= self.depreciation_yrs,
                                                    total_cost= total_dev_cost)
 
         print("\n")
@@ -81,11 +81,11 @@ class myProceeds:
         print("{} Operational Expense per SqFt: ${:,}".format(proceedsType, self.operation_expense_persqft))
         print("{} Real Estate Taxes per SqFt: ${:,}".format(proceedsType, self.realestate_taxes_persqft))
         print("{} Replacement Reserve per SqFt: ${:,}".format(proceedsType, self.replacement_reserve_persqft))
-        print("{} Operational Expense Total: ${:,}".format(proceedsType, operation_expense))
-        print("{} Real Estate Taxes Total: ${:,}".format(proceedsType, realestate_taxes))
-        print("{} Replacement Reserve Total: ${:,}".format(proceedsType, replacement_reserve))
+        print("{} Operational Expense Total: ${:,}".format(proceedsType, self.operation_expense))
+        print("{} Real Estate Taxes Total: ${:,}".format(proceedsType, self.realestate_taxes))
+        print("{} Replacement Reserve Total: ${:,}".format(proceedsType, self.replacement_reserve))
 
         print("\n")
         print("{} Depreciation".format(proceedsType))
         print("{} Depreciation in Yrs: {}".format(proceedsType, self.depreciation_yrs))
-        print("Total Depreciation ${:,}".format(depreciation))
+        print("Total Depreciation ${:,}".format(self.depreciation))
