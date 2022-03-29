@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b44eeb28-7d6e-44ef-b3d6-52e8b9225ea8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Coffee and Code.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Coffee and Code.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Inputs/testInputs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Inputs/testInputs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/ProForma_Form.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/ProForma_Form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Results/Results.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Results/Results.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Schedule/ScheduleDataFrame.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Schedule/ScheduleDataFrame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Schedule/testSchedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Schedule/testSchedule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/main.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +25,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectId" id="26M1hY9OeWC7r9dBRBTelupqAHY" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -34,7 +36,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager" selected="Python.testSchedule">
+  <component name="RunManager" selected="Python.ProForma_Form">
     <configuration name="ProForma_Form" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Coffee and Code" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -142,10 +144,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ProForma_Form" />
         <item itemvalue="Python.testSchedule" />
         <item itemvalue="Python.test_Results" />
         <item itemvalue="Python.testInputs" />
-        <item itemvalue="Python.ProForma_Form" />
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>

@@ -65,4 +65,3 @@ class ProForma:
                     mortgage_payoff= -schedule.mortage_payoff)
 
 
-testProforma = ProForma().propertyInput.residentialProceeds.
