@@ -52,8 +52,7 @@ oneBArea = 1102
 twoBArea = 1402
 threeBArea = 1938
 
-"""
-def UnitAssigner(ColivingArea, StudioArea, OneBArea, TwoBArea, ThreeBArea):
+def UnitAssigner(additionTotalArea, ColivingArea, StudioArea, OneBArea, TwoBArea, ThreeBArea):
     ColivingUnits = (additionTotalArea*.25)/ColivingArea
     StudioUnits = (additionTotalArea*.30)/StudioArea
     OneBUnits = (additionTotalArea*.30)/OneBArea
@@ -68,6 +67,4 @@ def UnitAssigner(ColivingArea, StudioArea, OneBArea, TwoBArea, ThreeBArea):
     print("Total Units: ", totalUnits)
     return totalUnits
 
-UnitAssigner = UnitAssigner(colivingArea, studioArea, oneBArea, twoBArea, threeBArea)
-
-"""
+UnitAssigner = UnitAssigner(additionTotalAreaCalculator[2],colivingArea, studioArea, oneBArea, twoBArea, threeBArea)
