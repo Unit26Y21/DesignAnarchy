@@ -5,7 +5,7 @@ import Schedule.ScheduleDataFrame as Schedule
 from statistics import mean
 
 
-myUnits = mean([900,1000,500])
+myUnits = mean([900, 1000, 500])
 
 class ProForma:
     '''
@@ -65,4 +65,4 @@ class ProForma:
                     mortgage_payoff= -schedule.mortage_payoff)
 
 
-testProforma = ProForma()
+testProforma = ProForma().propertyInput.residentialProceeds.

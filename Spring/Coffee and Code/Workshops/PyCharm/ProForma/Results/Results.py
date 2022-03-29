@@ -1,4 +1,6 @@
-import ResultsMetricHelper, ResultsHelper
+
+import ResultsMetricHelper
+import ResultsHelper
 
 
 class Results:
