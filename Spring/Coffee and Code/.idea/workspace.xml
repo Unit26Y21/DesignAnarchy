@@ -2,12 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b44eeb28-7d6e-44ef-b3d6-52e8b9225ea8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/setup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/myProFormaTest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/ProForma_Form.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/ProForma_Form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Schedule/ScheduleDataFrame.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Schedule/ScheduleDataFrame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Schedule/testSchedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Schedule/testSchedule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Inputs/CapitalStructure.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/CapitalStructure.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Inputs/CapitalStructureHelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/CapitalStructureHelper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Inputs/CostHelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/CostHelper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Inputs/Costs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/Costs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Inputs/Inputs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/Inputs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Inputs/InputsAssumptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/InputsAssumptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Inputs/OtherRates.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/OtherRates.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Inputs/Proceeds.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/Proceeds.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Inputs/ProceedsHelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/ProceedsHelper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Inputs/Totals.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/Totals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Inputs/testInputs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/testInputs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/ProForma_Form.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/ProForma_Form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Results/Results.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Results/Results.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Results/ResultsHelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Results/ResultsHelper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Results/ResultsMetricHelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Results/ResultsMetricHelper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Results/test_Results.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Results/test_Results.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Schedule/ScheduleDataFrame.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Schedule/ScheduleDataFrame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Schedule/ScheduleFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Schedule/ScheduleFunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/Schedule/testSchedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Schedule/testSchedule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +52,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager" selected="Python.ProForma_Form">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma" />
+      <recent name="$PROJECT_DIR$/Workshops/PyCharm/ProForma" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.testInputs (1)">
     <configuration name="ProForma_Form" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Coffee and Code" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -49,7 +71,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Workshops/PyCharm/ProForma/ProForma_Form.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/ProForma_Form.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -58,7 +80,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="testInputs (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Coffee and Code" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -66,11 +88,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Workshops/PyCharm/ProForma" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Workshops/PyCharm/ProForma/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/testInputs.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -144,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.testInputs (1)" />
         <item itemvalue="Python.ProForma_Form" />
         <item itemvalue="Python.testSchedule" />
         <item itemvalue="Python.test_Results" />
         <item itemvalue="Python.testInputs" />
-        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
