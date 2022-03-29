@@ -65,5 +65,6 @@ class ProForma:
                     accumulated_depreciation= -schedule.final_depreciation,
                     mortgage_payoff= -schedule.mortage_payoff)
 
+    print('\n')
     print(schedule.table.to_string())
     print('\n')

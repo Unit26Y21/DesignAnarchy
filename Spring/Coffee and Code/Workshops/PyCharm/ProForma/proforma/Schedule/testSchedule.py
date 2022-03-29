@@ -1,6 +1,5 @@
 from proforma.Schedule import ScheduleDataFrame as Schedule
 
-
 myScheduleGrid = Schedule.ScheduleGrid(total_gross_income= 1021228000.00,
                               total_vacancy= - 102061400.00,
                               operating_expenses=  1147500.00,
