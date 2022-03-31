@@ -7,10 +7,10 @@ class development_costs():
     total_development_cost = 0
 
     def __init__(self,
-                 residential_ZFA: int,
-                 commercial_ZFA: int,
-                 manufacturing_ZFA: int,
-                 community_ZFA: int,
+                 residential_gross_sqft: int,
+                 commercial_gross_sqft: int,
+                 manufacturing_gross_sqft: int,
+                 community_gross_sqft: int,
                  residential_cost: int,
                  commercial_cost: int,
                  manufacturing_cost: int,
@@ -22,10 +22,10 @@ class development_costs():
                  ):
 
         # Development Costs
-        self.residential_ZFA = residential_ZFA
-        self.commerical_ZFA = commercial_ZFA
-        self.manufacturing_ZFA = manufacturing_ZFA
-        self.community_ZFA = community_ZFA
+        self.residential_gross_sqft = residential_gross_sqft
+        self.commerical_gross_sqft = commercial_gross_sqft
+        self.manufacturing_gross_sqft = manufacturing_gross_sqft
+        self.community_gross_sqft = community_gross_sqft
         self.residential_cost = residential_cost  # $ per sqft
         self.commercial_cost = commercial_cost  # $ per sqft
         self.manufacturing_cost = manufacturing_cost  # $ per sqft
@@ -36,27 +36,30 @@ class development_costs():
         self.existingBuildingPurchase = existingBuildingPurchase # flat purchase price
 
 
-        gross_ZFA = sum([residential_ZFA,commercial_ZFA,manufacturing_ZFA])
+        self.gross_sqft = sum([residential_gross_sqft,
+                                commercial_gross_sqft,
+                                manufacturing_gross_sqft,
+                                community_gross_sqft])
 
         print("")
         print("My development costs ({})".format(self.currency))
 
-        my_residential_costs = CostHelper.use_cost_calculator(ZFA= residential_ZFA,
+        my_residential_costs = CostHelper.use_cost_calculator(gross_sqft= residential_gross_sqft,
                                                               cost_per_sqft= self.residential_cost)
 
-        my_commercial_costs = CostHelper.use_cost_calculator(ZFA= commercial_ZFA,
+        my_commercial_costs = CostHelper.use_cost_calculator(gross_sqft= commercial_gross_sqft,
                                                         cost_per_sqft= self.commercial_cost)
 
-        my_manufacturing_costs = CostHelper.use_cost_calculator(ZFA= manufacturing_ZFA,
+        my_manufacturing_costs = CostHelper.use_cost_calculator(gross_sqft= manufacturing_gross_sqft,
                                                               cost_per_sqft= self.manufacturing_cost)
 
-        my_community_costs = CostHelper.use_cost_calculator(ZFA = community_ZFA,
+        my_community_costs = CostHelper.use_cost_calculator(gross_sqft = community_gross_sqft,
                                                             cost_per_sqft= self.community_cost)
 
-        my_hard_costs = CostHelper.hard_cost(gross_ZFA= gross_ZFA,
+        my_hard_costs = CostHelper.hard_cost(gross_sqft= self.gross_sqft,
                                             hard_cost= self.hard_cost)
 
-        my_soft_costs = CostHelper.soft_cost(gross_ZFA= gross_ZFA,
+        my_soft_costs = CostHelper.soft_cost(gross_sqft= self.gross_sqft,
                                             soft_cost= self.soft_cost)
 
         self.total_development_cost = CostHelper.total_development_cost(existing_building_purchase = self.existingBuildingPurchase,

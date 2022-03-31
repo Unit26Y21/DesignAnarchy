@@ -23,10 +23,10 @@ class ProForma:
                  lot_area: float,
                  existingBuildingFloorArea: float,
                  existingBuildingPurchase: int,
-                 residential_FAR: float,
-                 commercial_FAR: float,
-                 manufacturing_FAR: float,
-                 communityFAR: float,
+                 residential_gross_sqft: float,
+                 commercial_gross_sqft: float,
+                 manufacturing_gross_sqft: float,
+                 community_gross_sqft: float,
                  avgUnitSize_residential: int,
                  avgUnitSize_commercial: int,
                  avgUnitSize_manufacturing: int,
@@ -49,10 +49,10 @@ class ProForma:
         self.lot_area= lot_area
         self.existingBuildingFloorArea= existingBuildingFloorArea
         self.existingBuildingPurchase= existingBuildingPurchase
-        self.residential_FAR= residential_FAR
-        self.commercial_FAR= commercial_FAR
-        self.manufacturing_FAR= manufacturing_FAR
-        self.communityFAR= communityFAR
+        self.residential_gross_sqft= residential_gross_sqft
+        self.commercial_gross_sqft= commercial_gross_sqft
+        self.manufacturing_gross_sqft= manufacturing_gross_sqft
+        self.community_gross_sqft= community_gross_sqft
         self.avgUnitSize_residential= avgUnitSize_residential
         self.avgUnitSize_commercial= avgUnitSize_commercial
         self.avgUnitSize_manufacturing= avgUnitSize_manufacturing
@@ -73,10 +73,10 @@ class ProForma:
         self.propertyInput = Inputs.MyInputsAssumptions(lot_area= lot_area,
                                                         existingBuildingFloorArea= existingBuildingFloorArea,
                                                         existingBuildingPurchase= existingBuildingPurchase,
-                                                        residential_FAR= residential_FAR,
-                                                        commercial_FAR= commercial_FAR,
-                                                        communityFAR= communityFAR,
-                                                        manufacturing_FAR= manufacturing_FAR,
+                                                        residential_gross_sqft= residential_gross_sqft,
+                                                        commercial_gross_sqft= commercial_gross_sqft,
+                                                        community_gross_sqft= community_gross_sqft,
+                                                        manufacturing_gross_sqft= manufacturing_gross_sqft,
                                                         avgUnitSize_residential=avgUnitSize_residential,
                                                         avgUnitSize_commercial = avgUnitSize_commercial,
                                                         avgUnitSize_manufacturing = avgUnitSize_manufacturing,

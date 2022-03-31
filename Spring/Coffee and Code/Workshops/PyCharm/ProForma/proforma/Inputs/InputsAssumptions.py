@@ -6,10 +6,10 @@ class MyInputsAssumptions:
                  lot_area: float,
                  existingBuildingFloorArea: float,
                  existingBuildingPurchase: int,
-                 residential_FAR: float,
-                 commercial_FAR: float,
-                 manufacturing_FAR: float,
-                 communityFAR: float,
+                 residential_gross_sqft: int,
+                 commercial_gross_sqft: int,
+                 manufacturing_gross_sqft: int,
+                 community_gross_sqft: int,
                  avgUnitSize_residential: int,
                  avgUnitSize_commercial: int,
                  avgUnitSize_manufacturing: int,
@@ -30,10 +30,10 @@ class MyInputsAssumptions:
         self.existinBuildingFloorArea = 0 #assumes not building or attaching to existing building
         self.existinBuildingPurchase = existingBuildingPurchase
         self.lot_area = lot_area
-        self.residential_FAR = residential_FAR
-        self.commercial_FAR = commercial_FAR
-        self.manufacturing_FAR = manufacturing_FAR
-        self.communityFAR = communityFAR
+        self.residential_gross_sqft = residential_gross_sqft
+        self.commercial_gross_sqft = commercial_gross_sqft
+        self.manufacturing_gross_sqft = manufacturing_gross_sqft
+        self.community_gross_sqft = community_gross_sqft
         self.residential_rent = residential_rent
         self.commercial_rent = commercial_rent
         self.manufacturing_rent = manufacturing_rent
@@ -49,16 +49,16 @@ class MyInputsAssumptions:
 
         self.development = Inputs.PropertyInputs(lot_area= self.lot_area,
                                                  existingBuildingFloorArea = self.existinBuildingFloorArea,
-                                                 residential_FAR = self.residential_FAR,
-                                                 commercial_FAR = self.commercial_FAR,
-                                                 manufacturing_FAR= self.manufacturing_FAR,
-                                                 community_FAR= self.communityFAR)
+                                                 residential_gross_sqft = self.residential_gross_sqft,
+                                                 commercial_gross_sqft = self.commercial_gross_sqft,
+                                                 manufacturing_gross_sqft= self.manufacturing_gross_sqft,
+                                                 community_gross_sqft= self.community_gross_sqft)
 
         self.development_costs = Costs.development_costs( existingBuildingPurchase= existingBuildingPurchase,
-                                                          residential_ZFA= self.development.residential_ZFA,
-                                                          commercial_ZFA= self.development.commercial_ZFA,
-                                                          manufacturing_ZFA= self.development.manufacturing_ZFA,
-                                                          community_ZFA= self.development.community_ZFA,
+                                                          residential_gross_sqft= self.development.residential_gross_sqft,
+                                                          commercial_gross_sqft= self.development.commercial_gross_sqft,
+                                                          manufacturing_gross_sqft= self.development.manufacturing_gross_sqft,
+                                                          community_gross_sqft= self.development.community_gross_sqft,
                                                           residential_cost = residential_cost,
                                                           commercial_cost= commercial_cost,
                                                           manufacturing_cost= manufacturing_cost,
@@ -72,25 +72,25 @@ class MyInputsAssumptions:
 
         self.residentialProceeds = Proceeds.myProceeds(proceeds_type= "Residential",
                                                        rent = residential_rent,
-                                                       gross_floor_area= self.development.residential_ZFA,
+                                                       gross_floor_area= self.development.residential_gross_sqft,
                                                        avg_unit_size= avgUnitSize_residential,
                                                        total_dev_cost= self.development_costs.total_development_cost)
 
         self.commercialProceeds = Proceeds.myProceeds(proceeds_type="Commercial",
                                                       rent = commercial_rent,
-                                                      gross_floor_area=self.development.commercial_ZFA,
+                                                      gross_floor_area=self.development.commercial_gross_sqft,
                                                       avg_unit_size= avgUnitSize_commercial,
                                                       total_dev_cost=self.development_costs.total_development_cost)
 
         self.manufacturingProceeds = Proceeds.myProceeds(proceeds_type="Manufacturing",
                                                          rent = manufacturing_rent,
-                                                         gross_floor_area=self.development.manufacturing_ZFA,
+                                                         gross_floor_area=self.development.manufacturing_gross_sqft,
                                                          avg_unit_size= avgUnitSize_manufacturing,
                                                          total_dev_cost=self.development_costs.total_development_cost)
 
         self.communityProceeds = Proceeds.myProceeds(proceeds_type="Community Facility",
                                                      rent = commercial_rent,
-                                                     gross_floor_area=self.development.community_ZFA,
+                                                     gross_floor_area=self.development.community_gross_sqft,
                                                      avg_unit_size= avgUnitSize_community,
                                                      total_dev_cost=self.development_costs.total_development_cost)
 

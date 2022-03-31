@@ -8,23 +8,23 @@ def land_purchase_cost(land_cost, lot_area):
     print("Total Land Area Cost: {:,}".format(total_land_purchase_cost))
     return total_land_purchase_cost
 
-def use_cost_calculator(ZFA, cost_per_sqft):
-    total_cost_per_sqft = ZFA * cost_per_sqft
+def use_cost_calculator(gross_sqft, cost_per_sqft):
+    total_cost_per_sqft = gross_sqft * cost_per_sqft
     print("---")
     print("Residential Cost per SqFt: {:,}".format(cost_per_sqft))
     print("Total Residential Area Cost: {:,}".format(total_cost_per_sqft))
     return total_cost_per_sqft
 
 
-def hard_cost(gross_ZFA, hard_cost):
-    total_hard_cost = gross_ZFA * hard_cost
+def hard_cost(gross_sqft, hard_cost):
+    total_hard_cost = gross_sqft * hard_cost
     print("---")
     print("Hard Costs per SqFf: {:,}".format(hard_cost))
     print("Total Hard Costs: {:,}".format(hard_cost))
     return total_hard_cost
 
-def soft_cost(gross_ZFA, soft_cost):
-    total_soft_cost = gross_ZFA * soft_cost
+def soft_cost(gross_sqft, soft_cost):
+    total_soft_cost = gross_sqft * soft_cost
     print("---")
     print("Soft Costs per SqFf: {:,}".format(soft_cost))
     print("Total Soft Costs: {:,}".format(soft_cost))
