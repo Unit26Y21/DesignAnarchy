@@ -9,7 +9,6 @@ class myProceeds:
     # NYCHA Vacancy
     vacancy_rate = 0.012
     income_escalation = 0.01
-    rent = 500
 
     #NYCHA Operation Costs
     operation_expense_persqft = 7 #USD
@@ -29,12 +28,14 @@ class myProceeds:
                  gross_floor_area: int,
                  avg_unit_size: float,
                  total_dev_cost: int,
+                 rent: int
                  ):
 
         self.total_dev_cost = total_dev_cost
         self.gross_floor_area = gross_floor_area
         self.avg_unit_size = avg_unit_size
         self.proceeds_type = proceeds_type
+        self.rent = rent
 
         #Proceeds
         common_circulation = ProceedsHelper.common_area_and_circulation(total_floor_area= gross_floor_area,

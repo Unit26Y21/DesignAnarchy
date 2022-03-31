@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b44eeb28-7d6e-44ef-b3d6-52e8b9225ea8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/InputsAssumptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/InputsAssumptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/Proceeds.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/Proceeds.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/ProFormaForm.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/ProFormaForm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/proFormaTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/proFormaTest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

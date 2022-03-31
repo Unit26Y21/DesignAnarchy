@@ -15,9 +15,13 @@ class MyInputsAssumptions:
                  avgUnitSize_manufacturing: int,
                  avgUnitSize_community: int,
                  residential_cost: int,
+                 residential_rent: int,
                  commercial_cost: int,
+                 commercial_rent: int,
                  manufacturing_cost: int,
+                 manufacturing_rent: int,
                  community_cost: int,
+                 community_rent: int,
                  hard_cost: int,
                  soft_cost: int,
                  land_cost: int,
@@ -30,6 +34,10 @@ class MyInputsAssumptions:
         self.commercial_FAR = commercial_FAR
         self.manufacturing_FAR = manufacturing_FAR
         self.communityFAR = communityFAR
+        self.residential_rent = residential_rent
+        self.commercial_rent = commercial_rent
+        self.manufacturing_rent = manufacturing_rent
+        self.community_rent = community_rent
         self.residential_cost = residential_cost
         self.commercial_cost: commercial_cost
         self.manufacturing_cost: manufacturing_cost
@@ -63,21 +71,25 @@ class MyInputsAssumptions:
 
 
         self.residentialProceeds = Proceeds.myProceeds(proceeds_type= "Residential",
+                                                       rent = residential_rent,
                                                        gross_floor_area= self.development.residential_ZFA,
                                                        avg_unit_size= avgUnitSize_residential,
                                                        total_dev_cost= self.development_costs.total_development_cost)
 
         self.commercialProceeds = Proceeds.myProceeds(proceeds_type="Commercial",
+                                                      rent = commercial_rent,
                                                       gross_floor_area=self.development.commercial_ZFA,
                                                       avg_unit_size= avgUnitSize_commercial,
                                                       total_dev_cost=self.development_costs.total_development_cost)
 
         self.manufacturingProceeds = Proceeds.myProceeds(proceeds_type="Manufacturing",
+                                                         rent = manufacturing_rent,
                                                          gross_floor_area=self.development.manufacturing_ZFA,
                                                          avg_unit_size= avgUnitSize_manufacturing,
                                                          total_dev_cost=self.development_costs.total_development_cost)
 
         self.communityProceeds = Proceeds.myProceeds(proceeds_type="Community Facility",
+                                                     rent = commercial_rent,
                                                      gross_floor_area=self.development.community_ZFA,
                                                      avg_unit_size= avgUnitSize_community,
                                                      total_dev_cost=self.development_costs.total_development_cost)
