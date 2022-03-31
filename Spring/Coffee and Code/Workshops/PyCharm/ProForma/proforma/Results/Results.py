@@ -10,7 +10,7 @@ class Results:
     sale_expense_rate = 0.05
 
     def __init__(self,
-                 equity: int,
+                 equity_calc: int,
                  future_cash_flow_list: list,
                  cash_flow_after_taxes: int,
                  total_net_operating_income: int,
@@ -20,7 +20,7 @@ class Results:
                  mortgage_payoff: int,
                  net_operating_income: int
                  ):
-        self.equity = equity
+        self.equity_calc = equity_calc
         self.future_cash_flow_list = future_cash_flow_list
         self.cash_flow_after_taxes = cash_flow_after_taxes
         self.total_net_operating_income = total_net_operating_income
@@ -36,23 +36,23 @@ class Results:
         sale_price = total_net_operating_income / self.cap_rate_atSale
         sale_expenses = sale_price * self.sale_expense_rate
 
-        net_book_value = ResultsHelper.NetBookValueCalculator(developmentCost=total_development_cost,
-                                                              replacementReserve=total_replacement_reserve,
+        net_book_value = ResultsHelper.net_book_value_calculator(development_cost=total_development_cost,
+                                                              replacement_reserve=total_replacement_reserve,
                                                               total_depreciation=accumulated_depreciation)
 
-        gain_on_sale = ResultsHelper.gainOnSaleCalculator(SalePrice=sale_price,
-                                                          SaleExpenses=sale_expenses,
-                                                          NetBookValue=net_book_value)
+        gain_on_sale = ResultsHelper.gain_onSale_calculator (sale_price=sale_price,
+                                                          sale_expenses=sale_expenses,
+                                                          net_book_value=net_book_value)
 
-        capital_gains_tax = ResultsHelper.TaxCalculator(capital_gains_tax=self.capital_gains_tax_rate,
+        capital_gains_tax = ResultsHelper.tax_calculator(capital_gains_tax=self.capital_gains_tax_rate,
                                                         total_depreciation=accumulated_depreciation,
                                                         depreciation_recapture_tax=depreciation_recapture_total,
                                                         gain_on_sale=gain_on_sale)
 
-        net_proceeds_from_sale = ResultsHelper.NetProceedsFromSaleCalculator(MortgagePayoff=mortgage_payoff,
-                                                                             SalePrice=sale_price,
-                                                                             SaleExpenses= -sale_expenses,
-                                                                             TaxPayment= -(capital_gains_tax + abs(depreciation_recapture_total)))
+        net_proceeds_from_sale = ResultsHelper.net_proceeds_fromSale_calculator(mortgage_payoff=mortgage_payoff,
+                                                                             sale_price=sale_price,
+                                                                             sale_expenses= -sale_expenses,
+                                                                             tax_payment= -(capital_gains_tax + abs(depreciation_recapture_total)))
 
 
 
@@ -64,7 +64,7 @@ class Results:
         print("#" * 30)
         print("\n")
         # Net Present Value
-        ResultsMetricHelper.net_present_value_calculator(equity=equity,
+        ResultsMetricHelper.net_present_value_calculator(equity_calc=equity_calc,
                                                          list_future_cash_flow=future_cash_flow_list,
                                                          discount_rate=self.discount_rate)
 
@@ -72,13 +72,13 @@ class Results:
         ResultsMetricHelper.leveraged_IRR_calculator(future_cash_flow_list=future_cash_flow_list)
 
         # Capitalized Value
-        ResultsMetricHelper.CapitalizeValueCalculator(net_operating_income=net_operating_income,
+        ResultsMetricHelper.capitalize_value_calculator(net_operating_income=net_operating_income,
                                                       cap_rate_atSale=self.cap_rate_atSale)
 
         # ROTA
-        ResultsMetricHelper.ReturnOnTotalAssetsCalculator(net_operating_income_1yr=net_operating_income,
+        ResultsMetricHelper.return_onTotalAssets_calculator(net_operating_income_1yr=net_operating_income,
                                                           total_development_cost=total_development_cost)
 
-        # Return on Equity
-        ResultsMetricHelper.ReturnOnEquityCalculator(equity=equity,
+        # Return on equity_calc
+        ResultsMetricHelper.return_onEquity_calculator(equity_calc=equity_calc,
                                                      cash_flow_after_taxes=cash_flow_after_taxes)

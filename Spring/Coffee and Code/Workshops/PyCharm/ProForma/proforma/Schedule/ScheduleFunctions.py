@@ -91,19 +91,19 @@ def net_operating_income(incomeTotal, expense_total):
 
 # Cash flow and Tax Payments
 
-def annual_debt_service(debt, debt_service):
+def annual_debt_calc_service(debt_calc, debt_calc_service):
     '''
-    Annual debt service is the amount paid of the debt multiplied by the debt service
+    Annual debt_calc service is the amount paid of the debt_calc multiplied by the debt_calc service
     '''
 
-    debServiceValues = {'debt': debt,
-                        'debt_service':debt_service}
+    debServiceValues = {'debt_calc': debt_calc,
+                        'debt_calc_service':debt_calc_service}
 
-    output = -(debt * debt_service)
+    output = -(debt_calc * debt_calc_service)
 
     print(json.dumps(debServiceValues, indent = 4))
 
-    print("Annual Debt Service", output)
+    print("Annual debt_calc Service", output)
 
     return output
 
@@ -113,15 +113,15 @@ def cash_flow_after_taxes(operating_income, annual_dbs, tax_payment):
     The  calculation  of  CFAT  is  completed  by  deducting  the  taxes  paid  or
     adding  the  tax  benefit  received  to  the  before-tax  cash  flow.    This  is  equivalent  to  applying  the  tax
     effect  to  the  operating  cash  flow  reduced  by  financial  payments.    For  many  investors,  CFAT  is  the
-    appropriate  annual  cash  flow  for  the  evaluation  of  an  equity  investment.
+    appropriate  annual  cash  flow  for  the  evaluation  of  an  equity_calc  investment.
 
-    Cash  flow  after  financing  return  on  equity  or  cash  on  cash  return This  measure  of
+    Cash  flow  after  financing  return  on  equity_calc  or  cash  on  cash  return This  measure  of
     return may be stated thus:
-        Cash flow after financing / equity
+        Cash flow after financing / equity_calc
 
-    Before-tax  cash  flow  +  first  year’s  amortization  return  on  equity This measure is
+    Before-tax  cash  flow  +  first  year’s  amortization  return  on  equity_calc This measure is
     defined in the following way:
-        Before-tax cash flow + Mortgage principal payment (year 1) / equity
+        Before-tax cash flow + Mortgage principal payment (year 1) / equity_calc
     '''
 
     cash_flow_after_financing = operating_income + annual_dbs
@@ -144,14 +144,14 @@ def cash_flow_after_taxes(operating_income, annual_dbs, tax_payment):
 def net_sale_price(total_development_cost, total_replacement_reserves):
     return total_development_cost +  total_replacement_reserves
 
-def total_sales(salePrice, saleExpense):
+def total_sales(sale_price, saleExpense):
     '''
     Total sales per year as the sum of sales price and sale expenses
     '''
     
-    totalSales = salePrice + saleExpense
+    totalSales = sale_price + saleExpense
 
-    salesDictionary = { 'salePrice': salePrice,
+    salesDictionary = { 'sale_price': sale_price,
                         'saleExpense':  saleExpense,
                         'totalSales': totalSales
                         }
@@ -161,11 +161,11 @@ def total_sales(salePrice, saleExpense):
     return totalSales
 
 def unleveraged_irr(cashFlowAfterFinancing,
-                    taxPayments,
+                    tax_payments,
                     net_proceeds_fromSale,
                     yearBeforeSale ):
 
-    beforeTaxSalesProceeds = taxPayments + net_proceeds_fromSale
+    beforeTaxSalesProceeds = tax_payments + net_proceeds_fromSale
 
     if yearBeforeSale:
         unleveragedIRR= { 'Cash Flow After Financing': cashFlowAfterFinancing,
@@ -195,47 +195,47 @@ def leveraged_before_taxIRR(total_cashFlow_afterTaxes, net_proceeds_fromSale):
 ############################################
 # Offsheet Calculation
 ############################################
-def debt_service_components(beginYearBalance, debtService, interestRate, ammortization):
-    print("### Debt Service Components ###")
+def debt_calc_service_components(begin_year_balance, debt_calcService, interest_rate, ammortization):
+    print("### debt_calc Service Components ###")
 
-    endYearBalance = beginYearBalance - debtService
-    interest = beginYearBalance - interestRate
-    amortization = debtService - interest
+    endYearBalance = begin_year_balance - debt_calcService
+    interest = begin_year_balance - interest_rate
+    amortization = debt_calcService - interest
 
-    debtComponents = {'beginYearBalance': beginYearBalance,
+    debt_calcComponents = {'begin_year_balance': begin_year_balance,
                   'endYearBalance': endYearBalance,
                   'interest': interest,
                   'ammortization': ammortization
                       }
 
-    print(json.dumps(debtComponents))
+    print(json.dumps(debt_calcComponents))
 
     return amortization
 
 
 def tax_paymentScheduler(cashFlowAfterFinancing,
                          amortization,
-                         replacementReserve,
+                         replacement_reserve,
                          depreciation,
                          ordinaryTaxIncome):
 
-    taxableIncome = cashFlowAfterFinancing + amortization + -replacementReserve + -depreciation
-    taxPayment = taxableIncome * ordinaryTaxIncome
+    taxableIncome = cashFlowAfterFinancing + amortization + -replacement_reserve + -depreciation
+    tax_payment = taxableIncome * ordinaryTaxIncome
 
     print("### Tax Payment ###")
 
-    taxPaymentLineItems = {'cashFlowAfterFinancing': cashFlowAfterFinancing,
+    tax_paymentLineItems = {'cashFlowAfterFinancing': cashFlowAfterFinancing,
                            'amortization': amortization,
-                           'replacementReserve': replacementReserve,
+                           'replacement_reserve': replacement_reserve,
                            'depreciation': depreciation,
                            'ordinaryTaxIncome': ordinaryTaxIncome,
                            'taxableIncome': taxableIncome,
-                           'taxPayment': taxPayment
+                           'tax_payment': tax_payment
                            }
 
-    print(json.dumps(taxPaymentLineItems))
+    print(json.dumps(tax_paymentLineItems))
 
-    return taxableIncome, taxPayment
+    return taxableIncome, tax_payment
 
 
 def total_amortization(amortizationValues):

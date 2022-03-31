@@ -3,58 +3,84 @@ from proforma.Inputs import Inputs, Costs, CapitalStructure, Proceeds, OtherRate
 class MyInputsAssumptions:
 
     def __init__(self,
-                 lotArea,
-                 existingBuildingFloorArea,
-                 residentialFAR,
-                 commercialFAR,
-                 manufacturingFAR,
-                 communityFAR,
-                 avgUnitSize_residential,
-                 avgUnitSize_commercial,
-                 avgUnitSize_manufacturing,
-                 avgUnitSize_community,
+                 lot_area: float,
+                 existingBuildingFloorArea: float,
+                 existingBuildingPurchase: int,
+                 residential_FAR: float,
+                 commercial_FAR: float,
+                 manufacturing_FAR: float,
+                 communityFAR: float,
+                 avgUnitSize_residential: int,
+                 avgUnitSize_commercial: int,
+                 avgUnitSize_manufacturing: int,
+                 avgUnitSize_community: int,
+                 residential_cost: int,
+                 commercial_cost: int,
+                 manufacturing_cost: int,
+                 community_cost: int,
+                 hard_cost: int,
+                 soft_cost: int,
+                 land_cost: int,
                  ):
 
         self.existinBuildingFloorArea = 0 #assumes not building or attaching to existing building
-        self.lotArea = lotArea
-        self.residentialFAR = residentialFAR
-        self.commercialFAR = commercialFAR
-        self.manufacturingFAR = manufacturingFAR
+        self.existinBuildingPurchase = existingBuildingPurchase
+        self.lot_area = lot_area
+        self.residential_FAR = residential_FAR
+        self.commercial_FAR = commercial_FAR
+        self.manufacturing_FAR = manufacturing_FAR
         self.communityFAR = communityFAR
+        self.residential_cost = residential_cost
+        self.commercial_cost: commercial_cost
+        self.manufacturing_cost: manufacturing_cost
+        self.community_cost: community_cost
+        self.hard_cost: hard_cost
+        self.soft_cost: soft_cost
+        self.land_cost = land_cost
 
 
-        self.development = Inputs.PropertyInputs(lotArea= self.lotArea,
+        self.development = Inputs.PropertyInputs(lot_area= self.lot_area,
                                                  existingBuildingFloorArea = self.existinBuildingFloorArea,
-                                                 residentialFAR = self.residentialFAR,
-                                                 commercialFAR = self.commercialFAR,
-                                                 manufacturingFAR= self.manufacturingFAR)
+                                                 residential_FAR = self.residential_FAR,
+                                                 commercial_FAR = self.commercial_FAR,
+                                                 manufacturing_FAR= self.manufacturing_FAR,
+                                                 community_FAR= self.communityFAR)
 
-        self.developmentCosts = Costs.DevelopmentCosts(residential_ZFA= self.development.residentialZoningFloorArea,
-                                                       commercial_ZFA= self.development.commercialZoningFloorArea,
-                                                       manufacturing_ZFA= self.development.manufacturingZoningFloorArea)
+        self.development_costs = Costs.development_costs( existingBuildingPurchase= existingBuildingPurchase,
+                                                          residential_ZFA= self.development.residential_ZFA,
+                                                          commercial_ZFA= self.development.commercial_ZFA,
+                                                          manufacturing_ZFA= self.development.manufacturing_ZFA,
+                                                          community_ZFA= self.development.community_ZFA,
+                                                          residential_cost = residential_cost,
+                                                          commercial_cost= commercial_cost,
+                                                          manufacturing_cost= manufacturing_cost,
+                                                          community_cost= community_cost,
+                                                          hard_cost= hard_cost,
+                                                          soft_cost= soft_cost,
+                                                          land_cost= land_cost)
 
-        self.capitalStructure = CapitalStructure.CapitalStructure(total_development_cost= self.developmentCosts.total_development_cost)
+        self.capitalStructure = CapitalStructure.CapitalStructure(total_development_cost= self.development_costs.total_development_cost)
 
 
-        self.residentialProceeds = Proceeds.myProceeds(proceedsType= "Residential",
-                                                       GFA= self.development.residentialZoningFloorArea,
+        self.residentialProceeds = Proceeds.myProceeds(proceeds_type= "Residential",
+                                                       gross_floor_area= self.development.residential_ZFA,
                                                        avg_unit_size= avgUnitSize_residential,
-                                                       total_dev_cost= self.developmentCosts.total_development_cost)
+                                                       total_dev_cost= self.development_costs.total_development_cost)
 
-        self.commercialProceeds = Proceeds.myProceeds(proceedsType="Commercial",
-                                                      GFA=self.development.commercialZoningFloorArea,
+        self.commercialProceeds = Proceeds.myProceeds(proceeds_type="Commercial",
+                                                      gross_floor_area=self.development.commercial_ZFA,
                                                       avg_unit_size= avgUnitSize_commercial,
-                                                      total_dev_cost=self.developmentCosts.total_development_cost)
+                                                      total_dev_cost=self.development_costs.total_development_cost)
 
-        self.manufacturingProceeds = Proceeds.myProceeds(proceedsType="Manufacturing",
-                                                         GFA=self.development.manufacturingZoningFloorArea,
+        self.manufacturingProceeds = Proceeds.myProceeds(proceeds_type="Manufacturing",
+                                                         gross_floor_area=self.development.manufacturing_ZFA,
                                                          avg_unit_size= avgUnitSize_manufacturing,
-                                                         total_dev_cost=self.developmentCosts.total_development_cost)
+                                                         total_dev_cost=self.development_costs.total_development_cost)
 
-        self.communityProceeds = Proceeds.myProceeds(proceedsType="Community Facility",
-                                                     GFA=self.development.commercialZoningFloorArea,
+        self.communityProceeds = Proceeds.myProceeds(proceeds_type="Community Facility",
+                                                     gross_floor_area=self.development.community_ZFA,
                                                      avg_unit_size= avgUnitSize_community,
-                                                     total_dev_cost=self.developmentCosts.total_development_cost)
+                                                     total_dev_cost=self.development_costs.total_development_cost)
 
         self.rates = OtherRates.OtherRates
 
@@ -66,34 +92,34 @@ class MyInputsAssumptions:
         print(self.residentialProceeds.vacancy)
         print(round(self.residentialProceeds.units,1))
 
-        self.total_Property_Operational_Expenses = sum([self.residentialProceeds.operation_expense,
-                                                   self.commercialProceeds.operation_expense,
-                                                   self.manufacturingProceeds.operation_expense,
-                                                   self.commercialProceeds.operation_expense])
+        self.total_property_operational_expenses = sum([self.residentialProceeds.operation_expense,
+                                                        self.commercialProceeds.operation_expense,
+                                                        self.manufacturingProceeds.operation_expense,
+                                                        self.commercialProceeds.operation_expense])
 
-        self.total_Property_Real_Estate_Taxes = sum([self.residentialProceeds.realestate_taxes,
-                                                self.commercialProceeds.realestate_taxes,
-                                                self.manufacturingProceeds.realestate_taxes,
-                                                self.communityProceeds.realestate_taxes])
+        self.total_property_real_estate_taxes = sum([self.residentialProceeds.realestate_taxes,
+                                                     self.commercialProceeds.realestate_taxes,
+                                                     self.manufacturingProceeds.realestate_taxes,
+                                                     self.communityProceeds.realestate_taxes])
 
-        self.total_Property_Replacement_Reserve = sum([self.residentialProceeds.replacement_reserve,
-                                                  self.commercialProceeds.replacement_reserve,
-                                                  self.manufacturingProceeds.replacement_reserve,
-                                                  self.communityProceeds.replacement_reserve])
+        self.total_property_replacement_reserve = sum([self.residentialProceeds.replacement_reserve,
+                                                       self.commercialProceeds.replacement_reserve,
+                                                       self.manufacturingProceeds.replacement_reserve,
+                                                       self.communityProceeds.replacement_reserve])
 
-        self.totals = Totals.Totals(total_Residential_Income = self.residentialProceeds.income,
-                                    total_Residential_Vacancy=self.residentialProceeds.vacancy,
-                                    total_residential_Depreciation=self.residentialProceeds.depreciation,
-                                    total_Commercial_Income=self.commercialProceeds.income,
-                                    total_Commercial_Vacancy=self.commercialProceeds.vacancy,
-                                    total_commercial_Depreciation=self.commercialProceeds.depreciation,
-                                    total_Manufacturing_Income=self.manufacturingProceeds.income,
-                                    total_Manufacturing_Vacancy=self.manufacturingProceeds.vacancy,
-                                    total_manufacturing_Depreciation=self.manufacturingProceeds.depreciation,
-                                    total_Community_Income= self.communityProceeds.income,
-                                    total_Community_Vacancy= self.communityProceeds.vacancy,
-                                    total_community_Depreciation= self.communityProceeds.depreciation,
-                                    total_Property_Operational_Expenses = self.total_Property_Operational_Expenses ,
-                                    total_Property_Real_Estate_Taxes= self.total_Property_Real_Estate_Taxes,
-                                    total_Property_Replacement_Reserve= self.total_Property_Replacement_Reserve
+        self.totals = Totals.Totals(total_residential_income = self.residentialProceeds.income,
+                                    total_residential_vacancy=self.residentialProceeds.vacancy,
+                                    total_residential_depreciation=self.residentialProceeds.depreciation,
+                                    total_commercial_income=self.commercialProceeds.income,
+                                    total_commercial_vacancy=self.commercialProceeds.vacancy,
+                                    total_commercial_depreciation=self.commercialProceeds.depreciation,
+                                    total_manufacturing_income=self.manufacturingProceeds.income,
+                                    total_manufacturing_vacancy=self.manufacturingProceeds.vacancy,
+                                    total_manufacturing_depreciation=self.manufacturingProceeds.depreciation,
+                                    total_community_income= self.communityProceeds.income,
+                                    total_community_vacancy= self.communityProceeds.vacancy,
+                                    total_community_depreciation= self.communityProceeds.depreciation,
+                                    total_property_operational_expenses = self.total_property_operational_expenses ,
+                                    total_property_real_estate_taxes= self.total_property_real_estate_taxes,
+                                    total_property_replacement_reserve= self.total_property_replacement_reserve
                                     )

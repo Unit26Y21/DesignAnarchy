@@ -1,33 +1,33 @@
-def common_area_and_circulation (totalFloorArea, netLossFactor):
-    return totalFloorArea * netLossFactor
+def common_area_and_circulation (total_floor_area, net_loss_factor):
+    return total_floor_area * net_loss_factor
 
-def net_area (totalFloorArea, common_area_and_circulation):
-    return totalFloorArea - common_area_and_circulation
+def net_area (total_floor_area, common_area_and_circulation):
+    return total_floor_area - common_area_and_circulation
 
-def approximate_units (netArea, avgmarketRateUnitSize):
-    if avgmarketRateUnitSize:
-        return netArea / avgmarketRateUnitSize
+def approximate_units (net_area, avg_market_rate_unit_size):
+    if avg_market_rate_unit_size:
+        return net_area / avg_market_rate_unit_size
 
-def total_income (approxUnits, marketRateRent):
-    if approxUnits:
-        return approxUnits * marketRateRent
+def total_income (approx_units, rent_per_unit):
+    if approx_units:
+        return approx_units * rent_per_unit
     else:
         return 0
 
-def total_vacancy (vacancyRate, total_income):
-    return vacancyRate * total_income
+def total_vacancy (vacancy_rate, total_income):
+    return vacancy_rate * total_income
 
-def operational_expenses (operationalExpenses, netArea):
-    return operationalExpenses * netArea
+def operational_expenses (operational_expenses, net_area):
+    return operational_expenses * net_area
 
-def real_estate_taxes (realestateTaxes, netArea):
-    return realestateTaxes * netArea
+def real_estate_taxes (real_estate_taxes, net_area):
+    return real_estate_taxes * net_area
 
-def replacement_reserve (totalFloorArea, replacementReserve):
-    return totalFloorArea * replacementReserve
+def replacement_reserve (total_floor_area, replacement_reserve):
+    return total_floor_area * replacement_reserve
 
-def total_cost (netArea, devCost):
-    return (netArea * devCost)
+def total_cost (net_area, dev_cost):
+    return (net_area * dev_cost)
 
 def depreciation (total_cost, depreciation):
     if depreciation:

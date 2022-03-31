@@ -16,51 +16,51 @@ class myProceeds:
     realestate_taxes_persqft = 0 #USD
     replacement_reserve_persqft = 1 #USD
     depreciation_yrs = 27.5   # in years
-    netLossFactor = 0.15
+    net_loss_factor = 0.15
 
     income = 0
     vacancy = 0
     units = 0
-    netArea = 0
+    net_area = 0
 
 
     def __init__(self,
-                 proceedsType: str,
-                 GFA: int,
+                 proceeds_type: str,
+                 gross_floor_area: int,
                  avg_unit_size: float,
                  total_dev_cost: int,
                  ):
 
         self.total_dev_cost = total_dev_cost
-        self.GFA = GFA
+        self.gross_floor_area = gross_floor_area
         self.avg_unit_size = avg_unit_size
-        self.proceedsType = proceedsType
+        self.proceeds_type = proceeds_type
 
         #Proceeds
-        common_circulation = ProceedsHelper.common_area_and_circulation(totalFloorArea= GFA,
-                                                                        netLossFactor= self.netLossFactor)
+        common_circulation = ProceedsHelper.common_area_and_circulation(total_floor_area= gross_floor_area,
+                                                                        net_loss_factor= self.net_loss_factor)
 
-        self.netArea = ProceedsHelper.net_area(totalFloorArea= GFA,
-                                               common_area_and_circulation= GFA * self.netLossFactor)
+        self.net_area = ProceedsHelper.net_area(total_floor_area= gross_floor_area,
+                                               common_area_and_circulation= gross_floor_area * self.net_loss_factor)
 
-        self.units = ProceedsHelper.approximate_units(netArea= self.netArea,
-                                                      avgmarketRateUnitSize= avg_unit_size)
+        self.units = ProceedsHelper.approximate_units(net_area= self.net_area,
+                                                      avg_market_rate_unit_size= avg_unit_size)
 
-        self.income = ProceedsHelper.total_income(approxUnits= self.units,
-                                                  marketRateRent= self.rent)
+        self.income = ProceedsHelper.total_income(approx_units= self.units,
+                                                  rent_per_unit= self.rent)
 
-        self.vacancy = ProceedsHelper.total_vacancy(vacancyRate= self.vacancy_rate,
+        self.vacancy = ProceedsHelper.total_vacancy(vacancy_rate= self.vacancy_rate,
                                                     total_income= self.income)
 
         #Expenses
-        self.operation_expense = ProceedsHelper.operational_expenses(netArea= self.netArea,
-                                                                     operationalExpenses= self.operation_expense_persqft)
+        self.operation_expense = ProceedsHelper.operational_expenses(net_area= self.net_area,
+                                                                     operational_expenses= self.operation_expense_persqft)
 
-        self.realestate_taxes = ProceedsHelper.real_estate_taxes(realestateTaxes= self.realestate_taxes_persqft,
-                                                                 netArea= self.netArea)
+        self.realestate_taxes = ProceedsHelper.real_estate_taxes(real_estate_taxes= self.realestate_taxes_persqft,
+                                                                 net_area= self.net_area)
 
-        self.replacement_reserve = ProceedsHelper.replacement_reserve(totalFloorArea= GFA,
-                                                                      replacementReserve= self.replacement_reserve_persqft)
+        self.replacement_reserve = ProceedsHelper.replacement_reserve(total_floor_area= gross_floor_area,
+                                                                      replacement_reserve= self.replacement_reserve_persqft)
 
         #Depreciation
 
@@ -68,24 +68,24 @@ class myProceeds:
                                                         total_cost= total_dev_cost)
 
         print("\n")
-        print("{} Proceeds".format(proceedsType))
+        print("{} Proceeds".format(proceeds_type))
         print("Common Area and Circulation: ${:,}".format(common_circulation))
-        print("Net {} Area: ${:,}".format(proceedsType, self.netArea))
-        print("{} Market Rate Rent: ${:,}".format(proceedsType, self.rent))
-        print("{} Vacancy Rate: ${:,}".format(proceedsType, self.vacancy_rate))
-        print("{} Total Income --> ${:,}".format(proceedsType,self.income))
-        print("{} Total Vacancy Cost --> ${:,}".format(proceedsType,self.vacancy))
+        print("Net {} Area: ${:,}".format(proceeds_type, self.net_area))
+        print("{} Market Rate Rent: ${:,}".format(proceeds_type, self.rent))
+        print("{} Vacancy Rate: ${:,}".format(proceeds_type, self.vacancy_rate))
+        print("{} Total Income --> ${:,}".format(proceeds_type,self.income))
+        print("{} Total Vacancy Cost --> ${:,}".format(proceeds_type,self.vacancy))
 
         print("\n")
-        print("{} Expenses".format(proceedsType))
-        print("{} Operational Expense per SqFt: ${:,}".format(proceedsType, self.operation_expense_persqft))
-        print("{} Real Estate Taxes per SqFt: ${:,}".format(proceedsType, self.realestate_taxes_persqft))
-        print("{} Replacement Reserve per SqFt: ${:,}".format(proceedsType, self.replacement_reserve_persqft))
-        print("{} Operational Expense Total: ${:,}".format(proceedsType, self.operation_expense))
-        print("{} Real Estate Taxes Total: ${:,}".format(proceedsType, self.realestate_taxes))
-        print("{} Replacement Reserve Total: ${:,}".format(proceedsType, self.replacement_reserve))
+        print("{} Expenses".format(proceeds_type))
+        print("{} Operational Expense per SqFt: ${:,}".format(proceeds_type, self.operation_expense_persqft))
+        print("{} Real Estate Taxes per SqFt: ${:,}".format(proceeds_type, self.realestate_taxes_persqft))
+        print("{} Replacement Reserve per SqFt: ${:,}".format(proceeds_type, self.replacement_reserve_persqft))
+        print("{} Operational Expense Total: ${:,}".format(proceeds_type, self.operation_expense))
+        print("{} Real Estate Taxes Total: ${:,}".format(proceeds_type, self.realestate_taxes))
+        print("{} Replacement Reserve Total: ${:,}".format(proceeds_type, self.replacement_reserve))
 
         print("\n")
-        print("{} Depreciation".format(proceedsType))
-        print("{} Depreciation in Yrs: {}".format(proceedsType, self.depreciation_yrs))
+        print("{} Depreciation".format(proceeds_type))
+        print("{} Depreciation in Yrs: {}".format(proceeds_type, self.depreciation_yrs))
         print("Total Depreciation ${:,}".format(self.depreciation))

@@ -1,51 +1,45 @@
 # Helpers to calculate development cost summaries
 
 
-def LandPurchaseCost(landCost, lotArea):
-    totalLandPurchaseCost = landCost * lotArea
+def land_purchase_cost(land_cost, lot_area):
+    total_land_purchase_cost = land_cost * lot_area
     print("---")
-    print("Land Cost per SqFt: {:,}".format(landCost))
-    print("Total Land Area Cost: {:,}".format(totalLandPurchaseCost))
-    return totalLandPurchaseCost
+    print("Land Cost per SqFt: {:,}".format(land_cost))
+    print("Total Land Area Cost: {:,}".format(total_land_purchase_cost))
+    return total_land_purchase_cost
 
-def ResidentialCost(residZFA, residCost):
-    totalResidCost = residZFA * residCost
+def use_cost_calculator(ZFA, cost_per_sqft):
+    total_cost_per_sqft = ZFA * cost_per_sqft
     print("---")
-    print("Residential Cost per SqFt: {:,}".format(residCost))
-    print("Total Residential Area Cost: {:,}".format(totalResidCost))
-    return totalResidCost
+    print("Residential Cost per SqFt: {:,}".format(cost_per_sqft))
+    print("Total Residential Area Cost: {:,}".format(total_cost_per_sqft))
+    return total_cost_per_sqft
 
-def CommercialCost(comZFA, comCost):
-    totalComCost = comZFA * comCost
-    print("---")
-    print("Commercial Cost per SqFt: {:,}".format(comCost))
-    print("Total Commercial Area Cost: {:,}".format(totalComCost))
-    return totalComCost
 
-def ManufacturingCost(manZFA, manCost):
-    totalManCost = manZFA * manCost
+def hard_cost(gross_ZFA, hard_cost):
+    total_hard_cost = gross_ZFA * hard_cost
     print("---")
-    print("Manufacturing Cost per SqFt: {:,}".format(totalManCost))
-    print("Total Manufacturing Area Cost: {:,}".format(totalManCost))
-    return totalManCost
+    print("Hard Costs per SqFf: {:,}".format(hard_cost))
+    print("Total Hard Costs: {:,}".format(hard_cost))
+    return total_hard_cost
 
-def HardCost(myTotalGZFA, hardCost):
-    totalHardCost = myTotalGZFA * hardCost
+def soft_cost(gross_ZFA, soft_cost):
+    total_soft_cost = gross_ZFA * soft_cost
     print("---")
-    print("Hard Costs per SqFf: {:,}".format(hardCost))
-    print("Total Hard Costs: {:,}".format(hardCost))
-    return totalHardCost
+    print("Soft Costs per SqFf: {:,}".format(soft_cost))
+    print("Total Soft Costs: {:,}".format(soft_cost))
+    return total_soft_cost
 
-def SoftCost(myTotalGZFA, softCost):
-    totalSoftCost = myTotalGZFA * softCost
-    print("---")
-    print("Soft Costs per SqFf: {:,}".format(softCost))
-    print("Total Soft Costs: {:,}".format(softCost))
-    return totalSoftCost
+def total_development_cost(existing_building_purchase,  total_residential_cost, total_commercial_cost, total_manufacturing_cost,total_community_cost, total_hard_cost, total_soft_cost):
+    totaldev_cost = [existing_building_purchase,
+                     total_residential_cost,
+                     total_commercial_cost,
+                     total_manufacturing_cost,
+                     total_community_cost,
+                     total_hard_cost,
+                     total_soft_cost]
 
-def TotalDevelopmentCost(myBuildingPurchase,  mytotalResidCost, mytotalComCost, mytotalManCost, mytotalHardCost, mytotalSoftCost):
-    totalDevCost = [myBuildingPurchase, mytotalResidCost, mytotalComCost, mytotalManCost, mytotalHardCost, mytotalSoftCost]
-    sumDevCost = sum(totalDevCost)
+    sum_dev_cost = sum(totaldev_cost)
     print("---")
-    print("Total Development Costs: {:,}".format(sumDevCost))
-    return sumDevCost
+    print("Total Development Costs: {:,}".format(sum_dev_cost))
+    return sum_dev_cost

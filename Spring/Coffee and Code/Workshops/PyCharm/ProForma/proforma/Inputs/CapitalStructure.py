@@ -1,20 +1,20 @@
 from proforma.Inputs  import CapitalStructureHelper as CSHelper
 
 class CapitalStructure:
-    equity_percent = 0.75
-    debt = 1 - equity_percent
+    equity_calc_percent = 0.75
+    debt_calc = 1 - equity_calc_percent
 
     def __init__(self,
                  total_development_cost):
 
         self.total_development_cost = total_development_cost
-        self.debtService_rate = 0.068805
+        self.debt_calcService_rate = 0.068805
 
 
-        self.equity = CSHelper.Equity(myTotalDevCost= total_development_cost,
-                        EqPerc= self.equity_percent)
+        self.equity_calc = CSHelper.equity_calc(myTotaldev_cost= total_development_cost,
+                        eqPerc= self.equity_calc_percent)
 
-        self.totalDebt = CSHelper.Debt(myTotalDevCost= total_development_cost,
-                      equityPercent= self.equity_percent)
+        self.totaldebt_calc = CSHelper.debt_calc(myTotaldev_cost= total_development_cost,
+                      equity_calcPercent= self.equity_calc_percent)
 
-        self.debtService = CSHelper.DebtService(mytotalDebt= self.totalDebt, debtServPerc= self.debtService_rate)
+        self.debt_calcService = CSHelper.debt_calcService(mytotaldebt_calc= self.totaldebt_calc, debt_calcServPerc= self.debt_calcService_rate)

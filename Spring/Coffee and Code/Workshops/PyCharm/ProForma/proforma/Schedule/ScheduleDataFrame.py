@@ -2,78 +2,80 @@ import pandas as pd
 
 class ScheduleGrid:
 
-    pd.options.display.float_format = '${:,}'.format
-    # pd.options.display.
-    yrs = 10
-    startYear = 2022
-    schedule_dates = pd.Series(pd.date_range(start=str(startYear), periods=yrs, freq= 'YS')).dt.year
-
-    rows = ['Income',
-            'Potential Gross Income',
-            'Vacancy',
-            'Effective Gross Income',
-            ' ',
-            'Expenses',
-            'Operating Expenses',
-            'Real Estate Taxes',
-            'Replacement Reserve',
-            'Total Expenses',
-            ' ',
-            'NET OPERATING INCOME',
-            ' ',
-            'Annual Debt Service',
-            'Cash flow after financing',
-            'Tax Payment',
-            'Cash flow after taxes',
-            ' ',
-            'RETURN MEASURES',
-            'Unleveraged IRR', 'Cash Flow After Financing', 'Before Tax Sales Proceed',
-            ' ',
-            'Leverahed Before Tax IRR', 'Cash Flow After Taxes', 'Net Procceeds form Sale', 'Total Future Cash Flow',
-            ]
-
-    offsheet_rows = [' ',
-            'OFFSHEET CALCLULATION',
-            'Debt Service Components',
-            'Beginning of Year Balance',
-            'End of Year Balance',
-            'Interest',
-            'Ammortization',
-            ' ',
-            'TAX PAYMENT',
-            'Cash Flow After Financing',
-            'Amortization',
-            'Replacement Reserve',
-            'Depreciation',
-            'Taxable Income',
-            'Tax Payment'
-            ]
-
-    df = pd.DataFrame(index=rows, columns=schedule_dates)
-    offsheet_df = pd.DataFrame(index=offsheet_rows, columns=schedule_dates)
-
-    df.loc['Income', 'Expenses', 'RETURN MEASURES',
-           'Unleveraged IRR', 'Leverahed Before Tax IRR',' '] = ' '
-
-    offsheet_df.loc['OFFSHEET CALCLULATION', 'Debt Service Components', 'TAX PAYMENT',' '] = ' '
-
-
     def __init__(self,
+                 yrs: int,
+                 start_year: int,
                  total_gross_income: float,
                  total_vacancy: float,
                  operating_expenses: float,
                  real_estate_taxes: float,
                  replacement_reserve: float,
-                 debt: float,
-                 equity: float,
-                 debt_service: float,
-                 debt_service_rate: float,
-                 beginYearBalance: float,
-                 interestRate: float,
+                 debt_calc: float,
+                 equity_calc: float,
+                 debt_calc_service: float,
+                 debt_calc_service_rate: float,
+                 begin_year_balance: float,
+                 interest_rate: float,
                  depreciation: float,
-                 odinaryTaxIncome: float,
+                 odinary_tax_income: float,
                  annual_public_subsidy_increase: float
                  ):
+
+        self.yrs = 10
+        self.start_year = 2022
+        schedule_dates = pd.Series(pd.date_range(start=str(self.start_year), periods=self.yrs, freq='YS')).dt.year
+
+        # pd.options.display.float_format = '${:,}'.format
+
+        rows = ['Income',
+                'Potential Gross Income',
+                'Vacancy',
+                'Effective Gross Income',
+                ' ',
+                'Expenses',
+                'Operating Expenses',
+                'Real Estate Taxes',
+                'Replacement Reserve',
+                'Total Expenses',
+                ' ',
+                'NET OPERATING INCOME',
+                ' ',
+                'Annual debt_calc Service',
+                'Cash flow after financing',
+                'Tax Payment',
+                'Cash flow after taxes',
+                ' ',
+                'RETURN MEASURES',
+                'Unleveraged IRR', 'Cash Flow After Financing', 'Before Tax Sales Proceed',
+                ' ',
+                'Leverahed Before Tax IRR', 'Cash Flow After Taxes', 'Net Procceeds form Sale',
+                'Total Future Cash Flow',
+                ]
+
+        offsheet_rows = [' ',
+                         'OFFSHEET CALCLULATION',
+                         'debt_calc Service Components',
+                         'Beginning of Year Balance',
+                         'End of Year Balance',
+                         'Interest',
+                         'Ammortization',
+                         ' ',
+                         'TAX PAYMENT',
+                         'Cash Flow After Financing',
+                         'Amortization',
+                         'Replacement Reserve',
+                         'Depreciation',
+                         'Taxable Income',
+                         'Tax Payment'
+                         ]
+
+        self.df = pd.DataFrame(index=rows, columns=schedule_dates)
+        self.offsheet_df = pd.DataFrame(index=offsheet_rows, columns=schedule_dates)
+
+        self.df.loc['Income', 'Expenses', 'RETURN MEASURES',
+               'Unleveraged IRR', 'Leverahed Before Tax IRR', ' '] = ' '
+
+        self.offsheet_df.loc['OFFSHEET CALCLULATION', 'debt_calc Service Components', 'TAX PAYMENT', ' '] = ' '
 
         for i in range(0, len(self.df.columns)):
             ### #FIRST ROW
@@ -93,23 +95,23 @@ class ScheduleGrid:
                 net_operating_income = sum([self.df.iat[9, i], self.df.iat[3, i]])
                 self.df.iat[11, i] = net_operating_income  # Net Operating Income
 
-                annual_debt_service = round(-(debt * debt_service_rate), 2)  # annual debt service
-                self.df.iat[13, i] = annual_debt_service
+                annual_debt_calc_service = round(-(debt_calc * debt_calc_service_rate), 2)  # annual debt_calc service
+                self.df.iat[13, i] = annual_debt_calc_service
 
-                cash_flow_after_financing = round(sum([net_operating_income, annual_debt_service]),
+                cash_flow_after_financing = round(sum([net_operating_income, annual_debt_calc_service]),
                                                   2)  # cash flow after financing
                 self.df.iat[14, i] = cash_flow_after_financing
 
                 # OffSheet Calculations
-                self.offsheet_df.iat[3, i] = beginYearBalance  # begin of year balance
+                self.offsheet_df.iat[3, i] = begin_year_balance  # begin of year balance
 
-                end_year_balance = beginYearBalance - debt_service  # end of year balance
+                end_year_balance = begin_year_balance - debt_calc_service  # end of year balance
                 self.offsheet_df.iat[4, i] = end_year_balance
 
-                interest = round(beginYearBalance * interestRate, 2)  # interest
+                interest = round(begin_year_balance * interest_rate, 2)  # interest
                 self.offsheet_df.iat[5, i] = interest
 
-                ammortization = round(debt_service - interest, 2)
+                ammortization = round(debt_calc_service - interest, 2)
                 self.offsheet_df.iat[6, i] = ammortization
 
                 self.offsheet_df.iat[9, i] = cash_flow_after_financing
@@ -121,7 +123,7 @@ class ScheduleGrid:
                     sum([cash_flow_after_financing, ammortization, replacement_reserve, depreciation]), 2)
                 self.offsheet_df.iat[13, i] = taxable_income
 
-                tax_payment = round(taxable_income * odinaryTaxIncome, 2)
+                tax_payment = round(taxable_income * odinary_tax_income, 2)
                 self.offsheet_df.iat[14, i] = tax_payment
 
                 # Operatin Income Part 2
@@ -160,25 +162,25 @@ class ScheduleGrid:
                 net_operating_income = round(sum([self.df.iat[9, i], self.df.iat[3, i]]), 2)
                 self.df.iat[11, i] = net_operating_income  # Net Operating Income
 
-                annual_debt_service = round(-(debt * debt_service_rate), 2)  # annual debt service
-                self.df.iat[13, i] = annual_debt_service
+                annual_debt_calc_service = round(-(debt_calc * debt_calc_service_rate), 2)  # annual debt_calc service
+                self.df.iat[13, i] = annual_debt_calc_service
 
-                cash_flow_after_financing = round(sum([net_operating_income, annual_debt_service]),
+                cash_flow_after_financing = round(sum([net_operating_income, annual_debt_calc_service]),
                                                   2)  # cash flow after financing
 
                 self.df.iat[14, i] = cash_flow_after_financing
 
                 # OffSheet Calculations
-                beginYearBalance = self.offsheet_df.iat[4,i-1]
-                self.offsheet_df.iat[3, i] = beginYearBalance # begin of year balance
+                begin_year_balance = self.offsheet_df.iat[4,i-1]
+                self.offsheet_df.iat[3, i] = begin_year_balance # begin of year balance
 
-                end_year_balance = beginYearBalance - debt_service  # end of year balance
+                end_year_balance = begin_year_balance - debt_calc_service  # end of year balance
                 self.offsheet_df.iat[4, i] = end_year_balance
 
-                interest = round(beginYearBalance * interestRate, 2)  # interest
+                interest = round(begin_year_balance * interest_rate, 2)  # interest
                 self.offsheet_df.iat[5, i] = interest
 
-                ammortization = round(debt_service - interest, 2)
+                ammortization = round(debt_calc_service - interest, 2)
                 self.offsheet_df.iat[6, i] = ammortization
 
                 self.offsheet_df.iat[9, i] = cash_flow_after_financing
@@ -192,7 +194,7 @@ class ScheduleGrid:
                     sum([cash_flow_after_financing, ammortization, replacement_reserve, depreciation]), 2)
                 self.offsheet_df.iat[13, i] = taxable_income
 
-                tax_payment = round(taxable_income * odinaryTaxIncome, 2)
+                tax_payment = round(taxable_income * odinary_tax_income, 2)
                 self.offsheet_df.iat[14, i] = tax_payment
 
                 # Operatin Income Part 2
@@ -216,7 +218,7 @@ class ScheduleGrid:
 
 
         #Total
-        self.total_future_cashflow_atStart = -equity
+        self.total_future_cashflow_atStart = -equity_calc
 
         self.future_cashflow_list = self.df.loc['Total Future Cash Flow']
 

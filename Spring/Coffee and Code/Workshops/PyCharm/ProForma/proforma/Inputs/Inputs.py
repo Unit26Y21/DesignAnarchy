@@ -1,50 +1,56 @@
 
 class PropertyInputs():
-    devTimeline = 11
-    netLossFactor = .15
-    residentialZoningFloorArea = 0
-    commercialZoningFloorArea = 0
-    manufacturingZoningFloorArea = 0
+    development_timeline = 11
+    net_loss_factor = 0.15
 
-    totalFloorArea = 0
+    residential_ZFA= 0
+    commercial_ZFA= 0
+    manufacturing_ZFA = 0
+    community_ZFA = 0
+
+    total_floor_area = 0
 
     def __init__(self,
-                 lotArea,
+                 lot_area,
                  existingBuildingFloorArea,
-                 residentialFAR,
-                 commercialFAR,
-                 manufacturingFAR,
+                 residential_FAR,
+                 commercial_FAR,
+                 manufacturing_FAR,
+                 community_FAR
                  ):
 
         # Starting Assumptions Constants
-        self.lotArea = lotArea
+        self.lot_area = lot_area
         self.existingBuildingFloorArea = existingBuildingFloorArea
 
-        self.residentialFAR = residentialFAR
-        self.commercialFAR = commercialFAR
-        self.manufacturingFAR = manufacturingFAR
+        self.residential_FAR = residential_FAR
+        self.commercial_FAR = commercial_FAR
+        self.manufacturing_FAR = manufacturing_FAR
+        self.community_FAR = community_FAR
 
-        self.residentialZoningFloorArea = lotArea * residentialFAR
-        self.commercialZoningFloorArea = lotArea * commercialFAR
-        self.manufacturingZoningFloorArea = lotArea * manufacturingFAR
+        self.residential_ZFA= lot_area * residential_FAR
+        self.commercial_ZFA= lot_area * commercial_FAR
+        self.manufacturing_ZFA = lot_area * manufacturing_FAR
+        self.community_ZFA = lot_area * community_FAR
 
-        self.totalFloorArea = sum([self.residentialZoningFloorArea,
-                              self.commercialZoningFloorArea,
-                              self.manufacturingZoningFloorArea])
+        self.total_floor_area = sum([self.residential_ZFA,
+                                     self.commercial_ZFA,
+                                     self.manufacturing_ZFA,
+                                     self.community_ZFA])
 
-        netZoningFloorArea = self.totalFloorArea - (self.totalFloorArea * self.netLossFactor)
+        netZoningFloorArea = self.total_floor_area - (self.total_floor_area * self.net_loss_factor)
 
-        print("Lot Area: {}".format(lotArea))
+        print("Lot Area: {}".format(lot_area))
         print("Existing Building Floor Area: {}".format(existingBuildingFloorArea))
 
-        if residentialFAR:
-            print("Residential FAR: {0} | Residential Floor Area  {1:,}".format(residentialFAR,self.residentialZoningFloorArea))
+        if residential_FAR:
+            print("Residential FAR: {0} | Residential Floor Area  {1:,}".format(residential_FAR,self.residential_ZFA))
 
-        if commercialFAR:
-            print("Commercial FAR: {0} | Commercial Floor Area  {1:,}".format(commercialFAR, self.commercialZoningFloorArea))
+        if commercial_FAR:
+            print("Commercial FAR: {0} | Commercial Floor Area  {1:,}".format(commercial_FAR, self.commercial_ZFA))
 
-        if manufacturingFAR:
-            print("Manufacturing FAR: {0} | Manufacturing Floor Area  {1:,}".format(manufacturingFAR, self.manufacturingZoningFloorArea))
+        if manufacturing_FAR:
+            print("Manufacturing FAR: {0} | Manufacturing Floor Area  {1:,}".format(manufacturing_FAR, self.manufacturing_ZFA))
 
 
 
