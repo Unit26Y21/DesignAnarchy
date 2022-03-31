@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b44eeb28-7d6e-44ef-b3d6-52e8b9225ea8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/proFormaTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/CapitalStructure.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/CapitalStructure.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/CapitalStructureHelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/CapitalStructureHelper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/CostHelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/CostHelper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/Costs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/Costs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/Inputs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/Inputs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/InputsAssumptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/InputsAssumptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/OtherRates.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/OtherRates.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/Proceeds.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/Proceeds.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/ProceedsHelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/ProceedsHelper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/Totals.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/Totals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/testInputs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/testInputs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/ProForma_Form.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/ProFormaForm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Results/Results.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Results/Results.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Results/ResultsHelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Results/ResultsHelper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Results/ResultsMetricHelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Results/ResultsMetricHelper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Results/test_Results.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Results/test_Results.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Schedule/ScheduleDataFrame.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Schedule/ScheduleDataFrame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Schedule/ScheduleFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Schedule/ScheduleFunctions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Schedule/testSchedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Schedule/testSchedule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/venv/Lib/site-packages/pip/_internal/operations/install/wheel.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/venv/Lib/site-packages/pip/_internal/operations/install/wheel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/venv/Lib/site-packages/pip/_vendor/certifi/cacert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/venv/Lib/site-packages/pip/_vendor/certifi/cacert.pem" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/venv/Lib/site-packages/pip/_vendor/urllib3/contrib/_securetransport/bindings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/venv/Lib/site-packages/pip/_vendor/urllib3/contrib/_securetransport/bindings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/venv/Lib/site-packages/pip/_vendor/urllib3/contrib/securetransport.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/venv/Lib/site-packages/pip/_vendor/urllib3/contrib/securetransport.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +30,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">

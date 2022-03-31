@@ -7,8 +7,9 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        # Add any requirements here, in `requirements.txt` format.
-        # e.g.,
-        # "bozo ==1.2.3",
+        "python = 3.9"
+        "numpy = 1.22.3",
+        "pandas = 1.4.1",
+        "jinja2 = 3.0.3"
     ],
 )
