@@ -49,16 +49,16 @@ The overall class schedule will be as follow:
 | --- | --- | --- | --- |--- | 
 | Feb 8, 2021 | 9-12pm | 3 | Coffee and Code | Downloading Software and Objectives, Data
 | Feb 15, 2021 | 9-12pm | 3 | Coffee and Code | Python Refresh 1
-| Feb 22, 2021 | 9-12pm | 3 | Coffee and Code | Open Discussion
-| Mar 1, 2021 | 9-12pm | 3 | Coffee and Code | Open Discussion
-| Mar 8, 2021 | 9-12pm | 3 | Coffee and Code | Open Discussion
-| Mar 15, 2021 | 9-12pm | 3 | Coffee and Code | Networks 1
-| Mar 22, 2021 | 9-12pm | 3 | Coffee and Code | Networks 2
-| Mar 29, 2021 | 9-12pm | 3 | Coffee and Code | Networks 3
-| Apr 5, 2021 | 9-12pm | 3 | Coffee and Code | Flow Diagrams 1
+| Feb 22, 2021 | 9-12pm | 3 | Coffee and Code | Python Review 1
+| Mar 1, 2021 | 9-12pm | 3 | Coffee and Code | Python Review 2
+| Mar 8, 2021 | 9-12pm | 3 | Coffee and Code | Python Review 3
+| Mar 15, 2021 | 9-12pm | 3 | Coffee and Code | Python Classes
+| Mar 22, 2021 | 9-12pm | 3 | Coffee and Code | Python in CityEngine and Grasshopper
+| Mar 29, 2021 | 9-12pm | 3 | Coffee and Code | Python - Data Visualization
+| Apr 5, 2021 | 9-12pm | 3 | Coffee and Code | Python - Data Visualization
 | Apr 7, 2021 | 9-12pm | 3 | Mid term |  Mid term
-| Apr 12, 2021 | 9-12pm | 3 | Coffee and Code | Flow Diagrams 2
-| Apr 19, 2021 | 9-12pm | 3 | Coffee and Code | Flow Diagrams 3
+| Apr 12, 2021 | 9-12pm | 3 | Coffee and Code | Open Discussion
+| Apr 19, 2021 | 9-12pm | 3 | Coffee and Code | Open Discussion
 | Apr 26, 2021 | 9-12pm | 3 | Mid term | Mid term
 | May 3, 2021 | 9-12pm | 3 | Coffee and Code | Open Discussion
 | May 10, 2021 | 9-12pm | 3 | Coffee and Code | Open Discussion
