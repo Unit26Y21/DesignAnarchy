@@ -1,4 +1,3 @@
-
 # Global Constants
 constructionCostPerSqFt = 362
 studioSqFt = 400
@@ -11,19 +10,27 @@ numberTwoBedrooms = 40
 numberThreeBedrooms = 20
 affordableRentPerSqft = 1
 marketRentPerSqft = 3
-principlePercent = 0.003
-interestPercent = 0.002
+i = .03
+n = 1
 
 def userInput():
     userInput = input("What percentage of housing would you like to be affordable? ")
-    userInputNumber = int(userInput)
-
-    tidsProforma(userInputNumber)
-
+    try:
+        userInputNumber = int(userInput)
+        if 0 < userInputNumber < 101:
+            return tidsProforma(userInputNumber)
+        elif userInputNumber > 100:
+            print("You can't have more than 100% of anything. Who taught you math?")
+        elif userInputNumber == 0:
+            print("Why did you enter zero? Do you hate poor people?")
+        elif userInputNumber < 0:
+            print("You entered a negative number. That's not possible.")
+    except ValueError:
+        print("You didn't put and integer... Stop Trying to break my program!")
 
 def tidsProforma(userInputNumberAffordable):
-    print("Towers In The Soup")
-    print("Pro Forma")
+    print("Towers In The ProForma - Soup")
+    print("ProForma")
 
     percentAffordable = userInputNumberAffordable
     percentMarketRate = 100 - percentAffordable
@@ -32,11 +39,11 @@ def tidsProforma(userInputNumberAffordable):
     affordable_totalSqFt = totalAffordableSqft(development_totalSqFt, percentAffordable)
     market_totalSqFt = totalMarketSqft(development_totalSqFt, percentMarketRate)
     construction_expenses = totalConstructionExpense(development_totalSqFt, constructionCostPerSqFt)
-    principal_interest = annualPrincipleAndInterest(construction_expenses, principlePercent, interestPercent)
     affordable_rent = affordableRent(affordable_totalSqFt, affordableRentPerSqft)
     market_rent = marketRent(market_totalSqFt, marketRentPerSqft)
     total_rent_income = totalRentalIncome(affordable_rent, market_rent)
-    profitability_output = profitability(total_rent_income, principal_interest)
+    payment_output = annualFinancingPayment(construction_expenses, i, n)
+    profitability_output = profitability(total_rent_income, payment_output)
 
     print("######"*10)
     print("Amount of percent affordable: " + str(percentAffordable) + "%")
@@ -45,14 +52,13 @@ def tidsProforma(userInputNumberAffordable):
     print(development_totalSqFt)
     print("######" * 10)
     print("The profitability output of your development is: {0}".format(profitability_output))
-
-    return profitability_output
+    print("annual payments are: {0}" .format(payment_output))
+    print(total_rent_income * 12)
 
 def totalSqft():
     #Python Collection
     #{} or [] or ()
-    return (studioSqFt * numberStudios) + (oneBedroomSqFt * numberOneBedrooms) + (twoBedroomSqFt * numberTwoBedrooms)
-    (threeBedroomSqFt * numberThreeBedrooms)
+    return (studioSqFt * numberStudios) + (oneBedroomSqFt * numberOneBedrooms) + (twoBedroomSqFt * numberTwoBedrooms) + (threeBedroomSqFt * numberThreeBedrooms)
 
 
 def numberOfUnits():
@@ -71,8 +77,9 @@ def totalConstructionExpense(total_sqft, constructionCostPerSqFt):
     return total_sqft * constructionCostPerSqFt
 
 
-def annualPrincipleAndInterest(total_construction_expense, principlePercent, interestPercent):
-    return (total_construction_expense * principlePercent) + (total_construction_expense * interestPercent)
+def annualFinancingPayment(construction_expenses, i, n):
+    return construction_expenses/(1 + pow((1 + i), -n) / i)
+    #annual financing payment for loan + principle
 
 
 def affordableRent(affordable_sqft, affordableRentPerSqft):
@@ -87,7 +94,5 @@ def totalRentalIncome(affordable_rent, market_rent):
     return affordable_rent + market_rent
 
 
-def profitability(total_rental_income, annual_principle_and_interest):
-    return (total_rental_income * 12) - annual_principle_and_interest
-
-
+def profitability(total_rental_income, payment_output):
+    return (total_rental_income * 12) - payment_output
