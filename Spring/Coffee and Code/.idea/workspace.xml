@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b44eeb28-7d6e-44ef-b3d6-52e8b9225ea8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Workshops/PyCharm/Visualizations/CircleChart.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Workshops/PyCharm/Visualizations/PolarCharts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Workshops/PyCharm/Visualizations/SanskyExample.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/CostHelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/CostHelper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/Costs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/Costs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/Inputs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/Inputs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/InputsAssumptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/InputsAssumptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/ProFormaForm.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/ProFormaForm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/proFormaTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/proFormaTest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +18,9 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="ht-pythonClass-4-Fix" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -44,8 +44,8 @@
       <recent name="$PROJECT_DIR$/Workshops/PyCharm/ProForma" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.proFormaTest">
-    <configuration name="ProFormaForm" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.PolarCharts">
+    <configuration name="CircleChart" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Coffee and Code" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -53,11 +53,74 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Workshops/PyCharm/ProForma" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Workshops/PyCharm/Visualizations" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/ProFormaForm.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Workshops/PyCharm/Visualizations/CircleChart.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PolarCharts" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Coffee and Code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Workshops/PyCharm/Visualizations" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Workshops/PyCharm/Visualizations/PolarCharts.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SanskyExample" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Coffee and Code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Workshops/PyCharm/Visualizations" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Workshops/PyCharm/Visualizations/SanskyExample.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Coffee and Code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Workshops/PyCharm" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Workshops/PyCharm/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -87,76 +150,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="testInputs (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Coffee and Code" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Inputs/testInputs.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="testSchedule (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Coffee and Code" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Schedule" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Schedule/testSchedule.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_Results (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Coffee and Code" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Results" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Workshops/PyCharm/ProForma/proforma/Results/test_Results.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.PolarCharts" />
+        <item itemvalue="Python.SanskyExample" />
+        <item itemvalue="Python.CircleChart" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.proFormaTest" />
-        <item itemvalue="Python.ProFormaForm" />
-        <item itemvalue="Python.testInputs (1)" />
-        <item itemvalue="Python.test_Results (1)" />
-        <item itemvalue="Python.testSchedule (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -169,6 +169,14 @@
       <option name="presentableId" value="Default" />
       <updated>1647218761080</updated>
     </task>
+    <task id="LOCAL-00001" summary="commit to be able to pull.">
+      <created>1649115196615</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1649115196615</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -182,5 +190,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit to be able to pull." />
+    <option name="LAST_COMMIT_MESSAGE" value="commit to be able to pull." />
   </component>
 </project>
