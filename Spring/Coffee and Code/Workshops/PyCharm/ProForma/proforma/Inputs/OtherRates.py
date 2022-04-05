@@ -7,7 +7,7 @@ class OtherRates:
                         'ordinaryIncomeTax' : .35,
                         'depreciationRecapture' : .25,
                         'capitalGainsTax' : .2,
-                        'discountRate' : 0,
+                        'discountRate' : 0.06,
                         'interest_rate' : .05,
                         'constantRate': 0.0688
     }

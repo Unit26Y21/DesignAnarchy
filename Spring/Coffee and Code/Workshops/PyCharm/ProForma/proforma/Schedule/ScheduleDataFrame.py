@@ -21,8 +21,8 @@ class ScheduleGrid:
                  annual_public_subsidy_increase: float
                  ):
 
-        self.yrs = 10
-        self.start_year = 2022
+        self.yrs = yrs
+        self.start_year = start_year
         schedule_dates = pd.Series(pd.date_range(start=str(self.start_year), periods=self.yrs, freq='YS')).dt.year
 
         # pd.options.display.float_format = '${:,}'.format

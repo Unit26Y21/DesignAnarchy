@@ -135,3 +135,5 @@ class MyInputsAssumptions:
                                     total_property_real_estate_taxes= self.total_property_real_estate_taxes,
                                     total_property_replacement_reserve= self.total_property_replacement_reserve
                                     )
+
+        #TODO: Create a dataframe for storing these values

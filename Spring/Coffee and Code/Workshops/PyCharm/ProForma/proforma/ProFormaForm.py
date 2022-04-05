@@ -18,6 +18,8 @@ class ProForma:
     4. Return Metrics: Net Present Value, Leveraged IRR After Tax, Capitalize Value, ROTA, Return on equity_calc
     '''
     def __init__(self,
+                 verbose: bool,
+                 exportToExcel: bool,
                  yrs: int,
                  start_year: int,
                  lot_area: float,
@@ -124,3 +126,11 @@ class ProForma:
                                        accumulated_depreciation= -self.schedule.final_depreciation,
                                        mortgage_payoff= -self.schedule.mortage_payoff)
 
+
+
+
+        if verbose:
+            print(self.schedule.df.to_string())
+
+        if exportToExcel:
+            pass
