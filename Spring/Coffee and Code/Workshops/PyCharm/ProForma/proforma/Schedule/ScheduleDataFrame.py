@@ -11,7 +11,7 @@ class ScheduleGrid:
                  real_estate_taxes: float,
                  replacement_reserve: float,
                  debt_calc: float,
-                 equity_calc: float,
+                 equity: float,
                  debt_calc_service: float,
                  debt_calc_service_rate: float,
                  begin_year_balance: float,
@@ -218,7 +218,7 @@ class ScheduleGrid:
 
 
         #Total
-        self.total_future_cashflow_atStart = -equity_calc
+        self.total_future_cashflow_atStart = -equity
 
         self.future_cashflow_list = self.df.loc['Total Future Cash Flow']
 

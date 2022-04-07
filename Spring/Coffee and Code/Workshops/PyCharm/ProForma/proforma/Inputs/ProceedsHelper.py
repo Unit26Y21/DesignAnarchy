@@ -10,7 +10,7 @@ def approximate_units (net_area, avg_market_rate_unit_size):
 
 def total_income (approx_units, rent_per_unit):
     if approx_units:
-        return approx_units * rent_per_unit
+        return approx_units * rent_per_unit * 12
     else:
         return 0
 
@@ -29,6 +29,6 @@ def replacement_reserve (total_floor_area, replacement_reserve):
 def total_cost (net_area, dev_cost):
     return (net_area * dev_cost)
 
-def depreciation (total_cost, depreciation):
+def depreciation (use_sqft_total_cost, depreciation):
     if depreciation:
-        return (-1 * (total_cost / depreciation))
+        return (-1 * (use_sqft_total_cost/ depreciation))

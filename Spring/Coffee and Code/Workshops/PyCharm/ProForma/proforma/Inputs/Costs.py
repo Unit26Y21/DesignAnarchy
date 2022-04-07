@@ -41,6 +41,7 @@ class development_costs():
                                 manufacturing_gross_sqft,
                                 community_gross_sqft])
 
+
         print("")
         print("My development costs ({})".format(self.currency))
 

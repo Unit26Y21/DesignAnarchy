@@ -15,7 +15,7 @@ class ProForma:
     1. Gross Income Totals
     2. A cost schedule
     3. Results including: Net Book Value, Gain on Sale, Tax Payment, Net proceed from sale
-    4. Return Metrics: Net Present Value, Leveraged IRR After Tax, Capitalize Value, ROTA, Return on equity_calc
+    4. Return Metrics: Net Present Value, Leveraged IRR After Tax, Capitalize Value, ROTA, Return on equity
     '''
     def __init__(self,
                  verbose: bool,
@@ -23,8 +23,10 @@ class ProForma:
                  yrs: int,
                  start_year: int,
                  lot_area: float,
+                 equity: float,
                  existingBuildingFloorArea: float,
                  existingBuildingPurchase: int,
+                 net_loss_factor: float,
                  residential_gross_sqft: float,
                  commercial_gross_sqft: float,
                  manufacturing_gross_sqft: float,
@@ -49,6 +51,7 @@ class ProForma:
         self.yrs= yrs
         self.start_year= start_year
         self.lot_area= lot_area
+        self.equity= equity
         self.existingBuildingFloorArea= existingBuildingFloorArea
         self.existingBuildingPurchase= existingBuildingPurchase
         self.residential_gross_sqft= residential_gross_sqft
@@ -72,7 +75,8 @@ class ProForma:
         self.community_rent = community_rent
 
         # 1. Property Information
-        self.propertyInput = Inputs.MyInputsAssumptions(lot_area= lot_area,
+        self.propertyInput = Inputs.MyInputsAssumptions(equity = equity,
+                                                        net_loss_factor= net_loss_factor,
                                                         existingBuildingFloorArea= existingBuildingFloorArea,
                                                         existingBuildingPurchase= existingBuildingPurchase,
                                                         residential_gross_sqft= residential_gross_sqft,
@@ -104,11 +108,11 @@ class ProForma:
                                               operating_expenses=  self.propertyInput.totals.total_Expenses,
                                               real_estate_taxes=  self.propertyInput.totals.total_property_real_estate_taxes,
                                               replacement_reserve=  self.propertyInput.totals.total_property_replacement_reserve,
-                                              debt_calc=  self.propertyInput.capitalStructure.debt_calc,
-                                              equity_calc = self.propertyInput.capitalStructure.equity_calc,
-                                              debt_calc_service=  self.propertyInput.capitalStructure.debt_calcService,
-                                              debt_calc_service_rate= self.propertyInput.capitalStructure.debt_calcService_rate,
-                                              begin_year_balance= self.propertyInput.capitalStructure.debt_calc,
+                                              debt_calc=  self.propertyInput.capitalStructure.debt,
+                                              equity = self.propertyInput.capitalStructure.equity,
+                                              debt_calc_service=  self.propertyInput.capitalStructure.debt_service,
+                                              debt_calc_service_rate= self.propertyInput.capitalStructure.debt_service_percent,
+                                              begin_year_balance= self.propertyInput.capitalStructure.debt,
                                               interest_rate= self.propertyInput.rates.ratesDictionary['interest_rate'],
                                               annual_public_subsidy_increase = self.propertyInput.rates.ratesDictionary['annualPublicSubsidiesIncrease'],
                                               depreciation= self.propertyInput.totals.total_depreciation,
@@ -116,9 +120,9 @@ class ProForma:
                                               )
 
         # 4. Results
-        self.results = Results.Results(equity_calc = self.propertyInput.capitalStructure.equity_calc,
+        self.results = Results.Results(equity = self.propertyInput.capitalStructure.equity,
                                        net_operating_income= self.schedule.net_operating_income_atStart,
-                                       future_cash_flow_list= self.schedule.future_cashflow_list,
+                                       debt_cash_flow_list= self.schedule.future_cashflow_list,
                                        cash_flow_after_taxes= self.schedule.cash_flow_after_taxes_atStart,
                                        total_net_operating_income= self.schedule.final_net_operating_income,
                                        total_development_cost= self.propertyInput.development_costs.total_development_cost,
@@ -128,9 +132,10 @@ class ProForma:
 
 
 
-
+        # Show Both the Inputs and the Schedule table
         if verbose:
             print(self.schedule.df.to_string())
 
+        # TODO: Lastly, export results to an excel file
         if exportToExcel:
             pass

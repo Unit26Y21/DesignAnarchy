@@ -3,7 +3,7 @@ import pandas as pd
 
 df = px.data.wind()
 
-df = pd.DataFrame()
+
 
 print(df.to_string())
 

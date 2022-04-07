@@ -1,17 +1,19 @@
 
 from proforma.Results import ResultsMetricHelper, ResultsHelper
+from proforma.Inputs import OtherRates as rates
+import pandas as pd
 
 
 class Results:
-    discount_rate = 0.09
-    cap_rate_atSale = 0.06
-    capital_gains_tax_rate = 0.2
-    depreciation_recapture_rate = 0.25
-    sale_expense_rate = 0.05
+    discount_rate = rates.OtherRates.ratesDictionary['discountRate']
+    cap_rate_atSale = rates.OtherRates.ratesDictionary['capRateAtSale']
+    capital_gains_tax_rate = rates.OtherRates.ratesDictionary['capitalGainsTax']
+    depreciation_recapture_rate =  rates.OtherRates.ratesDictionary['depreciationRecapture']
+    sale_expense_rate =  rates.OtherRates.ratesDictionary['salesExpense']
 
     def __init__(self,
-                 equity_calc: int,
-                 future_cash_flow_list: list,
+                 equity: int,
+                 debt_cash_flow_list: list,
                  cash_flow_after_taxes: int,
                  total_net_operating_income: int,
                  total_development_cost: int,
@@ -20,8 +22,9 @@ class Results:
                  mortgage_payoff: int,
                  net_operating_income: int
                  ):
-        self.equity_calc = equity_calc
-        self.future_cash_flow_list = future_cash_flow_list
+
+        self.equity = equity
+        self.debt_cash_flow_list = debt_cash_flow_list
         self.cash_flow_after_taxes = cash_flow_after_taxes
         self.total_net_operating_income = total_net_operating_income
         self.total_development_cost = total_development_cost
@@ -38,7 +41,7 @@ class Results:
 
         net_book_value = ResultsHelper.net_book_value_calculator(development_cost=total_development_cost,
                                                               replacement_reserve=total_replacement_reserve,
-                                                              total_depreciation=accumulated_depreciation)
+                                                              total_depreciation=-accumulated_depreciation)
 
         gain_on_sale = ResultsHelper.gain_onSale_calculator (sale_price=sale_price,
                                                           sale_expenses=sale_expenses,
@@ -64,12 +67,12 @@ class Results:
         print("#" * 30)
         print("\n")
         # Net Present Value
-        ResultsMetricHelper.net_present_value_calculator(equity_calc=equity_calc,
-                                                         list_future_cash_flow=future_cash_flow_list,
+        ResultsMetricHelper.net_present_value_calculator(equity=equity,
+                                                         debt_cash_flow_list=debt_cash_flow_list,
                                                          discount_rate=self.discount_rate)
 
         # Leveraged IRR after Taxes
-        ResultsMetricHelper.leveraged_IRR_calculator(future_cash_flow_list=future_cash_flow_list)
+        ResultsMetricHelper.leveraged_IRR_calculator(debt_cash_flow_list=debt_cash_flow_list)
 
         # Capitalized Value
         ResultsMetricHelper.capitalize_value_calculator(net_operating_income=net_operating_income,
@@ -79,6 +82,12 @@ class Results:
         ResultsMetricHelper.return_onTotalAssets_calculator(net_operating_income_1yr=net_operating_income,
                                                           total_development_cost=total_development_cost)
 
-        # Return on equity_calc
-        ResultsMetricHelper.return_onEquity_calculator(equity_calc=equity_calc,
+        # Return on equity
+        ResultsMetricHelper.return_on_equity_calculator(equity=equity,
                                                      cash_flow_after_taxes=cash_flow_after_taxes)
+
+        resultsDictionary = {
+
+        }
+        # TODO: Create a dataFrame for this Class
+        df =pd.DataFrame()
