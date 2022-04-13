@@ -1,9 +1,10 @@
-from proforma.Inputs import Inputs, Costs, CapitalStructure, Proceeds, OtherRates, Totals
+from proforma.Inputs import Inputs, Costs, CapitalStructure, Proceeds, OtherRates, Totals, OtherRates
+import pandas as pd
 
 class MyInputsAssumptions:
-
     def __init__(self,
-                 lot_area: float,
+                 equity: float,
+                 net_loss_factor: float,
                  existingBuildingFloorArea: float,
                  existingBuildingPurchase: int,
                  residential_gross_sqft: int,
@@ -27,9 +28,8 @@ class MyInputsAssumptions:
                  land_cost: int,
                  ):
 
-        self.existinBuildingFloorArea = 0 #assumes not building or attaching to existing building
+        self.existinBuildingFloorArea = existingBuildingFloorArea
         self.existinBuildingPurchase = existingBuildingPurchase
-        self.lot_area = lot_area
         self.residential_gross_sqft = residential_gross_sqft
         self.commercial_gross_sqft = commercial_gross_sqft
         self.manufacturing_gross_sqft = manufacturing_gross_sqft
@@ -39,15 +39,16 @@ class MyInputsAssumptions:
         self.manufacturing_rent = manufacturing_rent
         self.community_rent = community_rent
         self.residential_cost = residential_cost
-        self.commercial_cost: commercial_cost
-        self.manufacturing_cost: manufacturing_cost
-        self.community_cost: community_cost
-        self.hard_cost: hard_cost
-        self.soft_cost: soft_cost
+        self.commercial_cost = commercial_cost
+        self.manufacturing_cost = manufacturing_cost
+        self.community_cost = community_cost
+        self.hard_cost = hard_cost
+        self.soft_cost = soft_cost
         self.land_cost = land_cost
+        self.equity = equity
+        self.net_loss_factor = net_loss_factor
 
-
-        self.development = Inputs.PropertyInputs(lot_area= self.lot_area,
+        self.development = Inputs.PropertyInputs(net_loss_factor= net_loss_factor,
                                                  existingBuildingFloorArea = self.existinBuildingFloorArea,
                                                  residential_gross_sqft = self.residential_gross_sqft,
                                                  commercial_gross_sqft = self.commercial_gross_sqft,
@@ -67,42 +68,40 @@ class MyInputsAssumptions:
                                                           soft_cost= soft_cost,
                                                           land_cost= land_cost)
 
-        self.capitalStructure = CapitalStructure.CapitalStructure(total_development_cost= self.development_costs.total_development_cost)
+        self.capitalStructure = CapitalStructure.CapitalStructure(debt_service_percent= OtherRates.OtherRates.ratesDictionary['constantRate'],
+                                                                  total_development_cost= self.development_costs.total_development_cost,
+                                                                  equity_percent = self.equity)
 
 
         self.residentialProceeds = Proceeds.myProceeds(proceeds_type= "Residential",
                                                        rent = residential_rent,
-                                                       gross_floor_area= self.development.residential_gross_sqft,
+                                                       gross_floor_area= self.residential_gross_sqft,
+                                                       net_loss_factor=self.net_loss_factor,
                                                        avg_unit_size= avgUnitSize_residential,
-                                                       total_dev_cost= self.development_costs.total_development_cost)
+                                                       development_cost= self.residential_cost)
 
         self.commercialProceeds = Proceeds.myProceeds(proceeds_type="Commercial",
                                                       rent = commercial_rent,
-                                                      gross_floor_area=self.development.commercial_gross_sqft,
+                                                      gross_floor_area=self.commercial_gross_sqft,
+                                                      net_loss_factor= self.net_loss_factor,
                                                       avg_unit_size= avgUnitSize_commercial,
-                                                      total_dev_cost=self.development_costs.total_development_cost)
+                                                      development_cost=self.commercial_cost)
 
         self.manufacturingProceeds = Proceeds.myProceeds(proceeds_type="Manufacturing",
                                                          rent = manufacturing_rent,
-                                                         gross_floor_area=self.development.manufacturing_gross_sqft,
+                                                         gross_floor_area=self.manufacturing_gross_sqft,
+                                                         net_loss_factor=self.net_loss_factor,
                                                          avg_unit_size= avgUnitSize_manufacturing,
-                                                         total_dev_cost=self.development_costs.total_development_cost)
+                                                         development_cost= self.manufacturing_cost)
 
         self.communityProceeds = Proceeds.myProceeds(proceeds_type="Community Facility",
                                                      rent = commercial_rent,
-                                                     gross_floor_area=self.development.community_gross_sqft,
+                                                     gross_floor_area=self.community_gross_sqft,
+                                                     net_loss_factor=self.net_loss_factor,
                                                      avg_unit_size= avgUnitSize_community,
-                                                     total_dev_cost=self.development_costs.total_development_cost)
+                                                     development_cost=self.community_cost)
 
         self.rates = OtherRates.OtherRates
-
-        print("\n")
-        print("Tax Rates, Rates, Etc:")
-        print("\n")
-
-        print(self.residentialProceeds.income)
-        print(self.residentialProceeds.vacancy)
-        print(round(self.residentialProceeds.units,1))
 
         self.total_property_operational_expenses = sum([self.residentialProceeds.operation_expense,
                                                         self.commercialProceeds.operation_expense,

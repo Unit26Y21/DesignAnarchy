@@ -1,21 +1,19 @@
 # Helper methods to calculate capital structure
 
-def equity_calc(myTotaldev_cost, eqPerc):
-    totalEq = myTotaldev_cost * eqPerc
-    output = totalEq, eqPerc
-    print("Total equity_calc: ${0:,} | {1}".format(output[0], output[1]))
+def equity(my_totaldev_cost, equity_percent):
+    totalEq = my_totaldev_cost * equity_percent
+    output = totalEq, equity_percent
+    print("Total Equity: ${0:,} | {1}".format(output[0], output[1]))
     return totalEq
 
-def debt_calc(myTotaldev_cost, equity_calcPercent):
-    equity_calc = myTotaldev_cost * equity_calcPercent
-    debt_calcPercent = 1 - equity_calcPercent
-    totaldebt_calc = myTotaldev_cost - equity_calc
-    output = totaldebt_calc, debt_calcPercent
-    print("Total debt_calc: ${0:,} | {1}".format(output[0], output[1]))
+def debt_calc(my_totaldev_cost, debt_percent):
+    totaldebt_calc = my_totaldev_cost* debt_percent
+    output = totaldebt_calc, debt_percent
+    print("Total Debt: ${0:,} | {1}".format(output[0], output[1]))
     return totaldebt_calc
 
-def debt_calcService(mytotaldebt_calc, debt_calcServPerc):
-    totaldebt_calcServ = mytotaldebt_calc * debt_calcServPerc
-    output = totaldebt_calcServ, debt_calcServPerc
-    print("Total debt_calc Service: ${0:,} | {1}".format(round(output[0], 2), output[1]))
-    return totaldebt_calcServ
+def debt_calcService(my_total_debt, debt_service_percent):
+    total_debt_service = my_total_debt * debt_service_percent
+    output = total_debt_service, debt_service_percent
+    print("Total Debt Service: ${0:,} | {1}".format(round(output[0], 2), output[1]))
+    return total_debt_service

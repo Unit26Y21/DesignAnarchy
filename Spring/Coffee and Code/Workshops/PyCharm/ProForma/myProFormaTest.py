@@ -1,32 +1,129 @@
 import proforma.ProFormaForm as ProFormaForm
 from statistics import mean
 
-myUnits = mean([900,1000,1500])
+myUnits = mean([900,1000,1500]) #unit in sqft
 
-mySchedule = ProFormaForm.ProForma(verbose= True,
+
+
+# CarPark Legacy
+myProForma = ProFormaForm.ProForma(verbose= True,
                                    exportToExcel= False,
                                    yrs = 10,
                                    start_year = 2022,
-                                   lot_area=637132,
-                                   existingBuildingFloorArea=3236891,
+                                   lot_area=0,
+                                   equity = 0.70,
+                                   net_loss_factor= 0.15,
+                                   existingBuildingFloorArea=0,
                                    existingBuildingPurchase=0,
-                                   residential_gross_sqft=2265824, #70%
-                                   commercial_gross_sqft= 323689, #10%
+                                   residential_gross_sqft= 1900000,
+                                   commercial_gross_sqft=100000,
                                    manufacturing_gross_sqft=0,
-                                   community_gross_sqft=647378, #20%
-                                   avgUnitSize_residential=1063, #myUnits #sqft
-                                   avgUnitSize_commercial = 5000,
-                                   avgUnitSize_manufacturing = 0,
-                                   avgUnitSize_community = 10000,
-                                   residential_cost= 470,
-                                   residential_rent= 7080, #per month... per sqft? 6.6 same for the others
-                                   commercial_cost= 400,
-                                   commercial_rent= 960, #peryear, persqft
-                                   manufacturing_cost= 0,
+                                   community_gross_sqft=0,
+                                   avgUnitSize_residential=750,
+                                   avgUnitSize_commercial=3000,
+                                   avgUnitSize_manufacturing=0,
+                                   avgUnitSize_community=0,
+                                   residential_cost=375,
+                                   residential_rent=3600,
+                                   commercial_cost=700,
+                                   commercial_rent=285000,
+                                   manufacturing_cost=0,
                                    manufacturing_rent=0,
-                                   community_cost= 400,
-                                   community_rent = 600, #peryear, persqft
-                                   hard_cost= 188,
-                                   soft_cost= 282,
-                                   land_cost= 23812383)
+                                   community_cost=0,
+                                   community_rent=0,
+                                   hard_cost=0,
+                                   soft_cost=0,
+                                   land_cost=0)
+
+
+#
+# # Towers in the soup
+# myProForma = ProFormaForm.ProForma(verbose= True,
+#                                    exportToExcel= False,
+#                                    yrs = 10,
+#                                    start_year = 2022,
+#                                    lot_area=0,
+#                                    equity = 0.70,
+#                                    net_loss_factor= 0.15,
+#                                    existingBuildingFloorArea=0,
+#                                    existingBuildingPurchase=0,
+#                                    residential_gross_sqft= 1900000,
+#                                    commercial_gross_sqft=100000,
+#                                    manufacturing_gross_sqft=0,
+#                                    community_gross_sqft=0,
+#                                    avgUnitSize_residential=750,
+#                                    avgUnitSize_commercial=3000,
+#                                    avgUnitSize_manufacturing=0,
+#                                    avgUnitSize_community=0,
+#                                    residential_cost=375,
+#                                    residential_rent=3600,
+#                                    commercial_cost=700,
+#                                    commercial_rent=285000,
+#                                    manufacturing_cost=0,
+#                                    manufacturing_rent=0,
+#                                    community_cost=0,
+#                                    community_rent=0,
+#                                    hard_cost=0,
+#                                    soft_cost=0,
+#                                    land_cost=0)
+
+# Air rights
+# myProForma = ProFormaForm.ProForma(verbose= True,
+#                                    exportToExcel= False,
+#                                    yrs = 10,
+#                                    start_year = 2022,
+#                                    lot_area=0,
+#                                    equity = 0.70,
+#                                    net_loss_factor= 0.09,
+#                                    existingBuildingFloorArea=0,
+#                                    existingBuildingPurchase=0,
+#                                    residential_gross_sqft= 3000000,
+#                                    commercial_gross_sqft= 0,
+#                                    manufacturing_gross_sqft=0,
+#                                    community_gross_sqft=0,
+#                                    avgUnitSize_residential=680,
+#                                    avgUnitSize_commercial = 0,
+#                                    avgUnitSize_manufacturing = 0,
+#                                    avgUnitSize_community = 0,
+#                                    residential_cost= 470,
+#                                    residential_rent= 2000, #per month, 1000
+#                                    commercial_cost= 0,
+#                                    commercial_rent= 0,
+#                                    manufacturing_cost= 0,
+#                                    manufacturing_rent=0,
+#                                    community_cost= 0,
+#                                    community_rent = 0,
+#                                    hard_cost= 0,
+#                                    soft_cost= 0,
+#                                    land_cost= 0)
+
+# myProForma = ProFormaForm.ProForma(verbose= True,
+#                                    exportToExcel= False,
+#                                    yrs = 10,
+#                                    start_year = 2022,
+#                                    lot_area=0,
+#                                    equity = 0.70,
+#                                    net_loss_factor= 0.00,
+#                                    existingBuildingFloorArea=0,
+#                                    existingBuildingPurchase=0,
+#                                    residential_gross_sqft= 2000000,
+#                                    commercial_gross_sqft= 0,
+#                                    manufacturing_gross_sqft=0,
+#                                    community_gross_sqft=0,
+#                                    avgUnitSize_residential=680,
+#                                    avgUnitSize_commercial = 0,
+#                                    avgUnitSize_manufacturing = 0,
+#                                    avgUnitSize_community = 0,
+#                                    residential_cost= 470,
+#                                    residential_rent= 590, #per month, 1000
+#                                    commercial_cost= 0,
+#                                    commercial_rent= 0,
+#                                    manufacturing_cost= 0,
+#                                    manufacturing_rent=0,
+#                                    community_cost= 0,
+#                                    community_rent = 0,
+#                                    hard_cost= 0,
+#                                    soft_cost= 0,
+#                                    land_cost= 0)
+
 

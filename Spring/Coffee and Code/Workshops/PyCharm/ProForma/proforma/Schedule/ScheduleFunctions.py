@@ -113,15 +113,15 @@ def cash_flow_after_taxes(operating_income, annual_dbs, tax_payment):
     The  calculation  of  CFAT  is  completed  by  deducting  the  taxes  paid  or
     adding  the  tax  benefit  received  to  the  before-tax  cash  flow.    This  is  equivalent  to  applying  the  tax
     effect  to  the  operating  cash  flow  reduced  by  financial  payments.    For  many  investors,  CFAT  is  the
-    appropriate  annual  cash  flow  for  the  evaluation  of  an  equity_calc  investment.
+    appropriate  annual  cash  flow  for  the  evaluation  of  an  equity  investment.
 
-    Cash  flow  after  financing  return  on  equity_calc  or  cash  on  cash  return This  measure  of
+    Cash  flow  after  financing  return  on  equity  or  cash  on  cash  return This  measure  of
     return may be stated thus:
-        Cash flow after financing / equity_calc
+        Cash flow after financing / equity
 
-    Before-tax  cash  flow  +  first  year’s  amortization  return  on  equity_calc This measure is
+    Before-tax  cash  flow  +  first  year’s  amortization  return  on  equity This measure is
     defined in the following way:
-        Before-tax cash flow + Mortgage principal payment (year 1) / equity_calc
+        Before-tax cash flow + Mortgage principal payment (year 1) / equity
     '''
 
     cash_flow_after_financing = operating_income + annual_dbs

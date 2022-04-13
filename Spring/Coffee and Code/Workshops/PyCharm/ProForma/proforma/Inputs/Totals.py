@@ -35,13 +35,14 @@ class Totals:
         self.total_manufacturing_depreciation = total_manufacturing_depreciation
         self.total_community_depreciation = total_community_depreciation
 
-        print("#" * 5)
+        print("\n")
+        print("#" * 10)
 
         self.total_Gross_Incomes = sum([total_residential_income,
                                    total_commercial_income,
                                    total_manufacturing_income,
                                    total_community_income])
-
+        print("\n")
         print("Total Residential Income: ${:,}".format(self.total_residential_income))
         print("Total Commercial Income: ${:,}".format(self.total_commercial_income))
         print("Total Manufacturing Income: ${:,}".format(self.total_manufacturing_income))
@@ -79,3 +80,4 @@ class Totals:
         print("Total Commercial Depreciation: ${:,}".format(self.total_commercial_depreciation))
         print("Total Manufacturing Depreciation: ${:,}".format(self.total_manufacturing_depreciation))
         print("Total Depreciation: ${:,}".format(self.total_depreciation))
+        print("\n")

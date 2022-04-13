@@ -7,15 +7,14 @@ class myProceeds:
     '''
 
     # NYCHA Vacancy
-    vacancy_rate = 0.012
-    income_escalation = 0.01
+    vacancy_rate = 0.05 #0.012
+    income_escalation = 0.02 # 0.01
 
     #NYCHA Operation Costs
     operation_expense_persqft = 7 #USD
-    realestate_taxes_persqft = 0 #USD
+    realestate_taxes_persqft = 3 #0 #USD
     replacement_reserve_persqft = 1 #USD
     depreciation_yrs = 27.5   # in years
-    net_loss_factor = 0.15
 
     income = 0
     vacancy = 0
@@ -27,15 +26,17 @@ class myProceeds:
                  proceeds_type: str,
                  gross_floor_area: int,
                  avg_unit_size: float,
-                 total_dev_cost: int,
-                 rent: int
+                 development_cost: int,
+                 rent: int,
+                 net_loss_factor: float,
                  ):
 
-        self.total_dev_cost = total_dev_cost
+        self.development_cost = development_cost
         self.gross_floor_area = gross_floor_area
         self.avg_unit_size = avg_unit_size
         self.proceeds_type = proceeds_type
         self.rent = rent
+        self.net_loss_factor = net_loss_factor
 
         #Proceeds
         common_circulation = ProceedsHelper.common_area_and_circulation(total_floor_area= gross_floor_area,
@@ -66,16 +67,17 @@ class myProceeds:
         #Depreciation
 
         self.depreciation = ProceedsHelper.depreciation(depreciation= self.depreciation_yrs,
-                                                        total_cost= total_dev_cost)
+                                                        use_sqft_total_cost= self.net_area * self.development_cost)
 
         print("\n")
         print("{} Proceeds".format(proceeds_type))
-        print("Common Area and Circulation: ${:,}".format(common_circulation))
-        print("Net {} Area: ${:,}".format(proceeds_type, self.net_area))
+        print("Common Area and Circulation: {:,}".format(common_circulation))
+        print("Net {} Area: {:,}".format(proceeds_type, self.net_area))
+        print("Units: {}".format(self.units))
+        print("{} Vacancy Rate: {:,}".format(proceeds_type, self.vacancy_rate))
         print("{} Market Rate Rent: ${:,}".format(proceeds_type, self.rent))
-        print("{} Vacancy Rate: ${:,}".format(proceeds_type, self.vacancy_rate))
-        print("{} Total Income --> ${:,}".format(proceeds_type,self.income))
-        print("{} Total Vacancy Cost --> ${:,}".format(proceeds_type,self.vacancy))
+        print("{} Total Income: ${:,}".format(proceeds_type,self.income))
+        print("{} Total Vacancy Cost: ${:,}".format(proceeds_type,self.vacancy))
 
         print("\n")
         print("{} Expenses".format(proceeds_type))
@@ -89,4 +91,4 @@ class myProceeds:
         print("\n")
         print("{} Depreciation".format(proceeds_type))
         print("{} Depreciation in Yrs: {}".format(proceeds_type, self.depreciation_yrs))
-        print("Total Depreciation ${:,}".format(self.depreciation))
+        print("Total Depreciation: ${:,}".format(self.depreciation))
