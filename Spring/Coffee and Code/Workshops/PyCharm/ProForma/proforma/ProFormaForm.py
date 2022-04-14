@@ -127,14 +127,17 @@ class ProForma:
                                               )
 
         # 4. Results
+        debt_cash_flow_list = self.schedule.future_cashflow_list.values.tolist()
+        debt_cash_flow_list.insert(0, -self.propertyInput.capitalStructure.equity)
+
         self.results = Results.Results(equity = self.propertyInput.capitalStructure.equity,
                                        net_operating_income= self.schedule.net_operating_income_atStart,
-                                       debt_cash_flow_list= self.schedule.future_cashflow_list,
+                                       debt_cash_flow_list= debt_cash_flow_list,
                                        cash_flow_after_taxes= self.schedule.cash_flow_after_taxes_atStart,
                                        total_net_operating_income= self.schedule.final_net_operating_income,
                                        total_development_cost= self.propertyInput.development_costs.total_development_cost,
                                        total_replacement_reserve= self.schedule.final_replacement_reserve,
-                                       accumulated_depreciation= -self.schedule.final_depreciation,
+                                       accumulated_depreciation= self.schedule.final_depreciation,
                                        mortgage_payoff= -self.schedule.mortage_payoff)
 
 

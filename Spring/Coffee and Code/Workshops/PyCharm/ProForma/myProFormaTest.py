@@ -40,7 +40,7 @@ myUnits = mean([900,1000,1500]) #unit in sqft
 
 
 # Towers in the soup
-myProForma = ProFormaForm.ProForma(verbose= True,
+myProForma = ProFormaForm.ProForma(verbose= False,
                                    exportToExcel= False,
                                    yrs = 10,
                                    start_year = 2022,
