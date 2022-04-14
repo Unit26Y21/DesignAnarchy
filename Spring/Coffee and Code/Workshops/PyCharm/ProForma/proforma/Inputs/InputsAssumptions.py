@@ -5,8 +5,10 @@ class MyInputsAssumptions:
     def __init__(self,
                  equity: float,
                  net_loss_factor: float,
+                 lot_area: int,
                  existingBuildingFloorArea: float,
                  existingBuildingPurchase: int,
+                 landscape_gross_sqft: int,
                  residential_gross_sqft: int,
                  commercial_gross_sqft: int,
                  manufacturing_gross_sqft: int,
@@ -26,8 +28,10 @@ class MyInputsAssumptions:
                  hard_cost: int,
                  soft_cost: int,
                  land_cost: int,
+                 landscape_cost: int
                  ):
 
+        self.lot_area = lot_area
         self.existinBuildingFloorArea = existingBuildingFloorArea
         self.existinBuildingPurchase = existingBuildingPurchase
         self.residential_gross_sqft = residential_gross_sqft
@@ -56,10 +60,13 @@ class MyInputsAssumptions:
                                                  community_gross_sqft= self.community_gross_sqft)
 
         self.development_costs = Costs.development_costs( existingBuildingPurchase= existingBuildingPurchase,
+                                                          lot_area= lot_area,
+                                                          landscape_gross_sqft= landscape_gross_sqft,
                                                           residential_gross_sqft= self.development.residential_gross_sqft,
                                                           commercial_gross_sqft= self.development.commercial_gross_sqft,
                                                           manufacturing_gross_sqft= self.development.manufacturing_gross_sqft,
                                                           community_gross_sqft= self.development.community_gross_sqft,
+                                                          landscape_cost= landscape_cost,
                                                           residential_cost = residential_cost,
                                                           commercial_cost= commercial_cost,
                                                           manufacturing_cost= manufacturing_cost,
