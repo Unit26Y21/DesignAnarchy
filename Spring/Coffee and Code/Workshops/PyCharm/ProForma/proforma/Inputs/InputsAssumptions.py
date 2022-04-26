@@ -87,6 +87,8 @@ class MyInputsAssumptions:
                                                        avg_unit_size= avgUnitSize_residential,
                                                        development_cost= self.residential_cost)
 
+
+
         self.commercialProceeds = Proceeds.myProceeds(proceeds_type="Commercial",
                                                       rent = commercial_rent,
                                                       gross_floor_area=self.commercial_gross_sqft,
