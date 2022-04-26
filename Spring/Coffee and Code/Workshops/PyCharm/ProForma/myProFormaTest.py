@@ -3,6 +3,12 @@ from statistics import mean
 
 myUnits = mean([900,1000,1500]) #unit in sqft
 
+# type, sqft, rent
+myAMI = { 80: ['1-Bed', 0.2,  600, 937],
+          70: ['3-Bed', 0.1, 1200, 1537],
+          60: ['2-Bed', 0.3, 900, 1400],
+          50: ['3-Bed', 0.4, 1100, 1800]
+}
 
 #
 # # CarPark Legacy
@@ -69,7 +75,8 @@ myProForma = ProFormaForm.ProForma(verbose= False,
                                    hard_cost=0,
                                    soft_cost=0,
                                    land_cost=0,
-                                   landscape_cost= 50)
+                                   landscape_cost= 50,
+                                   residential_AMI=myAMI)
 
 # Air rights
 # myProForma = ProFormaForm.ProForma(verbose= True,

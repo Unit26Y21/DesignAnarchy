@@ -38,6 +38,7 @@ class ProForma:
                  avgUnitSize_community: int,
                  residential_cost: int,
                  residential_rent: int,
+                 residential_AMI: dict,
                  commercial_cost: int,
                  commercial_rent: int,
                  manufacturing_cost: int,
@@ -74,9 +75,11 @@ class ProForma:
         self.land_cost= land_cost
         self.landscape_cost = landscape_cost
         self.residential_rent = residential_rent
+        self.residential_AMI = residential_AMI
         self.commercial_rent = commercial_rent
         self.manufacturing_rent = manufacturing_rent
         self.community_rent = community_rent
+        self.residential_AMI = residential_AMI
 
         # 1. Property Information
         self.propertyInput = Inputs.MyInputsAssumptions(equity = equity,
@@ -104,7 +107,8 @@ class ProForma:
                                                         residential_rent= residential_rent,
                                                         commercial_rent= commercial_rent,
                                                         manufacturing_rent= manufacturing_rent,
-                                                        community_rent= community_rent
+                                                        community_rent= community_rent,
+                                                        residential_AMI = residential_AMI
                                                         )
 
         # 3. Schedule
