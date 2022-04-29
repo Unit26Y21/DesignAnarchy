@@ -1,18 +1,10 @@
 # Helpers to calculate development cost summaries
 
-
-def land_purchase_cost(land_cost, lot_area):
-    total_land_purchase_cost = land_cost * lot_area
-    print("---")
-    print("Land Cost per SqFt: ${:,}".format(land_cost))
-    print("Total Land Area Cost: ${:,}".format(total_land_purchase_cost))
-    return total_land_purchase_cost
-
-def use_cost_calculator(gross_sqft, cost_per_sqft):
+def use_cost_calculator(type, gross_sqft, cost_per_sqft):
     total_cost_per_sqft = gross_sqft * cost_per_sqft
     print("---")
-    print("Residential Cost per SqFt: ${:,}".format(cost_per_sqft))
-    print("Total Residential Area Cost: ${:,}".format(total_cost_per_sqft))
+    print("{type} Cost per SqFt: ${amount:,}".format(type = type, amount=cost_per_sqft))
+    print("Total {type} Area Cost: ${amount:,}".format(type = type, amount=total_cost_per_sqft))
     return total_cost_per_sqft
 
 
@@ -30,8 +22,19 @@ def soft_cost(gross_sqft, soft_cost):
     print("Total Soft Costs: ${:,}".format(total_soft_cost))
     return total_soft_cost
 
-def total_development_cost(existing_building_purchase,  total_residential_cost, total_commercial_cost, total_manufacturing_cost,total_community_cost, total_hard_cost, total_soft_cost):
+def total_development_cost(existing_building_purchase,
+                           total_lot_purchase_cost,
+                           total_landscape_cost,
+                           total_residential_cost,
+                           total_commercial_cost,
+                           total_manufacturing_cost,
+                           total_community_cost,
+                           total_hard_cost,
+                           total_soft_cost):
+
     totaldev_cost = [existing_building_purchase,
+                     total_lot_purchase_cost,
+                     total_landscape_cost,
                      total_residential_cost,
                      total_commercial_cost,
                      total_manufacturing_cost,

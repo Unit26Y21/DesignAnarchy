@@ -217,9 +217,7 @@ class ScheduleGrid:
 
 
 
-        #Total
-        self.total_future_cashflow_atStart = -equity
-
+        #Totals
         self.future_cashflow_list = self.df.loc['Total Future Cash Flow']
 
         self.cash_flow_after_taxes_atStart = self.df.iat[16,0]

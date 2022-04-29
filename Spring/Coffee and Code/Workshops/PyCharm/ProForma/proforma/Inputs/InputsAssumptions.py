@@ -5,8 +5,10 @@ class MyInputsAssumptions:
     def __init__(self,
                  equity: float,
                  net_loss_factor: float,
+                 lot_area: int,
                  existingBuildingFloorArea: float,
                  existingBuildingPurchase: int,
+                 landscape_gross_sqft: int,
                  residential_gross_sqft: int,
                  commercial_gross_sqft: int,
                  manufacturing_gross_sqft: int,
@@ -17,6 +19,7 @@ class MyInputsAssumptions:
                  avgUnitSize_community: int,
                  residential_cost: int,
                  residential_rent: int,
+                 residential_AMI: dict,
                  commercial_cost: int,
                  commercial_rent: int,
                  manufacturing_cost: int,
@@ -26,8 +29,10 @@ class MyInputsAssumptions:
                  hard_cost: int,
                  soft_cost: int,
                  land_cost: int,
+                 landscape_cost: int
                  ):
 
+        self.lot_area = lot_area
         self.existinBuildingFloorArea = existingBuildingFloorArea
         self.existinBuildingPurchase = existingBuildingPurchase
         self.residential_gross_sqft = residential_gross_sqft
@@ -38,6 +43,7 @@ class MyInputsAssumptions:
         self.commercial_rent = commercial_rent
         self.manufacturing_rent = manufacturing_rent
         self.community_rent = community_rent
+        self.residential_AMI = residential_AMI
         self.residential_cost = residential_cost
         self.commercial_cost = commercial_cost
         self.manufacturing_cost = manufacturing_cost
@@ -56,10 +62,13 @@ class MyInputsAssumptions:
                                                  community_gross_sqft= self.community_gross_sqft)
 
         self.development_costs = Costs.development_costs( existingBuildingPurchase= existingBuildingPurchase,
+                                                          lot_area= lot_area,
+                                                          landscape_gross_sqft= landscape_gross_sqft,
                                                           residential_gross_sqft= self.development.residential_gross_sqft,
                                                           commercial_gross_sqft= self.development.commercial_gross_sqft,
                                                           manufacturing_gross_sqft= self.development.manufacturing_gross_sqft,
                                                           community_gross_sqft= self.development.community_gross_sqft,
+                                                          landscape_cost= landscape_cost,
                                                           residential_cost = residential_cost,
                                                           commercial_cost= commercial_cost,
                                                           manufacturing_cost= manufacturing_cost,
@@ -72,13 +81,34 @@ class MyInputsAssumptions:
                                                                   total_development_cost= self.development_costs.total_development_cost,
                                                                   equity_percent = self.equity)
 
+        self.residentialProceeds_incomeList = []
 
-        self.residentialProceeds = Proceeds.myProceeds(proceeds_type= "Residential",
-                                                       rent = residential_rent,
-                                                       gross_floor_area= self.residential_gross_sqft,
-                                                       net_loss_factor=self.net_loss_factor,
-                                                       avg_unit_size= avgUnitSize_residential,
-                                                       development_cost= self.residential_cost)
+        for key,value in residential_AMI.items():
+            ami_type = str(key)
+            proceeds_type = ami_type + "% AMI " + value[0]
+            ami_percent_of_development = value[1]
+            ami_avg_unit_size = value[2]
+            ami_rent = value[3]
+
+
+
+            self.residentialProceeds_ami_income = Proceeds.myProceeds(proceeds_type= proceeds_type,
+                                                           rent = ami_rent,
+                                                           gross_floor_area= self.residential_gross_sqft * ami_percent_of_development,
+                                                           net_loss_factor=self.net_loss_factor,
+                                                           avg_unit_size=ami_avg_unit_size,
+                                                           development_cost= self.residential_cost)
+
+            self.residentialProceeds_incomeList.append(self.residentialProceeds_ami_income.income)
+
+        self.residentialProceeds_income = sum(self.residentialProceeds_incomeList)
+
+        self.residentialProceeds = Proceeds.myProceeds(proceeds_type="Residential",
+                                                      rent=residential_rent,
+                                                      gross_floor_area=self.residential_gross_sqft,
+                                                      net_loss_factor=self.net_loss_factor,
+                                                      avg_unit_size=avgUnitSize_residential,
+                                                      development_cost=self.residential_cost)
 
         self.commercialProceeds = Proceeds.myProceeds(proceeds_type="Commercial",
                                                       rent = commercial_rent,
@@ -118,7 +148,7 @@ class MyInputsAssumptions:
                                                        self.manufacturingProceeds.replacement_reserve,
                                                        self.communityProceeds.replacement_reserve])
 
-        self.totals = Totals.Totals(total_residential_income = self.residentialProceeds.income,
+        self.totals = Totals.Totals(total_residential_income = self.residentialProceeds_income,
                                     total_residential_vacancy=self.residentialProceeds.vacancy,
                                     total_residential_depreciation=self.residentialProceeds.depreciation,
                                     total_commercial_income=self.commercialProceeds.income,
