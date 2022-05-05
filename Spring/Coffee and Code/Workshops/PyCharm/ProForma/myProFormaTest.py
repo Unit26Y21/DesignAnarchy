@@ -3,7 +3,7 @@ from statistics import mean
 
 myUnits = mean([900,1000,1500]) #unit in sqft
 
-# type, sqft, rent
+# name: type, sqft, rent
 myAMI = { "Coliving Extra-Affordable": ['Coliving', 0.1, 325, 590],
           "Studio Extra-Affordable": ['Studio', 0.01, 400, 700],
           "1-Bed Extra-Affordable": ['1-Bed', 0.012, 400, 750],
