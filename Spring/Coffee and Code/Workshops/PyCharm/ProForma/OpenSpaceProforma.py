@@ -1,13 +1,13 @@
 import proforma.ProFormaForm as ProFormaForm
 from statistics import mean
 
-myAMI_1P1 = {'Affordable 1': ['Studio', 0.04,  400, 1150],
-          'Affordable 2': ['1-Bed', 0.14, 600, 1250],
-          'Affordable 3': ['2-Bed', 0.12, 800, 1500],
-          'Market 1': ['Studio', 0.10,  400, 3200],
-          'Market 2': ['1-Bed', 0.32, 600, 4000],
-          'Market 3': ['2-Bed', 0.28, 800, 5700],
-          }
+##myAMI_1P1 = {'Affordable 1': ['Studio', 0.04,  400, 1150],
+##          'Affordable 2': ['1-Bed', 0.14, 600, 1250],
+##          'Affordable 3': ['2-Bed', 0.12, 800, 1500],
+##          'Market 1': ['Studio', 0.10,  400, 3200],
+##          'Market 2': ['1-Bed', 0.32, 600, 4000],
+##          'Market 3': ['2-Bed', 0.28, 800, 5700],
+##          }
 
 myProFormaP1 = ProFormaForm.ProForma(verbose= False,
                                    exportToExcel= False,
